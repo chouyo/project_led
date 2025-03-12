@@ -224,11 +224,6 @@ class ListScreen extends GetView<ListController> {
                     ),
                     child: ListTile(
                       contentPadding: EdgeInsets.all(16),
-                      leading: Icon(
-                        Icons.mobile_friendly,
-                        color: Colors.white,
-                        size: 32,
-                      ),
                       title: Text(
                         led.name,
                         style: TextStyle(
@@ -236,18 +231,6 @@ class ListScreen extends GetView<ListController> {
                           fontWeight: FontWeight.w500,
                           color: Colors.white,
                         ),
-                      ),
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(height: 4),
-                          Text(
-                            led.type,
-                            style: TextStyle(
-                              color: Colors.white.withAlpha(204),
-                            ),
-                          ),
-                        ],
                       ),
                       onTap: () {
                         Get.toNamed(Routes.HOME, arguments: led.toJson());
