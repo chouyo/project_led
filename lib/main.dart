@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'infrastructure/navigation/navigation.dart';
@@ -22,6 +23,9 @@ void main() async {
   await Hive.openBox<Led>('leds');
 
   var initialRoute = await Routes.initialRoute;
+
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+
   runApp(Main(initialRoute));
 }
 

@@ -1,12 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../shared/scroll_text.dart';
 import 'controllers/home.controller.dart';
 import '../../infrastructure/data/led_model.dart';
-import '../../presentation/shared/marquee_widget.dart';
 
-class HomeScreen extends GetView<HomeController> {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
+  final controller = Get.find<HomeController>();
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      setState(() {}); // Force rebuild
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +55,7 @@ class HomeScreen extends GetView<HomeController> {
     final led = Led.fromJson(deviceJson);
 
     return Stack(
+      key: ValueKey('home_screen_${DateTime.now().millisecondsSinceEpoch}'),
       children: [
         // Bottom Layer - LED Type only
         Positioned.fill(
@@ -38,10 +65,11 @@ class HomeScreen extends GetView<HomeController> {
               height: MediaQuery.of(context).size.height,
               color: controller.backgroundColor.value,
               alignment: Alignment.centerLeft,
-              child: MarqueeWidget(
-                key: key,
+              child: ScrollText(
+                key: ValueKey(
+                    'home_screen_${DateTime.now().millisecondsSinceEpoch}'),
                 text: led.type,
-                style: TextStyle(
+                textStyle: TextStyle(
                   fontSize: 280,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -74,7 +102,7 @@ class HomeScreen extends GetView<HomeController> {
                         child: IconButton(
                           icon: Icon(Icons.arrow_back, color: Colors.white),
                           onPressed: controller.showOverlay.value
-                              ? () => Get.back()
+                              ? () => controller.goBack()
                               : null,
                         ),
                       ),
@@ -82,12 +110,11 @@ class HomeScreen extends GetView<HomeController> {
                         top: 16,
                         right: 16,
                         child: IconButton(
-                          icon: Icon(Icons.aspect_ratio, color: Colors.white),
-                          onPressed: () {
-                            final size = MediaQuery.of(context).size;
-                            print('Screen width: ${size.width}');
-                            print('Screen height: ${size.height}');
-                          },
+                          icon:
+                              Icon(Icons.screen_rotation, color: Colors.white),
+                          onPressed: controller.showOverlay.value
+                              ? () => controller.toggleOrientation()
+                              : null,
                         ),
                       ),
                       Positioned(

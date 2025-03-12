@@ -10,7 +10,8 @@ class HomeController extends GetxController {
   final showOverlay = false.obs;
   final speed = 1.0.obs;
   final textColor = Colors.white.obs;
-  final backgroundColor = Colors.white.obs;
+  final backgroundColor = Colors.black.obs;
+  final isLandscape = false.obs;
   final box = Hive.box<Led>('leds');
   late Led currentLed;
 
@@ -29,6 +30,30 @@ class HomeController extends GetxController {
   void updateBackgroundColor(Color color) {
     backgroundColor.value = color;
     _updateLed();
+  }
+
+  void toggleOrientation() {
+    toggleOverlay();
+    isLandscape.value = !isLandscape.value;
+    if (isLandscape.value) {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.landscapeLeft,
+        DeviceOrientation.landscapeRight,
+      ]);
+    } else {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
+    }
+  }
+
+  void goBack() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    Get.back();
   }
 
   void _updateLed() {
@@ -63,25 +88,11 @@ class HomeController extends GetxController {
     textColor.value = led.textColor;
     backgroundColor.value = led.backgroundColor; // Initialize background color
 
-    // Hide system UI
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-
-    // Force landscape
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.landscapeRight,
-    ]);
+    toggleOverlay();
   }
 
   @override
   void onClose() {
-    // Restore system UI
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
-
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
     super.onClose();
   }
 

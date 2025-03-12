@@ -3,15 +3,25 @@ import 'package:flutter/material.dart';
 class ScrollText extends StatefulWidget {
   final String text;
   final TextStyle textStyle;
+  final bool isLandscape;
+  final double speed;
+  final Color textColor;
 
-  const ScrollText({super.key, required this.text, required this.textStyle});
+  const ScrollText({
+    super.key,
+    required this.text,
+    required this.textStyle,
+    this.isLandscape = false,
+    this.speed = 1.0,
+    this.textColor = Colors.white,
+  });
 
   @override
   _ScrollTextState createState() => _ScrollTextState();
 }
 
 class _ScrollTextState extends State<ScrollText>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, WidgetsBindingObserver {
   late AnimationController _controller;
   late Animation<Offset> _animation;
   late double _textWidth;
@@ -20,6 +30,7 @@ class _ScrollTextState extends State<ScrollText>
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
 
     final TextPainter textPainter = TextPainter(
       text: TextSpan(
@@ -32,7 +43,7 @@ class _ScrollTextState extends State<ScrollText>
     _textWidth = textPainter.width;
 
     _controller = AnimationController(
-      duration: const Duration(seconds: 30),
+      duration: const Duration(seconds: 10),
       vsync: this,
     );
 
@@ -49,14 +60,7 @@ class _ScrollTextState extends State<ScrollText>
       });
     });
 
-    _controller.addStatusListener((status) {
-      if (status == AnimationStatus.completed && mounted) {
-        setState(() {
-          _controller.reset();
-          _controller.forward();
-        });
-      }
-    });
+    _controller.addStatusListener(_onAnimationStatusChanged);
   }
 
   @override
@@ -81,6 +85,20 @@ class _ScrollTextState extends State<ScrollText>
     });
   }
 
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      _controller.reset();
+      Future.delayed(const Duration(seconds: 1), () {
+        if (mounted) {
+          _controller.forward();
+        }
+      });
+    } else if (state == AppLifecycleState.paused) {
+      _controller.reset();
+    }
+  }
+
   void _updateAnimation() {
     _animation = Tween<Offset>(
       begin: const Offset(1.0, 0.0),
@@ -90,29 +108,47 @@ class _ScrollTextState extends State<ScrollText>
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    _controller.removeStatusListener(_onAnimationStatusChanged);
+    _controller.stop();
     _controller.dispose();
+    _animation = Tween<Offset>(begin: Offset.zero, end: Offset.zero)
+        .animate(_controller);
     super.dispose();
+  }
+
+  void _onAnimationStatusChanged(AnimationStatus status) {
+    if (status == AnimationStatus.completed && mounted) {
+      setState(() {
+        _controller.reset();
+        _controller.forward();
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        return Center(
-          child: ClipRect(
-            child: AnimatedBuilder(
-              animation: _controller,
-              builder: (context, child) {
-                return Transform.translate(
-                  offset: Offset(_animation.value.dx * _screenWidth, 0),
-                  child: Text(
-                    widget.text,
-                    style: widget.textStyle,
-                    overflow: TextOverflow.visible,
-                    softWrap: false,
-                  ),
-                );
-              },
+        return ClipRect(
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Center(
+              child: AnimatedBuilder(
+                animation: _controller,
+                builder: (context, child) {
+                  return Transform.translate(
+                    offset: Offset(_animation.value.dx * _screenWidth, 0),
+                    child: Text(
+                      widget.text,
+                      style: widget.textStyle,
+                      overflow: TextOverflow.visible,
+                      softWrap: false,
+                    ),
+                  );
+                },
+              ),
             ),
           ),
         );
