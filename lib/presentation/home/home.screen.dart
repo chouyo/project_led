@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                 child: ScrollText(
                   key: ValueKey(
                       'home_screen_${DateTime.now().millisecondsSinceEpoch}'),
-                  text: led.type,
+                  text: led.name,
                   textStyle: TextStyle(
                     fontSize: 280,
                     fontWeight: FontWeight.bold,
