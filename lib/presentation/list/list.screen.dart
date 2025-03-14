@@ -218,8 +218,6 @@ class ListScreen extends GetView<ListController> {
                   child: Container(
                     key: ValueKey('led_item_${led.name}_${timestamp}_$index'),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: Colors.grey[200]!),
                       color: led.backgroundColor,
                     ),
                     child: ListTile(
@@ -228,8 +226,8 @@ class ListScreen extends GetView<ListController> {
                         led.name,
                         style: TextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white,
+                          fontWeight: FontWeight.normal,
+                          color: led.textColor,
                         ),
                       ),
                       onTap: () {
