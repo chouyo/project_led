@@ -129,4 +129,10 @@ class HomeController extends GetxController {
 
     return HSVColor.fromAHSV(1.0, hue, saturation, valueColor);
   }
+
+  double calculateOverlayWidth(BuildContext context) {
+    return isLandscape.value
+        ? MediaQuery.of(context).size.width * 0.5
+        : MediaQuery.of(context).size.width * 0.95;
+  }
 }

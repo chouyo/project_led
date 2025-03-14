@@ -130,11 +130,12 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                             visible: controller.showOverlay.value,
                             child: Center(
                               child: Container(
-                                width: 400,
+                                width: controller.calculateOverlayWidth(
+                                    context), // 90% of screen width
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 20, vertical: 12),
                                 decoration: BoxDecoration(
-                                  color: Colors.black45,
+                                  color: Colors.grey.shade900,
                                   borderRadius: BorderRadius.circular(16),
                                 ),
                                 child: Column(
