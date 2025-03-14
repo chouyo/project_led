@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
 import 'package:flutter/material.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 import '../../../infrastructure/data/led_model.dart';
 import '../../list/controllers/list.controller.dart';
@@ -81,6 +82,8 @@ class HomeController extends GetxController {
   void onInit() async {
     super.onInit();
 
+    WakelockPlus.enable();
+
     // Get current LED data
     final led = Led.fromJson(Get.arguments);
     currentLed = led;
@@ -93,6 +96,8 @@ class HomeController extends GetxController {
 
   @override
   void onClose() {
+    WakelockPlus.disable();
+
     super.onClose();
   }
 
