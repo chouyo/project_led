@@ -13,7 +13,7 @@ class HomeController extends GetxController {
   final textColor = Colors.white.obs;
   final backgroundColor = Colors.black.obs;
   final isLandscape = false.obs;
-  final box = Hive.box<Led>('leds');
+  late Box<Led> box;
   late Led currentLed;
 
   void toggleOverlay() => showOverlay.toggle();
@@ -83,6 +83,8 @@ class HomeController extends GetxController {
     super.onInit();
 
     WakelockPlus.enable();
+
+    box = await Hive.openBox<Led>('leds');
 
     // Get current LED data
     final led = Led.fromJson(Get.arguments);
