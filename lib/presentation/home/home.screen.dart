@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
               // Overlay with animation
               Obx(
                 () => AnimatedOpacity(
-                  duration: Duration(milliseconds: 300),
+                  duration: Duration(milliseconds: 0),
                   curve: Curves.easeInOut,
                   opacity: controller.showOverlay.value ? 1.0 : 0.0,
                   child: GestureDetector(

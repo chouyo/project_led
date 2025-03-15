@@ -43,10 +43,7 @@ class Main extends StatelessWidget {
     return GetMaterialApp(
       initialRoute: initialRoute,
       getPages: Nav.routes,
-      theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.blue,
-      ),
+      theme: ThemeData.light(useMaterial3: true),
       builder: (context, child) {
         return Scaffold(
           drawer: MainDrawer(),
