@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import '../../infrastructure/navigation/routes.dart';
 
@@ -41,6 +42,10 @@ class MainDrawer extends StatelessWidget {
               if (currentRoute != Routes.LIST) {
                 Get.offAllNamed(Routes.LIST);
               }
+              SystemChrome.setPreferredOrientations([
+                DeviceOrientation.portraitUp,
+                DeviceOrientation.portraitDown,
+              ]);
             },
           ),
           ListTile(
@@ -51,6 +56,10 @@ class MainDrawer extends StatelessWidget {
               if (currentRoute != Routes.OPTION) {
                 Get.offAllNamed(Routes.OPTION);
               }
+              SystemChrome.setPreferredOrientations([
+                DeviceOrientation.portraitUp,
+                DeviceOrientation.portraitDown,
+              ]);
             },
           ),
         ],
