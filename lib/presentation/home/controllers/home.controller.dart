@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
 import '../../../infrastructure/data/led_model.dart';
@@ -34,6 +35,7 @@ class HomeController extends GetxController {
   }
 
   void toggleOrientation() {
+    Vibration.vibrate(duration: 50);
     toggleOverlay();
     isLandscape.value = !isLandscape.value;
     if (isLandscape.value) {
@@ -50,6 +52,7 @@ class HomeController extends GetxController {
   }
 
   void goBack() {
+    Vibration.vibrate(duration: 50);
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,

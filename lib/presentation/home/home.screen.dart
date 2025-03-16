@@ -101,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                     child: Stack(
                       children: [
                         Container(
-                          color: Colors.black.withOpacity(0.5),
+                          color: Colors.black.withAlpha(127),
                         ),
                         Positioned(
                           top: 16,
