@@ -31,9 +31,9 @@ class Led {
     required this.status,
     required this.type,
     required this.lastUsed,
-    this.backgroundColor = Colors.blue, // Default color
-    this.speed = 1.0, // Default speed
-    this.textColor = Colors.white, // Default text color
+    required this.backgroundColor, // Default color
+    required this.speed, // Default speed
+    required this.textColor, // Default text color
   });
 
   Map<String, dynamic> toJson() => {
@@ -41,9 +41,9 @@ class Led {
         'status': status,
         'type': type,
         'lastUsed': lastUsed,
-        'backgroundColor': backgroundColor.value,
+        'backgroundColor': backgroundColor,
         'speed': speed.toDouble(),
-        'textColor': textColor.value,
+        'textColor': textColor,
       };
 
   factory Led.fromJson(Map<String, dynamic> json) => Led(
@@ -51,8 +51,8 @@ class Led {
         status: json['status'],
         type: json['type'],
         lastUsed: json['lastUsed'],
-        backgroundColor: Color(json['backgroundColor'] ?? Colors.blue.value),
-        speed: (json['speed'] ?? 1.0).toDouble(),
-        textColor: Color(json['textColor'] ?? Colors.white.value),
+        backgroundColor: json['backgroundColor'],
+        speed: json['speed'],
+        textColor: json['textColor'],
       );
 }

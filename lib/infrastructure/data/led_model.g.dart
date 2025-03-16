@@ -23,13 +23,14 @@ class LedAdapter extends TypeAdapter<Led> {
       lastUsed: fields[3] as String,
       backgroundColor: fields[4] as Color,
       speed: fields[5] as double,
+      textColor: fields[6] as Color,
     );
   }
 
   @override
   void write(BinaryWriter writer, Led obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.name)
       ..writeByte(1)
@@ -41,7 +42,9 @@ class LedAdapter extends TypeAdapter<Led> {
       ..writeByte(4)
       ..write(obj.backgroundColor)
       ..writeByte(5)
-      ..write(obj.speed);
+      ..write(obj.speed)
+      ..writeByte(6)
+      ..write(obj.textColor);
   }
 
   @override

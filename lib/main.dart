@@ -21,9 +21,6 @@ void main() async {
   Hive.registerAdapter(ColorAdapter());
   Hive.registerAdapter(LedAdapter());
 
-  // Delete existing box if schema changed
-  // await Hive.deleteBoxFromDisk('leds');
-
   // Open the box
   await Hive.openBox<Led>('leds');
 

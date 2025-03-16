@@ -87,6 +87,8 @@ class ListScreen extends GetView<ListController> {
                               status: 'Disconnected',
                               lastUsed: 'Never',
                               backgroundColor: getRandomColor(),
+                              speed: 1.0,
+                              textColor: Colors.white,
                             );
                             controller.addLed(newLed);
                             Navigator.of(context).pop();
@@ -202,6 +204,8 @@ class ListScreen extends GetView<ListController> {
                                       status: led.status,
                                       lastUsed: led.lastUsed,
                                       backgroundColor: led.backgroundColor,
+                                      speed: led.speed,
+                                      textColor: led.textColor,
                                     );
                                     controller.updateLed(index, updatedLed);
                                     Navigator.of(context).pop();
