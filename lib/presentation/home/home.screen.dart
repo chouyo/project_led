@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../shared/scroll_text.dart';
 import 'controllers/home.controller.dart';
@@ -74,8 +75,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                   text: led.name,
                   textStyle: TextStyle(
                     fontSize: 280,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    fontWeight: FontWeight.normal,
+                    color: controller.textColor.value,
+                    fontFamily: GoogleFonts.notoSans().fontFamily,
                   ),
                   isLandscape: orientation == Orientation.landscape,
                   speed: controller.speed.value,
