@@ -42,10 +42,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
     // You can use these values or pass them to your controller
     if (deviceJson == null) {
-      return const Center(
+      return Center(
         child: Text(
           'Select a LED from the list',
-          style: TextStyle(
+          style: GoogleFonts.lato(
             fontSize: 16,
             color: Colors.grey,
           ),
@@ -145,7 +145,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                   children: [
                                     Text(
                                       'Settings',
-                                      style: TextStyle(color: Colors.white),
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontFamily:
+                                            GoogleFonts.lato().fontFamily,
+                                      ),
                                     ),
                                     SizedBox(height: 16),
                                     // Speed Row
@@ -157,7 +161,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                             'Speed',
                                             style: TextStyle(
                                                 color: Colors.white70,
-                                                fontSize: 12),
+                                                fontSize: 12,
+                                                fontFamily: GoogleFonts.lato()
+                                                    .fontFamily),
                                           ),
                                         ),
                                         Expanded(
@@ -192,7 +198,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                             'Text Color',
                                             style: TextStyle(
                                                 color: Colors.white70,
-                                                fontSize: 12),
+                                                fontSize: 12,
+                                                fontFamily: GoogleFonts.lato()
+                                                    .fontFamily),
                                           ),
                                         ),
                                         Expanded(
@@ -225,7 +233,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                             'Background',
                                             style: TextStyle(
                                                 color: Colors.white70,
-                                                fontSize: 12),
+                                                fontSize: 12,
+                                                fontFamily: GoogleFonts.lato()
+                                                    .fontFamily),
                                           ),
                                         ),
                                         Expanded(

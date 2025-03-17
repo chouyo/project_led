@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../infrastructure/navigation/routes.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -24,19 +25,18 @@ class MainDrawer extends StatelessWidget {
               children: [
                 Text(
                   'Fancy Led',
-                  style: TextStyle(
-                    color: Colors.white,
+                  style: GoogleFonts.lato(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
-                ),
-                SizedBox(height: 8),
+                )
               ],
             ),
           ),
           ListTile(
             leading: Icon(Icons.list),
-            title: Text('List'),
+            title: Text('List', style: GoogleFonts.lato()),
             onTap: () {
               Scaffold.of(context).closeDrawer();
               if (currentRoute != Routes.LIST) {
@@ -50,7 +50,7 @@ class MainDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.settings),
-            title: Text('Options'),
+            title: Text('Options', style: GoogleFonts.lato()),
             onTap: () {
               Scaffold.of(context).closeDrawer();
               if (currentRoute != Routes.OPTION) {
