@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
+import '../../infrastructure/data/constants.dart';
+
 class ScrollText extends StatefulWidget {
   final String text;
   final TextStyle textStyle;
   final bool isLandscape;
-  final double speed;
   final Color textColor;
+  final ESpeed speed;
 
   const ScrollText({
     super.key,
     required this.text,
     required this.textStyle,
     this.isLandscape = false,
-    this.speed = 1.0,
     this.textColor = Colors.white,
+    this.speed = ESpeed.normal,
   });
 
   @override
@@ -74,8 +76,6 @@ class _ScrollTextState extends State<ScrollText>
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
-        print('Screen orientation changed - Width: $_screenWidth');
-        print('Text width: $_textWidth');
         Future.delayed(const Duration(seconds: 1), () {
           if (mounted) {
             _controller.forward();
@@ -100,6 +100,19 @@ class _ScrollTextState extends State<ScrollText>
   }
 
   void _updateAnimation() {
+    int speedBaseRate = ((_textWidth + _screenWidth) / _screenWidth).toInt();
+    switch (widget.speed) {
+      case ESpeed.slow:
+        speedBaseRate *= 10;
+        break;
+      case ESpeed.normal:
+        speedBaseRate *= 7;
+        break;
+      case ESpeed.fast:
+        speedBaseRate *= 3;
+        break;
+    }
+    _controller.duration = Duration(seconds: speedBaseRate);
     _animation = Tween<Offset>(
       begin: const Offset(1.0, 0.0),
       end: Offset(-(_textWidth + _screenWidth) / _screenWidth, 0.0),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:project_led/infrastructure/data/constants.dart';
 
 import '../shared/scroll_text.dart';
 import 'controllers/home.controller.dart';
@@ -67,7 +68,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
               () => Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
-                color: controller.backgroundColor.value,
+                color: getBackgroundColorFromIndex(
+                    controller.backgroundColorIndex.value),
                 alignment: Alignment.centerLeft,
                 child: ScrollText(
                   key: ValueKey(
@@ -76,12 +78,13 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                   textStyle: TextStyle(
                     fontSize: 280,
                     fontWeight: FontWeight.normal,
-                    color: controller.textColor.value,
+                    color:
+                        getTextColorFromIndex(controller.textColorIndex.value),
                     fontFamily: GoogleFonts.notoSans().fontFamily,
                   ),
                   isLandscape: orientation == Orientation.landscape,
                   speed: controller.speed.value,
-                  textColor: controller.textColor.value,
+                  textColor: getTextColorFromIndex(led.textColorIndex),
                 ),
               ),
             ),
@@ -173,12 +176,15 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                                   TextStyle(color: Colors.grey),
                                             ),
                                             child: Slider(
-                                              value: controller.speed.value,
-                                              min: 1,
-                                              max: 10,
-                                              divisions: 2,
+                                              value: controller
+                                                  .speed.value.index
+                                                  .toDouble(),
+                                              min: 0,
+                                              max: ESpeed.values.length - 1,
+                                              divisions:
+                                                  ESpeed.values.length - 1,
                                               label: controller.getSpeedLabel(
-                                                  controller.speed.value),
+                                                  controller.speed.value.index),
                                               secondaryActiveColor:
                                                   Colors.white,
                                               activeColor: Colors.white,
@@ -205,20 +211,20 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                         ),
                                         Expanded(
                                           child: Slider(
-                                            value: HSVColor.fromColor(
-                                                    controller.textColor.value)
-                                                .hue,
+                                            value: controller
+                                                .textColorIndex.value
+                                                .toDouble(),
                                             min: 0,
-                                            max: 360,
-                                            divisions: 36,
-                                            activeColor:
-                                                controller.textColor.value,
+                                            max: foregroundColors.length - 1,
+                                            divisions:
+                                                foregroundColors.length - 1,
+                                            activeColor: getTextColorFromIndex(
+                                                controller
+                                                    .textColorIndex.value),
                                             inactiveColor: Colors.white24,
                                             onChanged: (value) {
-                                              final color = HSVColor.fromAHSV(
-                                                      1.0, value, 1.0, 1.0)
-                                                  .toColor();
-                                              controller.updateTextColor(color);
+                                              controller.updateTextColorIndex(
+                                                  value.toInt());
                                             },
                                           ),
                                         ),
@@ -240,21 +246,23 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                         ),
                                         Expanded(
                                           child: Slider(
-                                            value: HSVColor.fromColor(controller
-                                                    .backgroundColor.value)
-                                                .hue,
+                                            value: controller
+                                                .backgroundColorIndex
+                                                .toDouble(),
                                             min: 0,
-                                            max: 360,
-                                            divisions: 36,
-                                            activeColor: controller
-                                                .backgroundColor.value,
+                                            max: backgroudColors.length - 1,
+                                            divisions:
+                                                backgroudColors.length - 1,
+                                            activeColor:
+                                                getBackgroundColorFromIndex(
+                                                    controller
+                                                        .backgroundColorIndex
+                                                        .value),
                                             inactiveColor: Colors.white24,
                                             onChanged: (value) {
-                                              final color = HSVColor.fromAHSV(
-                                                      1.0, value, 1.0, 1.0)
-                                                  .toColor();
                                               controller
-                                                  .updateBackgroundColor(color);
+                                                  .updateBackgroundColorIndex(
+                                                      value.toInt());
                                             },
                                           ),
                                         ),

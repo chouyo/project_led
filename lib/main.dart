@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'infrastructure/data/speed_adapter.dart';
 import 'infrastructure/navigation/navigation.dart';
 import 'infrastructure/navigation/routes.dart';
 import 'presentation/shared/main_drawer.dart';
@@ -20,6 +21,7 @@ void main() async {
   // Register adapters
   Hive.registerAdapter(ColorAdapter());
   Hive.registerAdapter(LedAdapter());
+  Hive.registerAdapter(SpeedAdapter());
 
   // Open the box
   await Hive.openBox<Led>('leds');

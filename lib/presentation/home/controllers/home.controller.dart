@@ -5,32 +5,33 @@ import 'package:flutter/material.dart';
 import 'package:vibration/vibration.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
+import '../../../infrastructure/data/constants.dart';
 import '../../../infrastructure/data/led_model.dart';
 import '../../list/controllers/list.controller.dart';
 
 class HomeController extends GetxController {
   final showOverlay = false.obs;
-  final speed = 1.0.obs;
-  final textColor = Colors.white.obs;
-  final backgroundColor = Colors.black.obs;
+  final speed = ESpeed.normal.obs;
+  final backgroundColorIndex = 0.obs;
+  final textColorIndex = 0.obs;
   final isLandscape = false.obs;
   late Box<Led> box;
   late Led currentLed;
 
   void toggleOverlay() => showOverlay.toggle();
 
-  void updateTextColor(Color color) {
-    textColor.value = color;
-    _updateLed();
-  }
-
   void updateSpeed(double value) {
-    speed.value = value.toDouble();
+    speed.value = ESpeed.values[value.toInt()];
     _updateLed();
   }
 
-  void updateBackgroundColor(Color color) {
-    backgroundColor.value = color;
+  void updateBackgroundColorIndex(int index) {
+    backgroundColorIndex.value = index;
+    _updateLed();
+  }
+
+  void updateTextColorIndex(int index) {
+    textColorIndex.value = index;
     _updateLed();
   }
 
@@ -62,17 +63,17 @@ class HomeController extends GetxController {
 
   void _updateLed() {
     final updatedLed = Led(
+      id: currentLed.id,
       name: currentLed.name,
-      status: currentLed.status,
-      type: currentLed.type,
+      description: currentLed.description,
       lastUsed: currentLed.lastUsed,
-      backgroundColor: backgroundColor.value,
-      speed: speed.value,
-      textColor: textColor.value,
+      speed: speed.value, // Convert ESpeed to in
+      textColorIndex: textColorIndex.value,
+      backgroundColorIndex: backgroundColorIndex.value,
     );
 
-    final index = box.values.toList().indexWhere(
-        (led) => led.name == currentLed.name && led.type == currentLed.type);
+    final index =
+        box.values.toList().indexWhere((led) => led.id == currentLed.id);
 
     if (index != -1) {
       box.putAt(index, updatedLed);
@@ -93,8 +94,8 @@ class HomeController extends GetxController {
     final led = Led.fromJson(Get.arguments);
     currentLed = led;
     speed.value = led.speed; // Initialize with stored speed
-    textColor.value = led.textColor;
-    backgroundColor.value = led.backgroundColor; // Initialize background color
+    backgroundColorIndex.value = led.backgroundColorIndex;
+    textColorIndex.value = led.textColorIndex;
 
     toggleOverlay();
   }
@@ -106,33 +107,15 @@ class HomeController extends GetxController {
     super.onClose();
   }
 
-  String getSpeedLabel(double value) {
-    if (value <= 1.0) return 'Fast';
-    if (value <= 5.5) return 'Normal';
-    return 'Slow';
-  }
-
-  HSVColor getColorFromSlider(double value) {
-    double hue, saturation, valueColor;
-
-    if (value < 0.33) {
-      // 从黑色到彩色：调整亮度
-      hue = 0; // 固定色相
-      saturation = 1; // 固定饱和度
-      valueColor = value / 0.33; // 亮度从 0 到 1
-    } else if (value < 0.66) {
-      // 从彩色到白色：调整饱和度
-      hue = (value - 0.33) / 0.33 * 360; // 色相从 0 到 360
-      saturation = 1 - (value - 0.33) / 0.33; // 饱和度从 1 到 0
-      valueColor = 1; // 固定亮度
-    } else {
-      // 从白色回到彩色：调整色相
-      hue = (value - 0.66) / 0.34 * 360; // 色相从 0 到 360
-      saturation = 1; // 固定饱和度
-      valueColor = 1; // 固定亮度
+  String getSpeedLabel(int value) {
+    switch (ESpeed.values[value]) {
+      case ESpeed.fast:
+        return 'Fast';
+      case ESpeed.normal:
+        return 'Normal';
+      case ESpeed.slow:
+        return 'Slow';
     }
-
-    return HSVColor.fromAHSV(1.0, hue, saturation, valueColor);
   }
 
   double calculateOverlayWidth(BuildContext context) {

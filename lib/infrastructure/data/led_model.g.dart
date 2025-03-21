@@ -17,13 +17,13 @@ class LedAdapter extends TypeAdapter<Led> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Led(
-      name: fields[0] as String,
-      status: fields[1] as String,
-      type: fields[2] as String,
+      id: fields[0] as String,
+      name: fields[1] as String,
+      description: fields[2] as String,
       lastUsed: fields[3] as String,
-      backgroundColor: fields[4] as Color,
-      speed: fields[5] as double,
-      textColor: fields[6] as Color,
+      speed: fields[4] as ESpeed,
+      textColorIndex: fields[5] as int,
+      backgroundColorIndex: fields[6] as int,
     );
   }
 
@@ -32,19 +32,19 @@ class LedAdapter extends TypeAdapter<Led> {
     writer
       ..writeByte(7)
       ..writeByte(0)
-      ..write(obj.name)
+      ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.status)
+      ..write(obj.name)
       ..writeByte(2)
-      ..write(obj.type)
+      ..write(obj.description)
       ..writeByte(3)
       ..write(obj.lastUsed)
       ..writeByte(4)
-      ..write(obj.backgroundColor)
-      ..writeByte(5)
       ..write(obj.speed)
+      ..writeByte(5)
+      ..write(obj.textColorIndex)
       ..writeByte(6)
-      ..write(obj.textColor);
+      ..write(obj.backgroundColorIndex);
   }
 
   @override

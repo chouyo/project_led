@@ -1,31 +1,16 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_led/infrastructure/navigation/routes.dart';
+import 'package:uuid/uuid.dart';
 
+import '../../infrastructure/data/constants.dart';
 import 'controllers/list.controller.dart';
 import '../../infrastructure/data/led_model.dart';
 
 class ListScreen extends GetView<ListController> {
   const ListScreen({super.key});
-
-  Color getRandomColor() {
-    final List<Color> colors = [
-      Colors.blue,
-      Colors.purple,
-      Colors.green,
-      Colors.orange,
-      Colors.teal,
-      Colors.pink,
-      Colors.indigo,
-      Colors.red,
-      Colors.cyan,
-      Colors.amber,
-    ];
-    return colors[Random().nextInt(colors.length)];
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +33,6 @@ class ListScreen extends GetView<ListController> {
                 context: context,
                 builder: (BuildContext context) {
                   final nameController = TextEditingController();
-                  final typeController = TextEditingController();
 
                   return AlertDialog(
                     title: Text('Add New LED'),
@@ -63,15 +47,6 @@ class ListScreen extends GetView<ListController> {
                           ),
                           style: GoogleFonts.lato(),
                         ),
-                        SizedBox(height: 16),
-                        TextField(
-                          controller: typeController,
-                          decoration: InputDecoration(
-                            labelText: 'LED Type',
-                            hintText: 'Enter LED type',
-                          ),
-                          style: GoogleFonts.lato(),
-                        ),
                       ],
                     ),
                     actions: [
@@ -82,16 +57,16 @@ class ListScreen extends GetView<ListController> {
                       TextButton(
                         child: Text('Add'),
                         onPressed: () {
-                          if (nameController.text.isNotEmpty &&
-                              typeController.text.isNotEmpty) {
+                          if (nameController.text.isNotEmpty) {
                             final newLed = Led(
+                              id: Uuid().v4(),
                               name: nameController.text,
-                              type: typeController.text,
-                              status: 'Disconnected',
-                              lastUsed: 'Never',
-                              backgroundColor: getRandomColor(),
-                              speed: 1.0,
-                              textColor: Colors.white,
+                              description: '',
+                              lastUsed: DateTime.now().toIso8601String(),
+                              speed: ESpeed.normal,
+                              textColorIndex: getRandomTextColorIndex(),
+                              backgroundColorIndex:
+                                  getRandomBackgroundColorIndex(),
                             );
                             controller.addLed(newLed);
                             Navigator.of(context).pop();
@@ -118,15 +93,15 @@ class ListScreen extends GetView<ListController> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Dismissible(
-                  key: Key('${led.name}_${led.type}_${timestamp}_$index'),
+                  key: Key(led.id),
                   background: Container(
-                    color: Colors.green,
+                    color: Colors.green[300],
                     alignment: Alignment.centerLeft,
                     padding: EdgeInsets.only(left: 16),
                     child: Icon(Icons.edit, color: Colors.white),
                   ),
                   secondaryBackground: Container(
-                    color: Colors.red,
+                    color: Colors.red[300],
                     alignment: Alignment.centerRight,
                     padding: EdgeInsets.only(right: 16),
                     child: Icon(Icons.delete, color: Colors.white),
@@ -171,8 +146,6 @@ class ListScreen extends GetView<ListController> {
                         builder: (BuildContext context) {
                           final nameController =
                               TextEditingController(text: led.name);
-                          final typeController =
-                              TextEditingController(text: led.type);
 
                           return AlertDialog(
                             title: Text('Edit LED', style: GoogleFonts.lato()),
@@ -183,13 +156,6 @@ class ListScreen extends GetView<ListController> {
                                   controller: nameController,
                                   decoration: InputDecoration(
                                     labelText: 'LED Name',
-                                  ),
-                                ),
-                                SizedBox(height: 16),
-                                TextField(
-                                  controller: typeController,
-                                  decoration: InputDecoration(
-                                    labelText: 'LED Type',
                                   ),
                                 ),
                               ],
@@ -203,16 +169,16 @@ class ListScreen extends GetView<ListController> {
                               TextButton(
                                 child: Text('Save', style: GoogleFonts.lato()),
                                 onPressed: () {
-                                  if (nameController.text.isNotEmpty &&
-                                      typeController.text.isNotEmpty) {
+                                  if (nameController.text.isNotEmpty) {
                                     final updatedLed = Led(
+                                      id: led.id,
                                       name: nameController.text,
-                                      type: typeController.text,
-                                      status: led.status,
+                                      description: led.description,
                                       lastUsed: led.lastUsed,
-                                      backgroundColor: led.backgroundColor,
                                       speed: led.speed,
-                                      textColor: led.textColor,
+                                      textColorIndex: led.textColorIndex,
+                                      backgroundColorIndex:
+                                          led.backgroundColorIndex,
                                     );
                                     controller.updateLed(index, updatedLed);
                                     Navigator.of(context).pop();
@@ -229,7 +195,8 @@ class ListScreen extends GetView<ListController> {
                   child: Container(
                     key: ValueKey('led_item_${led.name}_${timestamp}_$index'),
                     decoration: BoxDecoration(
-                      color: led.backgroundColor,
+                      color:
+                          getBackgroundColorFromIndex(led.backgroundColorIndex),
                     ),
                     child: ListTile(
                       contentPadding: EdgeInsets.all(16),
@@ -238,7 +205,7 @@ class ListScreen extends GetView<ListController> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
-                          color: led.textColor,
+                          color: getTextColorFromIndex(led.textColorIndex),
                           fontFamily: GoogleFonts.lato().fontFamily,
                         ),
                       ),

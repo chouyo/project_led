@@ -1,58 +1,58 @@
-import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:project_led/infrastructure/data/constants.dart';
 
 part 'led_model.g.dart';
 
 @HiveType(typeId: 0)
 class Led {
   @HiveField(0)
-  final String name;
+  final String id;
 
   @HiveField(1)
-  final String status;
+  final String name;
 
   @HiveField(2)
-  final String type;
+  final String description;
 
   @HiveField(3)
   final String lastUsed;
 
   @HiveField(4)
-  final Color backgroundColor;
+  final ESpeed speed;
 
   @HiveField(5)
-  final double speed;
+  final int textColorIndex;
 
   @HiveField(6)
-  final Color textColor;
+  final int backgroundColorIndex;
 
   Led({
+    required this.id,
     required this.name,
-    required this.status,
-    required this.type,
+    required this.description,
     required this.lastUsed,
-    required this.backgroundColor, // Default color
-    required this.speed, // Default speed
-    required this.textColor, // Default text color
+    required this.speed,
+    required this.textColorIndex,
+    required this.backgroundColorIndex,
   });
 
   Map<String, dynamic> toJson() => {
+        'id': id,
         'name': name,
-        'status': status,
-        'type': type,
+        'description': description,
         'lastUsed': lastUsed,
-        'backgroundColor': backgroundColor,
-        'speed': speed.toDouble(),
-        'textColor': textColor,
+        'speed': speed,
+        'textColorIndex': textColorIndex,
+        'backgroundColorIndex': backgroundColorIndex,
       };
 
   factory Led.fromJson(Map<String, dynamic> json) => Led(
+        id: json['id'],
         name: json['name'],
-        status: json['status'],
-        type: json['type'],
+        description: json['description'],
         lastUsed: json['lastUsed'],
-        backgroundColor: json['backgroundColor'],
         speed: json['speed'],
-        textColor: json['textColor'],
+        textColorIndex: json['textColorIndex'],
+        backgroundColorIndex: json['backgroundColorIndex'],
       );
 }
