@@ -71,20 +71,22 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                 color: getBackgroundColorFromIndex(
                     controller.backgroundColorIndex.value),
                 alignment: Alignment.centerLeft,
-                child: ScrollText(
-                  key: ValueKey(
-                      'home_screen_${DateTime.now().millisecondsSinceEpoch}'),
-                  text: led.name,
-                  textStyle: TextStyle(
-                    fontSize: 280,
-                    fontWeight: FontWeight.normal,
-                    color:
-                        getTextColorFromIndex(controller.textColorIndex.value),
-                    fontFamily: GoogleFonts.notoSans().fontFamily,
+                child: RepaintBoundary(
+                  child: ScrollText(
+                    key: ValueKey(
+                        'home_screen_${DateTime.now().millisecondsSinceEpoch}'),
+                    text: led.name,
+                    textStyle: TextStyle(
+                      fontSize: 280,
+                      fontWeight: FontWeight.normal,
+                      color: getTextColorFromIndex(
+                          controller.textColorIndex.value),
+                      fontFamily: GoogleFonts.notoSans().fontFamily,
+                    ),
+                    isLandscape: orientation == Orientation.landscape,
+                    speed: controller.speed.value,
+                    textColor: getTextColorFromIndex(led.textColorIndex),
                   ),
-                  isLandscape: orientation == Orientation.landscape,
-                  speed: controller.speed.value,
-                  textColor: getTextColorFromIndex(led.textColorIndex),
                 ),
               ),
             ),
