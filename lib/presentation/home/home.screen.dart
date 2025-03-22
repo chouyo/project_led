@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:project_led/infrastructure/data/constants.dart';
 
 import '../shared/scroll_text.dart';
@@ -46,7 +45,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       return Center(
         child: Text(
           'Select a LED from the list',
-          style: GoogleFonts.lato(
+          style: TextStyle(
+            fontFamily: nexaRegular,
             fontSize: 16,
             color: Colors.grey,
           ),
@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                       fontWeight: FontWeight.normal,
                       color: getTextColorFromIndex(
                           controller.textColorIndex.value),
-                      fontFamily: GoogleFonts.notoSans().fontFamily,
+                      fontFamily: "NexaRegular",
                     ),
                     isLandscape: orientation == Orientation.landscape,
                     speed: controller.speed.value,
@@ -152,8 +152,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                       'Settings',
                                       style: TextStyle(
                                         color: Colors.white,
-                                        fontFamily:
-                                            GoogleFonts.lato().fontFamily,
+                                        fontFamily: nexaRegular,
                                       ),
                                     ),
                                     SizedBox(height: 16),
@@ -167,8 +166,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                             style: TextStyle(
                                                 color: Colors.white70,
                                                 fontSize: 12,
-                                                fontFamily: GoogleFonts.lato()
-                                                    .fontFamily),
+                                                fontFamily: nexaRegular),
                                           ),
                                         ),
                                         Expanded(
@@ -207,8 +205,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                             style: TextStyle(
                                                 color: Colors.white70,
                                                 fontSize: 12,
-                                                fontFamily: GoogleFonts.lato()
-                                                    .fontFamily),
+                                                fontFamily: nexaRegular),
                                           ),
                                         ),
                                         Expanded(
@@ -242,8 +239,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                             style: TextStyle(
                                                 color: Colors.white70,
                                                 fontSize: 12,
-                                                fontFamily: GoogleFonts.lato()
-                                                    .fontFamily),
+                                                fontFamily: nexaRegular),
                                           ),
                                         ),
                                         Expanded(

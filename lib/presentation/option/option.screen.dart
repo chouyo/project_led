@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:project_led/infrastructure/data/constants.dart';
 
 import 'controllers/option.controller.dart';
 import '../../infrastructure/data/mock_languages.dart';
@@ -19,7 +19,7 @@ class OptionScreen extends GetView<OptionController> {
             Scaffold.of(context).openDrawer();
           },
         ),
-        title: Text('Options', style: GoogleFonts.lato()),
+        title: Text('Options', style: TextStyle(fontFamily: nexaRegular)),
         centerTitle: true,
       ),
       body: ListView(
@@ -67,7 +67,7 @@ class OptionScreen extends GetView<OptionController> {
                                     fontSize: 20,
                                     fontWeight: FontWeight.w600,
                                     color: Theme.of(context).primaryColor,
-                                    fontFamily: GoogleFonts.lato().fontFamily,
+                                    fontFamily: nexaRegular,
                                   ),
                                 ),
                                 Spacer(),
@@ -96,7 +96,7 @@ class OptionScreen extends GetView<OptionController> {
                                     style: TextStyle(
                                       fontWeight: FontWeight.w500,
                                       fontSize: 16,
-                                      fontFamily: GoogleFonts.lato().fontFamily,
+                                      fontFamily: nexaRegular,
                                     ),
                                   ),
                                   subtitle: Text(
@@ -104,7 +104,7 @@ class OptionScreen extends GetView<OptionController> {
                                     style: TextStyle(
                                       color: Colors.grey[600],
                                       fontSize: 14,
-                                      fontFamily: GoogleFonts.lato().fontFamily,
+                                      fontFamily: nexaRegular,
                                     ),
                                   ),
                                   trailing: Obx(() => controller
@@ -167,7 +167,7 @@ class OptionScreen extends GetView<OptionController> {
                                     fontSize: 20,
                                     fontWeight: FontWeight.w600,
                                     color: Theme.of(context).primaryColor,
-                                    fontFamily: GoogleFonts.lato().fontFamily,
+                                    fontFamily: nexaRegular,
                                   ),
                                 ),
                                 Spacer(),
@@ -204,7 +204,7 @@ class OptionScreen extends GetView<OptionController> {
                                     style: TextStyle(
                                       fontWeight: FontWeight.w500,
                                       fontSize: 16,
-                                      fontFamily: GoogleFonts.lato().fontFamily,
+                                      fontFamily: nexaRegular,
                                     ),
                                   ),
                                   subtitle: Text(
@@ -212,7 +212,7 @@ class OptionScreen extends GetView<OptionController> {
                                     style: TextStyle(
                                       color: Colors.grey[600],
                                       fontSize: 14,
-                                      fontFamily: GoogleFonts.lato().fontFamily,
+                                      fontFamily: nexaRegular,
                                     ),
                                   ),
                                   trailing: Obx(() => controller
@@ -254,7 +254,7 @@ class OptionScreen extends GetView<OptionController> {
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: Colors.grey[700],
-              fontFamily: GoogleFonts.lato().fontFamily,
+              fontFamily: nexaRegular,
             ),
           ),
         ),
@@ -289,7 +289,7 @@ class OptionScreen extends GetView<OptionController> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
-                        fontFamily: GoogleFonts.lato().fontFamily,
+                        fontFamily: nexaRegular,
                       ),
                     ),
                     SizedBox(height: 4),
@@ -298,7 +298,7 @@ class OptionScreen extends GetView<OptionController> {
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.grey[600],
-                        fontFamily: GoogleFonts.lato().fontFamily,
+                        fontFamily: nexaRegular,
                       ),
                     ),
                   ],

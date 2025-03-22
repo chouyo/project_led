@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:project_led/infrastructure/navigation/routes.dart';
 import 'package:uuid/uuid.dart';
 
@@ -22,7 +21,7 @@ class ListScreen extends GetView<ListController> {
             Scaffold.of(context).openDrawer();
           },
         ),
-        title: Text('LEDs', style: GoogleFonts.lato()),
+        title: Text('LEDs', style: TextStyle(fontFamily: nexaRegular)),
         centerTitle: true,
         actions: [
           IconButton(
@@ -45,7 +44,7 @@ class ListScreen extends GetView<ListController> {
                             labelText: 'LED Name',
                             hintText: 'Enter LED name',
                           ),
-                          style: GoogleFonts.lato(),
+                          style: TextStyle(fontFamily: nexaRegular),
                         ),
                       ],
                     ),
@@ -116,7 +115,7 @@ class ListScreen extends GetView<ListController> {
                             title: Text('Delete LED'),
                             content: Text(
                               'Are you sure you want to delete ${led.name}?',
-                              style: GoogleFonts.lato(),
+                              style: TextStyle(fontFamily: nexaRegular),
                             ),
                             actions: [
                               TextButton(
@@ -125,8 +124,8 @@ class ListScreen extends GetView<ListController> {
                                     Navigator.of(context).pop(false),
                               ),
                               TextButton(
-                                child:
-                                    Text('Delete', style: GoogleFonts.lato()),
+                                child: Text('Delete',
+                                    style: TextStyle(fontFamily: nexaRegular)),
                                 onPressed: () =>
                                     Navigator.of(context).pop(true),
                               ),
@@ -148,7 +147,8 @@ class ListScreen extends GetView<ListController> {
                               TextEditingController(text: led.name);
 
                           return AlertDialog(
-                            title: Text('Edit LED', style: GoogleFonts.lato()),
+                            title: Text('Edit LED',
+                                style: TextStyle(fontFamily: nexaRegular)),
                             content: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
@@ -162,12 +162,13 @@ class ListScreen extends GetView<ListController> {
                             ),
                             actions: [
                               TextButton(
-                                child:
-                                    Text('Cancel', style: GoogleFonts.lato()),
+                                child: Text('Cancel',
+                                    style: TextStyle(fontFamily: nexaRegular)),
                                 onPressed: () => Navigator.of(context).pop(),
                               ),
                               TextButton(
-                                child: Text('Save', style: GoogleFonts.lato()),
+                                child: Text('Save',
+                                    style: TextStyle(fontFamily: nexaRegular)),
                                 onPressed: () {
                                   if (nameController.text.isNotEmpty) {
                                     final updatedLed = Led(
@@ -206,7 +207,7 @@ class ListScreen extends GetView<ListController> {
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
                           color: getTextColorFromIndex(led.textColorIndex),
-                          fontFamily: GoogleFonts.lato().fontFamily,
+                          fontFamily: nexaRegular,
                         ),
                       ),
                       onTap: () {

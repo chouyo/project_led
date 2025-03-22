@@ -75,3 +75,5 @@ enum ESpeed {
   normal,
   fast,
 }
+
+final String nexaRegular = "NexaRegular";
