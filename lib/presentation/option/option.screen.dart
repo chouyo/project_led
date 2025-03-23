@@ -22,222 +22,201 @@ class OptionScreen extends GetView<OptionController> {
         title: Text('Options', style: TextStyle(fontFamily: nexaRegular)),
         centerTitle: true,
       ),
-      body: ListView(
-        padding: EdgeInsets.all(16),
-        children: [
-          _buildSection(
-            'Appearance Settings',
-            [
-              _buildCard(
-                Icons.language,
-                'Language Settings',
-                'Configure Language',
-                onTap: () {
-                  showModalBottomSheet(
-                    context: context,
-                    backgroundColor: Colors.white,
-                    isScrollControlled: true,
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(20)),
-                    ),
-                    constraints: BoxConstraints(
-                      maxHeight: MediaQuery.of(context).size.height * 0.7,
-                    ),
-                    builder: (context) => SafeArea(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(top: 8),
-                            width: 40,
-                            height: 4,
-                            decoration: BoxDecoration(
-                              color: Colors.grey[300],
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(20),
-                            child: Row(
-                              children: [
-                                Text(
-                                  'Select Language',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w600,
-                                    color: Theme.of(context).primaryColor,
-                                    fontFamily: nexaRegular,
-                                  ),
-                                ),
-                                Spacer(),
-                                IconButton(
-                                  icon: Icon(Icons.close),
-                                  onPressed: () => Navigator.pop(context),
-                                  color: Colors.grey[600],
-                                ),
-                              ],
-                            ),
-                          ),
-                          Divider(height: 1),
-                          Flexible(
-                            child: ListView.separated(
-                              shrinkWrap: true,
-                              itemCount: MockLanguages.languages.length,
-                              separatorBuilder: (context, index) =>
-                                  Divider(height: 1),
-                              itemBuilder: (context, index) {
-                                final language = MockLanguages.languages[index];
-                                return ListTile(
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 20, vertical: 4),
-                                  title: Text(
-                                    language.name,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 16,
-                                      fontFamily: nexaRegular,
-                                    ),
-                                  ),
-                                  subtitle: Text(
-                                    language.nativeName,
-                                    style: TextStyle(
-                                      color: Colors.grey[600],
-                                      fontSize: 14,
-                                      fontFamily: nexaRegular,
-                                    ),
-                                  ),
-                                  trailing: Obx(() => controller
-                                              .selectedLanguage.value?.code ==
-                                          language.code
-                                      ? Icon(Icons.check,
-                                          color: Theme.of(context).primaryColor)
-                                      : SizedBox(width: 24)),
-                                  onTap: () {
-                                    controller.setLanguage(language);
-                                    Navigator.pop(context);
-                                  },
-                                );
-                              },
-                            ),
-                          ),
-                        ],
+      body: Obx(
+        () => ListView(
+          padding: EdgeInsets.all(12),
+          children: [
+            _buildSection(
+              'Appearance Settings',
+              [
+                _buildCard(
+                  Icons.language,
+                  'Language Settings',
+                  'Configure Language',
+                  onTap: () {
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.vertical(top: Radius.circular(20)),
                       ),
-                    ),
-                  );
-                },
-              ),
-              SizedBox(height: 8),
-              _buildCard(
-                Icons.theater_comedy,
-                'Theme Settings',
-                'Configure Theme',
-                onTap: () {
-                  showModalBottomSheet(
-                    context: context,
-                    backgroundColor: Colors.white,
-                    isScrollControlled: true,
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(20)),
-                    ),
-                    constraints: BoxConstraints(
-                      maxHeight: MediaQuery.of(context).size.height * 0.7,
-                    ),
-                    builder: (context) => SafeArea(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(top: 8),
-                            width: 40,
-                            height: 4,
-                            decoration: BoxDecoration(
-                              color: Colors.grey[300],
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(20),
-                            child: Row(
-                              children: [
-                                Text(
-                                  'Select Theme',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w600,
-                                    color: Theme.of(context).primaryColor,
-                                    fontFamily: nexaRegular,
-                                  ),
-                                ),
-                                Spacer(),
-                                IconButton(
-                                  icon: Icon(Icons.close),
-                                  onPressed: () => Navigator.pop(context),
-                                  color: Colors.grey[600],
-                                ),
-                              ],
-                            ),
-                          ),
-                          Divider(height: 1),
-                          Flexible(
-                            child: ListView.separated(
-                              shrinkWrap: true,
-                              itemCount: MockThemes.themes.length,
-                              separatorBuilder: (context, index) =>
-                                  Divider(height: 1),
-                              itemBuilder: (context, index) {
-                                final theme = MockThemes.themes[index];
-                                return ListTile(
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 20, vertical: 4),
-                                  leading: Container(
-                                    width: 24,
-                                    height: 24,
-                                    decoration: BoxDecoration(
-                                      color: theme.primaryColor,
-                                      shape: BoxShape.circle,
-                                    ),
-                                  ),
-                                  title: Text(
-                                    theme.name,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 16,
-                                      fontFamily: nexaRegular,
-                                    ),
-                                  ),
-                                  subtitle: Text(
-                                    theme.isDark ? 'Dark Mode' : 'Light Mode',
-                                    style: TextStyle(
-                                      color: Colors.grey[600],
-                                      fontSize: 14,
-                                      fontFamily: nexaRegular,
-                                    ),
-                                  ),
-                                  trailing: Obx(() => controller
-                                              .selectedTheme.value?.name ==
-                                          theme.name
-                                      ? Icon(Icons.check,
-                                          color: Theme.of(context).primaryColor)
-                                      : SizedBox(width: 24)),
-                                  onTap: () {
-                                    controller.setTheme(theme);
-                                    Navigator.pop(context);
-                                  },
-                                );
-                              },
-                            ),
-                          ),
-                        ],
+                      constraints: BoxConstraints(
+                        maxHeight: MediaQuery.of(context).size.height * 0.7,
                       ),
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
-        ],
+                      builder: (context) => SafeArea(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(top: 8),
+                              width: 40,
+                              height: 4,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[300],
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(20),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Select Language',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600,
+                                      fontFamily: nexaRegular,
+                                    ),
+                                  ),
+                                  Spacer(),
+                                  IconButton(
+                                    icon: Icon(Icons.close),
+                                    onPressed: () => Navigator.pop(context),
+                                    color: Colors.grey[600],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Divider(height: 1),
+                            Flexible(
+                              child: ListView.separated(
+                                shrinkWrap: true,
+                                itemCount: MockLanguages.languages.length,
+                                separatorBuilder: (context, index) =>
+                                    Divider(height: 1),
+                                itemBuilder: (context, index) {
+                                  final language =
+                                      MockLanguages.languages[index];
+                                  return ListTile(
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 4),
+                                    title: Text(
+                                      language.name,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                        fontFamily: nexaRegular,
+                                      ),
+                                    ),
+                                    subtitle: Text(
+                                      language.nativeName,
+                                      style: TextStyle(
+                                        color: Colors.grey[600],
+                                        fontSize: 14,
+                                        fontFamily: nexaRegular,
+                                      ),
+                                    ),
+                                    trailing: Obx(() => controller
+                                                .selectedLanguage.value?.code ==
+                                            language.code
+                                        ? Icon(Icons.check)
+                                        : SizedBox(width: 24)),
+                                    onTap: () {
+                                      controller.setLanguage(language);
+                                      Navigator.pop(context);
+                                    },
+                                  );
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                SizedBox(height: 8),
+                _buildCard(
+                  Icons.theater_comedy,
+                  'Theme Settings',
+                  getThemeModeName(controller.selectedThemeMode.value),
+                  onTap: () {
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.vertical(top: Radius.circular(20)),
+                      ),
+                      constraints: BoxConstraints(
+                        maxHeight: MediaQuery.of(context).size.height * 0.7,
+                      ),
+                      builder: (context) => SafeArea(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(top: 8),
+                              width: 40,
+                              height: 4,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[300],
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(12),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Select Theme',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600,
+                                      fontFamily: nexaRegular,
+                                    ),
+                                  ),
+                                  Spacer(),
+                                  IconButton(
+                                    icon: Icon(Icons.close),
+                                    onPressed: () => Navigator.pop(context),
+                                    color: Colors.grey[600],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Divider(height: 1),
+                            Flexible(
+                              child: ListView.separated(
+                                shrinkWrap: true,
+                                itemCount: MockThemes.themes.length,
+                                separatorBuilder: (context, index) =>
+                                    Divider(height: 1),
+                                itemBuilder: (context, index) {
+                                  final theme = MockThemes.themes[index];
+                                  return ListTile(
+                                    title: Text(
+                                      getThemeModeName(theme.themeMode),
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                        fontFamily: nexaRegular,
+                                      ),
+                                    ),
+                                    trailing: Obx(() =>
+                                        controller.selectedThemeMode.value ==
+                                                theme.themeMode
+                                            ? Icon(Icons.check)
+                                            : SizedBox(width: 24)),
+                                    onTap: () {
+                                      controller.setTheme(theme.themeMode);
+                                      Navigator.pop(context);
+                                    },
+                                  );
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -269,13 +248,12 @@ class OptionScreen extends GetView<OptionController> {
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
-        side: BorderSide(color: Colors.grey[200]!),
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
         onTap: onTap,
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(12),
           child: Row(
             children: [
               Icon(icon, size: 24, color: Colors.blue),

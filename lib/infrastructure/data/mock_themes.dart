@@ -4,24 +4,13 @@ import 'theme_model.dart';
 class MockThemes {
   static const List<ThemeModel> themes = [
     ThemeModel(
-      name: 'Light Blue',
-      isDark: false,
-      primaryColor: Colors.blue,
+      themeMode: ThemeMode.system,
     ),
     ThemeModel(
-      name: 'Dark Blue',
-      isDark: true,
-      primaryColor: Colors.blue,
+      themeMode: ThemeMode.light,
     ),
     ThemeModel(
-      name: 'Light Purple',
-      isDark: false,
-      primaryColor: Colors.purple,
-    ),
-    ThemeModel(
-      name: 'Dark Purple',
-      isDark: true,
-      primaryColor: Colors.purple,
+      themeMode: ThemeMode.dark,
     ),
   ];
 }

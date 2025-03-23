@@ -4,7 +4,7 @@ import 'constants.dart';
 
 class SpeedAdapter extends TypeAdapter<ESpeed> {
   @override
-  final int typeId = 2; // Use a different typeId than Led
+  final int typeId = 3; // Use a different typeId than Led
 
   @override
   ESpeed read(BinaryReader reader) {

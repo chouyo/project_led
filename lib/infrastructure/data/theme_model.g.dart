@@ -17,22 +17,16 @@ class ThemeModelAdapter extends TypeAdapter<ThemeModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return ThemeModel(
-      name: fields[0] as String,
-      isDark: fields[1] as bool,
-      primaryColor: fields[2] as Color,
+      themeMode: fields[0] as ThemeMode,
     );
   }
 
   @override
   void write(BinaryWriter writer, ThemeModel obj) {
     writer
-      ..writeByte(3)
-      ..writeByte(0)
-      ..write(obj.name)
       ..writeByte(1)
-      ..write(obj.isDark)
-      ..writeByte(2)
-      ..write(obj.primaryColor);
+      ..writeByte(0)
+      ..write(obj.themeMode);
   }
 
   @override

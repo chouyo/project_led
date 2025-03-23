@@ -77,3 +77,16 @@ enum ESpeed {
 }
 
 final String nexaRegular = "NexaRegular";
+
+enum ETheme { auto, light, dark }
+
+String getThemeModeName(ThemeMode themeMode) {
+  switch (themeMode) {
+    case ThemeMode.system:
+      return 'Follow System';
+    case ThemeMode.light:
+      return 'Light Mode';
+    case ThemeMode.dark:
+      return 'Dark Mode';
+  }
+}

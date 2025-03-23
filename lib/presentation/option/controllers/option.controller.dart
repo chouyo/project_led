@@ -1,26 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
 import '../../../infrastructure/data/language_model.dart';
 import '../../../infrastructure/data/theme_model.dart';
 
 class OptionController extends GetxController {
-  //TODO: Implement OptionController
-
-  final count = 0.obs;
+  final selectedThemeMode = ThemeMode.system.obs;
   final Rx<Language?> selectedLanguage = Rx<Language?>(null);
-  final Rx<ThemeModel?> selectedTheme = Rx<ThemeModel?>(null);
 
-  void increment() => count.value++;
+  late Box<ThemeModel> box;
+
+  @override
+  void onInit() async {
+    super.onInit();
+    box = await Hive.openBox<ThemeModel>('themeModel');
+
+    var theme = box.get('themeModel');
+    if (theme == null) {
+      setTheme(selectedThemeMode.value);
+      theme = box.get('themeModel');
+    }
+    selectedThemeMode.value = theme!.themeMode;
+  }
 
   void setLanguage(Language language) {
     selectedLanguage.value = language;
-    // Here you can add logic to persist the selection
-    // and update the app's locale
+    print(language);
     Get.updateLocale(Locale(language.code));
   }
 
-  void setTheme(ThemeModel theme) {
-    selectedTheme.value = theme;
-    // Add theme change logic here
+  void setTheme(ThemeMode themeMode) {
+    selectedThemeMode.value = themeMode;
+    print(themeMode);
+    _updateTheme(themeMode);
+  }
+
+  void _updateTheme(ThemeMode themeMode) {
+    box.put('themeModel', ThemeModel(themeMode: themeMode));
   }
 }

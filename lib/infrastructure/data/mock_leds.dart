@@ -16,7 +16,7 @@ class MockLeds {
     ),
     Led(
       id: Uuid().v4(),
-      name: 'Thank you',
+      name: 'Thank You',
       description: '',
       lastUsed: DateTime.now().toIso8601String(),
       speed: ESpeed.normal,
@@ -34,7 +34,7 @@ class MockLeds {
     ),
     Led(
       id: Uuid().v4(),
-      name: 'I love you',
+      name: 'I Love You',
       description: '',
       lastUsed: DateTime.now().toIso8601String(),
       speed: ESpeed.normal,
@@ -43,7 +43,7 @@ class MockLeds {
     ),
     Led(
       id: Uuid().v4(),
-      name: 'I miss you',
+      name: 'I Miss You',
       description: '',
       lastUsed: DateTime.now().toIso8601String(),
       speed: ESpeed.normal,
