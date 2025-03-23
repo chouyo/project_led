@@ -87,8 +87,16 @@ class ListScreen extends GetView<ListController> {
           itemBuilder: (context, index) {
             final led = controller.leds[index];
             final timestamp = DateTime.now().millisecondsSinceEpoch;
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 12),
+            return Container(
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black, spreadRadius: 0, blurRadius: 4),
+                ],
+              ),
+              margin: EdgeInsets.only(bottom: 10),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Dismissible(

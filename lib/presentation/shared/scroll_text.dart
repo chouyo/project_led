@@ -153,11 +153,13 @@ class _ScrollTextState extends State<ScrollText>
                 builder: (context, child) {
                   return Transform.translate(
                     offset: Offset(_animation.value.dx * _screenWidth, 0),
-                    child: Text(
-                      widget.text,
-                      style: widget.textStyle,
-                      overflow: TextOverflow.visible,
-                      softWrap: false,
+                    child: RepaintBoundary(
+                      child: Text(
+                        widget.text,
+                        style: widget.textStyle,
+                        overflow: TextOverflow.visible,
+                        softWrap: false,
+                      ),
                     ),
                   );
                 },
