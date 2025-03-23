@@ -54,7 +54,7 @@ class OptionScreen extends GetView<OptionController> {
                             height: 4,
                             decoration: BoxDecoration(
                               color: Colors.grey[300],
-                              borderRadius: BorderRadius.circular(2),
+                              borderRadius: BorderRadius.circular(12),
                             ),
                           ),
                           Padding(
@@ -154,7 +154,7 @@ class OptionScreen extends GetView<OptionController> {
                             height: 4,
                             decoration: BoxDecoration(
                               color: Colors.grey[300],
-                              borderRadius: BorderRadius.circular(2),
+                              borderRadius: BorderRadius.circular(12),
                             ),
                           ),
                           Padding(

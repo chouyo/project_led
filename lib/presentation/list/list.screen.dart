@@ -90,7 +90,7 @@ class ListScreen extends GetView<ListController> {
             return Container(
               decoration: BoxDecoration(
                 color: Colors.grey,
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
                       color: Colors.black, spreadRadius: 0, blurRadius: 4),
@@ -99,128 +99,133 @@ class ListScreen extends GetView<ListController> {
               margin: EdgeInsets.only(bottom: 10),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Dismissible(
-                  key: Key(led.id),
-                  background: Container(
-                    color: Colors.green[300],
-                    alignment: Alignment.centerLeft,
-                    padding: EdgeInsets.only(left: 16),
-                    child: Icon(Icons.edit, color: Colors.white),
-                  ),
-                  secondaryBackground: Container(
-                    color: Colors.red[300],
-                    alignment: Alignment.centerRight,
-                    padding: EdgeInsets.only(right: 16),
-                    child: Icon(Icons.delete, color: Colors.white),
-                  ),
-                  confirmDismiss: (direction) async {
-                    if (direction == DismissDirection.endToStart) {
-                      // Delete action
-                      final shouldDelete = await showDialog<bool>(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            title: Text('Delete LED'),
-                            content: Text(
-                              'Are you sure you want to delete ${led.name}?',
-                              style: TextStyle(fontFamily: nexaRegular),
-                            ),
-                            actions: [
-                              TextButton(
-                                child: Text('Cancel'),
-                                onPressed: () =>
-                                    Navigator.of(context).pop(false),
+                child: Material(
+                  child: Dismissible(
+                    key: Key(led.id),
+                    background: Container(
+                      color: Colors.green[300],
+                      alignment: Alignment.centerLeft,
+                      padding: EdgeInsets.only(left: 12),
+                      child: Icon(Icons.edit, color: Colors.white),
+                    ),
+                    secondaryBackground: Container(
+                      color: Colors.red[300],
+                      alignment: Alignment.centerRight,
+                      padding: EdgeInsets.only(right: 16),
+                      child: Icon(Icons.delete, color: Colors.white),
+                    ),
+                    confirmDismiss: (direction) async {
+                      if (direction == DismissDirection.endToStart) {
+                        // Delete action
+                        final shouldDelete = await showDialog<bool>(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text('Delete LED'),
+                              content: Text(
+                                'Are you sure you want to delete ${led.name}?',
+                                style: TextStyle(fontFamily: nexaRegular),
                               ),
-                              TextButton(
-                                child: Text('Delete',
-                                    style: TextStyle(fontFamily: nexaRegular)),
-                                onPressed: () =>
-                                    Navigator.of(context).pop(true),
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                      if (shouldDelete ?? false) {
-                        controller.deleteLed(index);
-                        return true;
-                      }
-                      return false;
-                    } else {
-                      // Edit action
-                      await showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          final nameController =
-                              TextEditingController(text: led.name);
-
-                          return AlertDialog(
-                            title: Text('Edit LED',
-                                style: TextStyle(fontFamily: nexaRegular)),
-                            content: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                TextField(
-                                  controller: nameController,
-                                  decoration: InputDecoration(
-                                    labelText: 'LED Name',
-                                  ),
+                              actions: [
+                                TextButton(
+                                  child: Text('Cancel'),
+                                  onPressed: () =>
+                                      Navigator.of(context).pop(false),
+                                ),
+                                TextButton(
+                                  child: Text('Delete',
+                                      style:
+                                          TextStyle(fontFamily: nexaRegular)),
+                                  onPressed: () =>
+                                      Navigator.of(context).pop(true),
                                 ),
                               ],
-                            ),
-                            actions: [
-                              TextButton(
-                                child: Text('Cancel',
-                                    style: TextStyle(fontFamily: nexaRegular)),
-                                onPressed: () => Navigator.of(context).pop(),
+                            );
+                          },
+                        );
+                        if (shouldDelete ?? false) {
+                          controller.deleteLed(index);
+                          return true;
+                        }
+                        return false;
+                      } else {
+                        // Edit action
+                        await showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            final nameController =
+                                TextEditingController(text: led.name);
+
+                            return AlertDialog(
+                              title: Text('Edit LED',
+                                  style: TextStyle(fontFamily: nexaRegular)),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  TextField(
+                                    controller: nameController,
+                                    decoration: InputDecoration(
+                                      labelText: 'LED Name',
+                                    ),
+                                  ),
+                                ],
                               ),
-                              TextButton(
-                                child: Text('Save',
-                                    style: TextStyle(fontFamily: nexaRegular)),
-                                onPressed: () {
-                                  if (nameController.text.isNotEmpty) {
-                                    final updatedLed = Led(
-                                      id: led.id,
-                                      name: nameController.text,
-                                      description: led.description,
-                                      lastUsed: led.lastUsed,
-                                      speed: led.speed,
-                                      textColorIndex: led.textColorIndex,
-                                      backgroundColorIndex:
-                                          led.backgroundColorIndex,
-                                    );
-                                    controller.updateLed(index, updatedLed);
-                                    Navigator.of(context).pop();
-                                  }
-                                },
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                      return false;
-                    }
-                  },
-                  child: Container(
-                    key: ValueKey('led_item_${led.name}_${timestamp}_$index'),
-                    decoration: BoxDecoration(
-                      color:
-                          getBackgroundColorFromIndex(led.backgroundColorIndex),
-                    ),
-                    child: ListTile(
-                      contentPadding: EdgeInsets.all(16),
-                      title: Text(
-                        led.name,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal,
-                          color: getTextColorFromIndex(led.textColorIndex),
-                          fontFamily: nexaRegular,
-                        ),
+                              actions: [
+                                TextButton(
+                                  child: Text('Cancel',
+                                      style:
+                                          TextStyle(fontFamily: nexaRegular)),
+                                  onPressed: () => Navigator.of(context).pop(),
+                                ),
+                                TextButton(
+                                  child: Text('Save',
+                                      style:
+                                          TextStyle(fontFamily: nexaRegular)),
+                                  onPressed: () {
+                                    if (nameController.text.isNotEmpty) {
+                                      final updatedLed = Led(
+                                        id: led.id,
+                                        name: nameController.text,
+                                        description: led.description,
+                                        lastUsed: led.lastUsed,
+                                        speed: led.speed,
+                                        textColorIndex: led.textColorIndex,
+                                        backgroundColorIndex:
+                                            led.backgroundColorIndex,
+                                      );
+                                      controller.updateLed(index, updatedLed);
+                                      Navigator.of(context).pop();
+                                    }
+                                  },
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                        return false;
+                      }
+                    },
+                    child: Container(
+                      key: ValueKey('led_item_${led.name}_${timestamp}_$index'),
+                      decoration: BoxDecoration(
+                        color: getBackgroundColorFromIndex(
+                            led.backgroundColorIndex),
                       ),
-                      onTap: () {
-                        Get.toNamed(Routes.HOME, arguments: led.toJson());
-                      },
+                      child: ListTile(
+                        contentPadding: EdgeInsets.all(16),
+                        title: Text(
+                          led.name,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: getTextColorFromIndex(led.textColorIndex),
+                            fontFamily: nexaRegular,
+                          ),
+                        ),
+                        onTap: () {
+                          Get.toNamed(Routes.HOME, arguments: led.toJson());
+                        },
+                      ),
                     ),
                   ),
                 ),

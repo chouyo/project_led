@@ -143,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                     horizontal: 20, vertical: 12),
                                 decoration: BoxDecoration(
                                   color: Colors.grey.shade900,
-                                  borderRadius: BorderRadius.circular(16),
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
