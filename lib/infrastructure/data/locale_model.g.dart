@@ -1,38 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'language_model.dart';
+part of 'locale_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class LanguageAdapter extends TypeAdapter<Language> {
+class LocaleModelAdapter extends TypeAdapter<LocaleModel> {
   @override
   final int typeId = 1;
 
   @override
-  Language read(BinaryReader reader) {
+  LocaleModel read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Language(
-      code: fields[0] as String,
-      name: fields[1] as String,
-      nativeName: fields[2] as String,
+    return LocaleModel(
+      languageCode: fields[0] as String,
+      scriptCode: fields[1] as String,
+      countryCode: fields[2] as String,
     );
   }
 
   @override
-  void write(BinaryWriter writer, Language obj) {
+  void write(BinaryWriter writer, LocaleModel obj) {
     writer
       ..writeByte(3)
       ..writeByte(0)
-      ..write(obj.code)
+      ..write(obj.languageCode)
       ..writeByte(1)
-      ..write(obj.name)
+      ..write(obj.scriptCode)
       ..writeByte(2)
-      ..write(obj.nativeName);
+      ..write(obj.countryCode);
   }
 
   @override
@@ -41,7 +41,7 @@ class LanguageAdapter extends TypeAdapter<Language> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is LanguageAdapter &&
+      other is LocaleModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

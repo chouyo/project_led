@@ -8,6 +8,7 @@ class ScrollText extends StatefulWidget {
   final bool isLandscape;
   final Color textColor;
   final ESpeed speed;
+  final double speedRatio;
 
   const ScrollText({
     super.key,
@@ -16,6 +17,7 @@ class ScrollText extends StatefulWidget {
     this.isLandscape = false,
     this.textColor = Colors.white,
     this.speed = ESpeed.normal,
+    this.speedRatio = 1.0,
   });
 
   @override
@@ -28,6 +30,7 @@ class _ScrollTextState extends State<ScrollText>
   late Animation<Offset> _animation;
   late double _textWidth;
   late double _screenWidth;
+  late double _screenHeight;
 
   @override
   void initState() {
@@ -53,6 +56,8 @@ class _ScrollTextState extends State<ScrollText>
       if (!mounted) return;
 
       _screenWidth = MediaQuery.of(context).size.width;
+      _screenHeight = MediaQuery.of(context).size.height;
+
       _updateAnimation();
 
       Future.delayed(const Duration(seconds: 1), () {
@@ -69,6 +74,8 @@ class _ScrollTextState extends State<ScrollText>
   void didChangeDependencies() {
     super.didChangeDependencies();
     _screenWidth = MediaQuery.of(context).size.width;
+    _screenHeight = MediaQuery.of(context).size.height;
+
     _updateAnimation();
 
     _controller.stop();
@@ -100,7 +107,7 @@ class _ScrollTextState extends State<ScrollText>
   }
 
   void _updateAnimation() {
-    int speedBaseRate = ((_textWidth + _screenWidth) / _screenWidth).toInt();
+    double speedBaseRate = (_textWidth + _screenWidth) / _screenWidth;
     switch (widget.speed) {
       case ESpeed.slow:
         speedBaseRate *= 10;
@@ -112,7 +119,14 @@ class _ScrollTextState extends State<ScrollText>
         speedBaseRate *= 3;
         break;
     }
-    _controller.duration = Duration(seconds: speedBaseRate);
+
+    if (widget.isLandscape) {
+      speedBaseRate /= 1;
+    } else {
+      speedBaseRate /= (_screenHeight / _screenWidth);
+    }
+
+    _controller.duration = Duration(seconds: speedBaseRate.toInt());
     _animation = Tween<Offset>(
       begin: const Offset(1.0, 0.0),
       end: Offset(-(_textWidth + _screenWidth) / _screenWidth, 0.0),

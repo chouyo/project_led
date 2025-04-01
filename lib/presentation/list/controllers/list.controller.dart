@@ -23,7 +23,9 @@ class ListController extends GetxController {
   }
 
   void loadLeds() {
-    if (ledBox == null) return;
+    if (!ledBox!.isOpen) {
+      initBox();
+    }
 
     if (ledBox!.isEmpty) {
       // Load mock data only if box is empty (first launch)
@@ -32,27 +34,33 @@ class ListController extends GetxController {
     leds.value = ledBox!.values.toList();
   }
 
-  void addLed(Led led) {
-    if (ledBox == null) return;
+  void addLed(Led led) async {
+    if (!ledBox!.isOpen) {
+      await initBox();
+    }
     ledBox!.add(led); // Store in Hive
     leds.value = ledBox!.values.toList(); // Update UI
   }
 
-  void updateLed(int index, Led led) {
-    if (ledBox == null) return;
+  void updateLed(int index, Led led) async {
+    if (!ledBox!.isOpen) {
+      await initBox();
+    }
     ledBox!.putAt(index, led); // Update in Hive
     leds.value = ledBox!.values.toList(); // Update UI
   }
 
-  void deleteLed(int index) {
-    if (ledBox == null) return;
+  void deleteLed(int index) async {
+    if (!ledBox!.isOpen) {
+      await initBox();
+    }
     ledBox!.deleteAt(index); // Delete from Hive
     leds.value = ledBox!.values.toList(); // Update UI
   }
 
   @override
   void onClose() {
-    if (ledBox != null) {
+    if (ledBox!.isOpen) {
       ledBox!.close();
     }
     super.onClose();

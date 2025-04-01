@@ -1,0 +1,53 @@
+Map<String, String> locales = {
+  // European Languages
+  'en': 'English',
+  'es': 'Español',
+  'fr': 'Français',
+  'de': 'Deutsch',
+  'it': 'Italiano',
+  'pt': 'Português',
+  'nl': 'Nederlands',
+  'ru': 'Русский',
+  'pl': 'Polski',
+  'tr': 'Türkçe',
+  'sv': 'Svenska',
+  'nb': 'Norsk',
+  'da': 'Dansk',
+  'fi': 'Suomi',
+  'cs': 'Čeština',
+  'hu': 'Magyar',
+  'el': 'Ελληνικά',
+  'ro': 'Română',
+  'hr': 'Hrvatski',
+  'sk': 'Slovenčina',
+  'sl': 'Slovenščina',
+  'bg': 'Български',
+  'sr': 'Српски',
+  'uk': 'Українська',
+
+  // Asian Languages
+  'zh_Hans': '中文 (简体)',
+  'zh_Hant': '中文 (繁體)',
+  'ja': '日本語',
+  'ko': '한국어',
+  'hi': 'हिन्दी',
+  'ta': 'தமிழ்',
+  'te': 'తెలుగు',
+  'ms': 'Bahasa Melayu',
+  'id': 'Bahasa Indonesia',
+  'vi': 'Tiếng Việt',
+  'th': 'ไทย',
+  'tl': 'Filipino',
+
+  // Middle Eastern & African Languages
+  'ar': 'العربية',
+  'iw': 'עברית',
+  'fa': 'فارسی',
+  'am': 'አማርኛ',
+  'sw': 'Kiswahili',
+  'af': 'Afrikaans',
+
+  // Other Languages
+  'la': 'Latina',
+  'eo': 'Esperanto',
+};

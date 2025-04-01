@@ -1,0 +1,40 @@
+import 'locales.dart';
+
+Map<String, String> translations = {
+  'appName': '炫彩燈牌',
+  'ledList': '燈牌列表',
+  'options': '設定選項',
+  'helloWorld': '你好，世界！',
+  'myLeds': '我的燈牌',
+  'newLed': '新燈牌',
+  'editLed': '編輯燈牌',
+  'deleteLed': '刪除燈牌',
+  'deleteLedConfirm': '確定要刪除這個燈牌嗎？',
+  'ledText': '燈牌內容',
+  'inputLedText': '請輸入燈牌內容',
+  'add': '新增',
+  'edit': '編輯',
+  'delete': '刪除',
+  'cancel': '取消',
+  'save': '儲存',
+  'appearanceSettings': '外觀設定',
+  'languageSettings': '語言設定',
+  'selectLanguage': '選擇語言',
+  'selectTheme': '選擇主題',
+  'themeSettings': '主題設定',
+  'lightTheme': '淺色主題',
+  'darkTheme': '深色主題',
+  'systemTheme': '系統主題',
+  'settings': '設定',
+  'speed': '速度',
+  'textColor': '文字顏色',
+  'backgroundColor': '背景顏色',
+  'fast': '快速',
+  'normal': '一般',
+  'slow': '慢速',
+};
+
+final Map<String, String> zh_Hant = {
+  ...translations,
+  ...locales,
+};

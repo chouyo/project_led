@@ -9,6 +9,8 @@ import '../../../infrastructure/data/constants.dart';
 import '../../../infrastructure/data/led_model.dart';
 import '../../list/controllers/list.controller.dart';
 
+import 'dart:ui' as ui;
+
 class HomeController extends GetxController {
   final showOverlay = false.obs;
   final speed = ESpeed.normal.obs;
@@ -98,6 +100,10 @@ class HomeController extends GetxController {
     textColorIndex.value = led.textColorIndex;
 
     toggleOverlay();
+
+    printSystemLocales();
+    final locale = ui.window.locales.first;
+    print('Locale: ${locale.languageCode}, Country: ${locale.countryCode}');
   }
 
   @override
@@ -110,11 +116,11 @@ class HomeController extends GetxController {
   String getSpeedLabel(int value) {
     switch (ESpeed.values[value]) {
       case ESpeed.fast:
-        return 'Fast';
+        return 'fast';
       case ESpeed.normal:
-        return 'Normal';
+        return 'normal';
       case ESpeed.slow:
-        return 'Slow';
+        return 'slow';
     }
   }
 
@@ -122,5 +128,16 @@ class HomeController extends GetxController {
     return isLandscape.value
         ? MediaQuery.of(context).size.width * 0.5
         : MediaQuery.of(context).size.width * 0.95;
+  }
+}
+
+List<Locale> getSystemLocales() {
+  return ui.window.locales;
+}
+
+void printSystemLocales() {
+  final locales = getSystemLocales();
+  for (var locale in locales) {
+    print('Language: ${locale.languageCode}, Country: ${locale.countryCode}');
   }
 }

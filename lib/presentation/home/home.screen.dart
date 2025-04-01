@@ -149,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Text(
-                                      'Settings',
+                                      'settings'.tr,
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontFamily: nexaRegular,
@@ -162,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                         SizedBox(
                                           width: 100,
                                           child: Text(
-                                            'Speed',
+                                            'speed'.tr,
                                             style: TextStyle(
                                                 color: Colors.white70,
                                                 fontSize: 12,
@@ -183,8 +183,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                               max: ESpeed.values.length - 1,
                                               divisions:
                                                   ESpeed.values.length - 1,
-                                              label: controller.getSpeedLabel(
-                                                  controller.speed.value.index),
+                                              label: controller
+                                                  .getSpeedLabel(controller
+                                                      .speed.value.index)
+                                                  .tr,
                                               secondaryActiveColor:
                                                   Colors.white,
                                               activeColor: Colors.white,
@@ -201,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                         SizedBox(
                                           width: 100,
                                           child: Text(
-                                            'Text Color',
+                                            'textColor'.tr,
                                             style: TextStyle(
                                                 color: Colors.white70,
                                                 fontSize: 12,
@@ -235,7 +237,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                         SizedBox(
                                           width: 100,
                                           child: Text(
-                                            'Background',
+                                            'backgroundColor'.tr,
                                             style: TextStyle(
                                                 color: Colors.white70,
                                                 fontSize: 12,

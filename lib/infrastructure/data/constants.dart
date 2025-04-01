@@ -83,10 +83,10 @@ enum ETheme { auto, light, dark }
 String getThemeModeName(ThemeMode themeMode) {
   switch (themeMode) {
     case ThemeMode.system:
-      return 'Follow System';
+      return 'systemTheme';
     case ThemeMode.light:
-      return 'Light Mode';
+      return 'lightTheme';
     case ThemeMode.dark:
-      return 'Dark Mode';
+      return 'darkTheme';
   }
 }

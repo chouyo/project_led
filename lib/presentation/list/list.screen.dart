@@ -21,7 +21,7 @@ class ListScreen extends GetView<ListController> {
             Scaffold.of(context).openDrawer();
           },
         ),
-        title: Text('LEDs', style: TextStyle(fontFamily: nexaRegular)),
+        title: Text('ledList'.tr, style: TextStyle(fontFamily: nexaRegular)),
         centerTitle: true,
         actions: [
           IconButton(
@@ -34,15 +34,15 @@ class ListScreen extends GetView<ListController> {
                   final nameController = TextEditingController();
 
                   return AlertDialog(
-                    title: Text('Add New LED'),
+                    title: Text('newLed'.tr),
                     content: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         TextField(
                           controller: nameController,
                           decoration: InputDecoration(
-                            labelText: 'LED Name',
-                            hintText: 'Enter LED name',
+                            labelText: 'ledText'.tr,
+                            hintText: 'inputLedText'.tr,
                           ),
                           style: TextStyle(fontFamily: nexaRegular),
                         ),
@@ -50,11 +50,11 @@ class ListScreen extends GetView<ListController> {
                     ),
                     actions: [
                       TextButton(
-                        child: Text('Cancel'),
+                        child: Text('cancel'.tr),
                         onPressed: () => Navigator.of(context).pop(),
                       ),
                       TextButton(
-                        child: Text('Add'),
+                        child: Text('add'.tr),
                         onPressed: () {
                           if (nameController.text.isNotEmpty) {
                             final newLed = Led(
@@ -121,19 +121,19 @@ class ListScreen extends GetView<ListController> {
                           context: context,
                           builder: (BuildContext context) {
                             return AlertDialog(
-                              title: Text('Delete LED'),
+                              title: Text('deleteLed'.tr),
                               content: Text(
-                                'Are you sure you want to delete ${led.name}?',
+                                'deleteLedConfirm'.tr,
                                 style: TextStyle(fontFamily: nexaRegular),
                               ),
                               actions: [
                                 TextButton(
-                                  child: Text('Cancel'),
+                                  child: Text('cancel'.tr),
                                   onPressed: () =>
                                       Navigator.of(context).pop(false),
                                 ),
                                 TextButton(
-                                  child: Text('Delete',
+                                  child: Text('delete'.tr,
                                       style:
                                           TextStyle(fontFamily: nexaRegular)),
                                   onPressed: () =>
@@ -157,7 +157,7 @@ class ListScreen extends GetView<ListController> {
                                 TextEditingController(text: led.name);
 
                             return AlertDialog(
-                              title: Text('Edit LED',
+                              title: Text('editLed'.tr,
                                   style: TextStyle(fontFamily: nexaRegular)),
                               content: Column(
                                 mainAxisSize: MainAxisSize.min,
@@ -165,20 +165,20 @@ class ListScreen extends GetView<ListController> {
                                   TextField(
                                     controller: nameController,
                                     decoration: InputDecoration(
-                                      labelText: 'LED Name',
+                                      labelText: 'ledText'.tr,
                                     ),
                                   ),
                                 ],
                               ),
                               actions: [
                                 TextButton(
-                                  child: Text('Cancel',
+                                  child: Text('cancel'.tr,
                                       style:
                                           TextStyle(fontFamily: nexaRegular)),
                                   onPressed: () => Navigator.of(context).pop(),
                                 ),
                                 TextButton(
-                                  child: Text('Save',
+                                  child: Text('save'.tr,
                                       style:
                                           TextStyle(fontFamily: nexaRegular)),
                                   onPressed: () {
@@ -206,17 +206,17 @@ class ListScreen extends GetView<ListController> {
                       }
                     },
                     child: Container(
-                      key: ValueKey('led_item_${led.name}_${timestamp}_$index'),
+                      key: ValueKey('led_item_${led.id}'),
                       decoration: BoxDecoration(
                         color: getBackgroundColorFromIndex(
                             led.backgroundColorIndex),
                       ),
                       child: ListTile(
-                        contentPadding: EdgeInsets.all(16),
+                        contentPadding: EdgeInsets.all(12),
                         title: Text(
                           led.name,
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 20,
                             fontWeight: FontWeight.normal,
                             color: getTextColorFromIndex(led.textColorIndex),
                             fontFamily: nexaRegular,

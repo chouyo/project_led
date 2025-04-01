@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:project_led/infrastructure/data/constants.dart';
+import 'package:project_led/infrastructure/data/mock_locales.dart';
 
 import 'controllers/option.controller.dart';
-import '../../infrastructure/data/mock_languages.dart';
 import '../../infrastructure/data/mock_themes.dart';
 
 class OptionScreen extends GetView<OptionController> {
@@ -19,7 +19,7 @@ class OptionScreen extends GetView<OptionController> {
             Scaffold.of(context).openDrawer();
           },
         ),
-        title: Text('Options', style: TextStyle(fontFamily: nexaRegular)),
+        title: Text('options'.tr, style: TextStyle(fontFamily: nexaRegular)),
         centerTitle: true,
       ),
       body: Obx(
@@ -27,12 +27,12 @@ class OptionScreen extends GetView<OptionController> {
           padding: EdgeInsets.all(12),
           children: [
             _buildSection(
-              'Appearance Settings',
+              'appearanceSettings'.tr,
               [
                 _buildCard(
                   Icons.language,
-                  'Language Settings',
-                  'Configure Language',
+                  'languageSettings'.tr,
+                  controller.getLocaleString(controller.selectedLocale.value),
                   onTap: () {
                     showModalBottomSheet(
                       context: context,
@@ -62,7 +62,7 @@ class OptionScreen extends GetView<OptionController> {
                               child: Row(
                                 children: [
                                   Text(
-                                    'Select Language',
+                                    'selectLanguage'.tr,
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w600,
@@ -82,38 +82,30 @@ class OptionScreen extends GetView<OptionController> {
                             Flexible(
                               child: ListView.separated(
                                 shrinkWrap: true,
-                                itemCount: MockLanguages.languages.length,
+                                itemCount: MockLocales.locales.length,
                                 separatorBuilder: (context, index) =>
                                     Divider(height: 1),
                                 itemBuilder: (context, index) {
-                                  final language =
-                                      MockLanguages.languages[index];
+                                  final locale = MockLocales.locales[index];
                                   return ListTile(
                                     contentPadding: EdgeInsets.symmetric(
                                         horizontal: 20, vertical: 4),
                                     title: Text(
-                                      language.name,
+                                      locale.tr,
                                       style: TextStyle(
                                         fontWeight: FontWeight.w500,
                                         fontSize: 16,
                                         fontFamily: nexaRegular,
                                       ),
                                     ),
-                                    subtitle: Text(
-                                      language.nativeName,
-                                      style: TextStyle(
-                                        color: Colors.grey[600],
-                                        fontSize: 14,
-                                        fontFamily: nexaRegular,
-                                      ),
-                                    ),
-                                    trailing: Obx(() => controller
-                                                .selectedLanguage.value?.code ==
-                                            language.code
-                                        ? Icon(Icons.check)
-                                        : SizedBox(width: 24)),
+                                    trailing: Obx(() =>
+                                        controller.selectedLocale!.value ==
+                                                locale
+                                            ? Icon(Icons.check)
+                                            : SizedBox(width: 24)),
                                     onTap: () {
-                                      controller.setLanguage(language);
+                                      controller.setLocale(controller
+                                          .parseLocaleByString(locale));
                                       Navigator.pop(context);
                                     },
                                   );
@@ -129,8 +121,8 @@ class OptionScreen extends GetView<OptionController> {
                 SizedBox(height: 8),
                 _buildCard(
                   Icons.theater_comedy,
-                  'Theme Settings',
-                  getThemeModeName(controller.selectedThemeMode.value),
+                  'themeSettings'.tr,
+                  getThemeModeName(controller.selectedThemeMode.value).tr,
                   onTap: () {
                     showModalBottomSheet(
                       context: context,
@@ -160,7 +152,7 @@ class OptionScreen extends GetView<OptionController> {
                               child: Row(
                                 children: [
                                   Text(
-                                    'Select Theme',
+                                    'selectTheme'.tr,
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w600,
@@ -187,7 +179,7 @@ class OptionScreen extends GetView<OptionController> {
                                   final theme = MockThemes.themes[index];
                                   return ListTile(
                                     title: Text(
-                                      getThemeModeName(theme.themeMode),
+                                      getThemeModeName(theme.themeMode).tr,
                                       style: TextStyle(
                                         fontWeight: FontWeight.w500,
                                         fontSize: 16,
