@@ -19,7 +19,7 @@ class OptionScreen extends GetView<OptionController> {
             Scaffold.of(context).openDrawer();
           },
         ),
-        title: Text('options'.tr, style: TextStyle(fontFamily: nexaRegular)),
+        title: Text('options'.tr, style: TextStyle(fontFamily: notoSansRegular)),
         centerTitle: true,
       ),
       body: Obx(
@@ -66,7 +66,7 @@ class OptionScreen extends GetView<OptionController> {
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w600,
-                                      fontFamily: nexaRegular,
+                                      fontFamily: notoSansRegular,
                                     ),
                                   ),
                                   Spacer(),
@@ -95,7 +95,7 @@ class OptionScreen extends GetView<OptionController> {
                                       style: TextStyle(
                                         fontWeight: FontWeight.w500,
                                         fontSize: 16,
-                                        fontFamily: nexaRegular,
+                                        fontFamily: notoSansRegular,
                                       ),
                                     ),
                                     trailing: Obx(() =>
@@ -156,7 +156,7 @@ class OptionScreen extends GetView<OptionController> {
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w600,
-                                      fontFamily: nexaRegular,
+                                      fontFamily: notoSansRegular,
                                     ),
                                   ),
                                   Spacer(),
@@ -183,7 +183,7 @@ class OptionScreen extends GetView<OptionController> {
                                       style: TextStyle(
                                         fontWeight: FontWeight.w500,
                                         fontSize: 16,
-                                        fontFamily: nexaRegular,
+                                        fontFamily: notoSansRegular,
                                       ),
                                     ),
                                     trailing: Obx(() =>
@@ -225,7 +225,7 @@ class OptionScreen extends GetView<OptionController> {
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: Colors.grey[700],
-              fontFamily: nexaRegular,
+              fontFamily: notoSansRegular,
             ),
           ),
         ),
@@ -259,7 +259,7 @@ class OptionScreen extends GetView<OptionController> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
-                        fontFamily: nexaRegular,
+                        fontFamily: notoSansRegular,
                       ),
                     ),
                     SizedBox(height: 4),
@@ -268,7 +268,7 @@ class OptionScreen extends GetView<OptionController> {
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.grey[600],
-                        fontFamily: nexaRegular,
+                        fontFamily: notoSansRegular,
                       ),
                     ),
                   ],

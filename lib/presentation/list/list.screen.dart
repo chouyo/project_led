@@ -21,7 +21,8 @@ class ListScreen extends GetView<ListController> {
             Scaffold.of(context).openDrawer();
           },
         ),
-        title: Text('ledList'.tr, style: TextStyle(fontFamily: nexaRegular)),
+        title:
+            Text('ledList'.tr, style: TextStyle(fontFamily: notoSansRegular)),
         centerTitle: true,
         actions: [
           IconButton(
@@ -44,7 +45,7 @@ class ListScreen extends GetView<ListController> {
                             labelText: 'ledText'.tr,
                             hintText: 'inputLedText'.tr,
                           ),
-                          style: TextStyle(fontFamily: nexaRegular),
+                          style: TextStyle(fontFamily: notoSansRegular),
                         ),
                       ],
                     ),
@@ -124,7 +125,7 @@ class ListScreen extends GetView<ListController> {
                               title: Text('deleteLed'.tr),
                               content: Text(
                                 'deleteLedConfirm'.tr,
-                                style: TextStyle(fontFamily: nexaRegular),
+                                style: TextStyle(fontFamily: notoSansRegular),
                               ),
                               actions: [
                                 TextButton(
@@ -134,8 +135,8 @@ class ListScreen extends GetView<ListController> {
                                 ),
                                 TextButton(
                                   child: Text('delete'.tr,
-                                      style:
-                                          TextStyle(fontFamily: nexaRegular)),
+                                      style: TextStyle(
+                                          fontFamily: notoSansRegular)),
                                   onPressed: () =>
                                       Navigator.of(context).pop(true),
                                 ),
@@ -158,7 +159,8 @@ class ListScreen extends GetView<ListController> {
 
                             return AlertDialog(
                               title: Text('editLed'.tr,
-                                  style: TextStyle(fontFamily: nexaRegular)),
+                                  style:
+                                      TextStyle(fontFamily: notoSansRegular)),
                               content: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -173,14 +175,14 @@ class ListScreen extends GetView<ListController> {
                               actions: [
                                 TextButton(
                                   child: Text('cancel'.tr,
-                                      style:
-                                          TextStyle(fontFamily: nexaRegular)),
+                                      style: TextStyle(
+                                          fontFamily: notoSansRegular)),
                                   onPressed: () => Navigator.of(context).pop(),
                                 ),
                                 TextButton(
                                   child: Text('save'.tr,
-                                      style:
-                                          TextStyle(fontFamily: nexaRegular)),
+                                      style: TextStyle(
+                                          fontFamily: notoSansRegular)),
                                   onPressed: () {
                                     if (nameController.text.isNotEmpty) {
                                       final updatedLed = Led(
@@ -219,7 +221,7 @@ class ListScreen extends GetView<ListController> {
                             fontSize: 20,
                             fontWeight: FontWeight.normal,
                             color: getTextColorFromIndex(led.textColorIndex),
-                            fontFamily: nexaRegular,
+                            fontFamily: notoSansRegular,
                           ),
                         ),
                         onTap: () {

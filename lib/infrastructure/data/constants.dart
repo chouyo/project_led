@@ -76,7 +76,7 @@ enum ESpeed {
   fast,
 }
 
-final String nexaRegular = "NexaRegular";
+final String notoSansRegular = "NotoSans-Regular";
 
 enum ETheme { auto, light, dark }
 

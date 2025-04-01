@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         child: Text(
           'Select a LED from the list',
           style: TextStyle(
-            fontFamily: nexaRegular,
+            fontFamily: notoSansRegular,
             fontSize: 16,
             color: Colors.grey,
           ),
@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                       fontWeight: FontWeight.normal,
                       color: getTextColorFromIndex(
                           controller.textColorIndex.value),
-                      fontFamily: "NexaRegular",
+                      fontFamily: notoSansRegular,
                     ),
                     isLandscape: orientation == Orientation.landscape,
                     speed: controller.speed.value,
@@ -152,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                       'settings'.tr,
                                       style: TextStyle(
                                         color: Colors.white,
-                                        fontFamily: nexaRegular,
+                                        fontFamily: notoSansRegular,
                                       ),
                                     ),
                                     SizedBox(height: 16),
@@ -166,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                             style: TextStyle(
                                                 color: Colors.white70,
                                                 fontSize: 12,
-                                                fontFamily: nexaRegular),
+                                                fontFamily: notoSansRegular),
                                           ),
                                         ),
                                         Expanded(
@@ -207,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                             style: TextStyle(
                                                 color: Colors.white70,
                                                 fontSize: 12,
-                                                fontFamily: nexaRegular),
+                                                fontFamily: notoSansRegular),
                                           ),
                                         ),
                                         Expanded(
@@ -241,7 +241,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                             style: TextStyle(
                                                 color: Colors.white70,
                                                 fontSize: 12,
-                                                fontFamily: nexaRegular),
+                                                fontFamily: notoSansRegular),
                                           ),
                                         ),
                                         Expanded(

@@ -26,7 +26,7 @@ class MainDrawer extends StatelessWidget {
                 Text(
                   'appName'.tr,
                   style: TextStyle(
-                    fontFamily: nexaRegular,
+                    fontFamily: notoSansRegular,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -37,8 +37,8 @@ class MainDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.list),
-            title:
-                Text('ledList'.tr, style: TextStyle(fontFamily: nexaRegular)),
+            title: Text('ledList'.tr,
+                style: TextStyle(fontFamily: notoSansRegular)),
             onTap: () {
               Scaffold.of(context).closeDrawer();
               if (currentRoute != Routes.LIST) {
@@ -52,8 +52,8 @@ class MainDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.settings),
-            title:
-                Text('options'.tr, style: TextStyle(fontFamily: nexaRegular)),
+            title: Text('options'.tr,
+                style: TextStyle(fontFamily: notoSansRegular)),
             onTap: () {
               Scaffold.of(context).closeDrawer();
               if (currentRoute != Routes.OPTION) {
