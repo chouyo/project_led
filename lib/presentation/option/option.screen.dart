@@ -19,7 +19,8 @@ class OptionScreen extends GetView<OptionController> {
             Scaffold.of(context).openDrawer();
           },
         ),
-        title: Text('options'.tr, style: TextStyle(fontFamily: notoSansRegular)),
+        title:
+            Text('options'.tr, style: TextStyle(fontFamily: notoSansRegular)),
         centerTitle: true,
       ),
       body: Obx(
@@ -98,11 +99,12 @@ class OptionScreen extends GetView<OptionController> {
                                         fontFamily: notoSansRegular,
                                       ),
                                     ),
-                                    trailing: Obx(() =>
-                                        controller.selectedLocale!.value ==
-                                                locale
-                                            ? Icon(Icons.check)
-                                            : SizedBox(width: 24)),
+                                    trailing: Obx(() => controller
+                                                .selectedLocale.value
+                                                .toString() ==
+                                            locale
+                                        ? Icon(Icons.check)
+                                        : SizedBox(width: 24)),
                                     onTap: () {
                                       controller.setLocale(controller
                                           .parseLocaleByString(locale));
