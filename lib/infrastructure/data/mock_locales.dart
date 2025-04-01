@@ -42,7 +42,7 @@ class MockLocales {
 
     // Middle Eastern & African Languages
     'ar',
-    'iw',
+    'he',
     'fa',
     'am',
     'sw',

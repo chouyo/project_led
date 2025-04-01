@@ -35,7 +35,7 @@ import 'vi.dart';
 import 'th.dart';
 import 'tl.dart';
 import 'ar.dart';
-import 'iw.dart';
+import 'he.dart';
 import 'fa.dart';
 import 'am.dart';
 import 'sw.dart';
@@ -87,7 +87,7 @@ class AppTranslations extends Translations {
 
         // Middle Eastern & African Languages
         'ar': ar,
-        'iw': iw,
+        'he': he,
         'fa': fa,
         'am': am,
         'sw': sw,

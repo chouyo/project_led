@@ -41,7 +41,7 @@ Map<String, String> locales = {
 
   // Middle Eastern & African Languages
   'ar': 'العربية',
-  'iw': 'עברית',
+  'he': 'עברית',
   'fa': 'فارسی',
   'am': 'አማርኛ',
   'sw': 'Kiswahili',

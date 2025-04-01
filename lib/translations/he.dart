@@ -33,7 +33,7 @@ Map<String, String> translations = {
   'slow': 'איטי',
 };
 
-final Map<String, String> iw = {
+final Map<String, String> he = {
   ...translations,
   ...locales,
 };
