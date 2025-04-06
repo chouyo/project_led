@@ -39,6 +39,8 @@ class MockLocales {
     'vi',
     'th',
     'tl',
+    'ug',
+    'bo',
 
     // Middle Eastern & African Languages
     'ar',

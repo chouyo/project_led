@@ -38,6 +38,8 @@ Map<String, String> locales = {
   'vi': 'Tiếng Việt',
   'th': 'ไทย',
   'tl': 'Filipino',
+  'ug': 'ئۇيغۇرچە',
+  'bo': 'བོད་པོ',
 
   // Middle Eastern & African Languages
   'ar': 'العربية',

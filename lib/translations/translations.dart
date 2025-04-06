@@ -42,6 +42,8 @@ import 'sw.dart';
 import 'af.dart';
 import 'la.dart';
 import 'eo.dart';
+import 'ug.dart';
+import 'bo.dart';
 
 class AppTranslations extends Translations {
   @override
@@ -84,6 +86,8 @@ class AppTranslations extends Translations {
         'vi': vi,
         'th': th,
         'tl': tl,
+        'ug': ug,
+        'bo': bo,
 
         // Middle Eastern & African Languages
         'ar': ar,

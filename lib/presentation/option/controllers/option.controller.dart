@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:project_led/presentation/home/controllers/home.controller.dart';
 import 'package:project_led/translations/locales.dart';
 import '../../../infrastructure/data/theme_model.dart';
 import '../../../infrastructure/data/locale_model.dart';
@@ -11,16 +12,6 @@ class OptionController extends GetxController {
 
   late Box<ThemeModel> themeModelBox;
   late Box<LocaleModel> localeModelBox;
-
-  @override
-  void onInit() async {
-    super.onInit();
-
-    // 初始化主题
-    loadTheme();
-    // 初始化语言
-    loadLocale();
-  }
 
   Future<void> loadTheme() async {
     themeModelBox = await Hive.openBox<ThemeModel>('themeModel');
@@ -38,10 +29,20 @@ class OptionController extends GetxController {
     if (localeModel == null) {
       if (Get.deviceLocale?.scriptCode != null &&
           Get.deviceLocale!.scriptCode!.isNotEmpty) {
-        selectedLocale.value = Locale(
-            Get.deviceLocale!.languageCode, Get.deviceLocale!.scriptCode!);
+        if (['Hans', 'Hant'].contains(Get.deviceLocale!.scriptCode)) {
+          selectedLocale.value = Locale('zh', Get.deviceLocale!.scriptCode!);
+        } else {
+          selectedLocale.value = Locale(Get.deviceLocale!.languageCode);
+        }
       } else {
-        selectedLocale.value = Locale(Get.deviceLocale!.languageCode);
+        if (['zh_CN'].contains(Get.deviceLocale!.toString())) {
+          selectedLocale.value = Locale('zh', 'Hans');
+        } else if (['zh_TW', 'zh_HK', 'zh_MO', 'zh_SG']
+            .contains(Get.deviceLocale!.toString())) {
+          selectedLocale.value = Locale('zh', 'Hant');
+        } else {
+          selectedLocale.value = Locale(Get.deviceLocale!.languageCode);
+        }
       }
       if (!locales.keys.contains(selectedLocale.value.toString())) {
         selectedLocale.value = getFallbackLocale();
@@ -49,9 +50,6 @@ class OptionController extends GetxController {
     } else {
       selectedLocale.value = parseLocaleByModel(localeModel);
     }
-
-    print(Get.deviceLocale);
-    print(selectedLocale.value);
   }
 
   void setTheme(ThemeMode themeMode) {
