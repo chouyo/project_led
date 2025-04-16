@@ -21,13 +21,12 @@ class ScrollText extends StatefulWidget {
   State<ScrollText> createState() => _ScrollTextState();
 }
 
-class _ScrollTextState extends State<ScrollText> {
+class _ScrollTextState extends State<ScrollText> with WidgetsBindingObserver {
   late ScrollController _scrollController;
   late Future<List<String>> words;
   late Duration _duration;
   late double _textWidth;
   bool _isAutoScrolling = false;
-  bool _isDelayed = true;
 
   @override
   void initState() {
@@ -36,9 +35,11 @@ class _ScrollTextState extends State<ScrollText> {
     _scrollController = ScrollController();
     words = parseText(widget.text);
 
+    // Register observer to handle app lifecycle changes
+    WidgetsBinding.instance.addObserver(this);
+
     // Start auto-scrolling after the widget is built
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      _isDelayed = true;
       final TextPainter textPainter = TextPainter(
         text: TextSpan(
           text: widget.text,
@@ -54,8 +55,39 @@ class _ScrollTextState extends State<ScrollText> {
 
   @override
   void dispose() {
-    //_scrollController.dispose();
+    WidgetsBinding.instance.removeObserver(this);
+    _scrollController.dispose();
     super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      // App resumed from background
+      if (_isAutoScrolling) {
+        // Reattach controller and restart scrolling
+        _restartScrolling();
+      }
+    } else if (state == AppLifecycleState.paused) {
+      _stopAutoScroll();
+    }
+  }
+
+  void _restartScrolling() {
+    // Stop current scrolling
+    _stopAutoScroll();
+
+    // Reset controller position
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0);
+    }
+
+    // Restart scrolling after a short delay to ensure widget is properly built
+    Future.delayed(Duration(milliseconds: 100), () {
+      if (mounted) {
+        _startAutoScroll();
+      }
+    });
   }
 
   void _startAutoScroll() {
@@ -81,6 +113,11 @@ class _ScrollTextState extends State<ScrollText> {
       MediaQuery.of(context).size.width,
       MediaQuery.of(context).size.height,
     ));
+
+    if (!_scrollController.hasClients) {
+      return;
+    }
+
     _scrollController
         .animateTo(
       _textWidth,
