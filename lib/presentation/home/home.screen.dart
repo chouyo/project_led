@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         controller.goBack(); // Allow back navigation
       },
       child: Stack(
-        key: ValueKey('home_screen_${DateTime.now().millisecondsSinceEpoch}'),
+        key: UniqueKey(),
         children: [
           // Bottom Layer - LED Type only
           Positioned.fill(
@@ -68,13 +68,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
               () => Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
-                color: getBackgroundColorFromIndex(
-                    controller.backgroundColorIndex.value),
                 alignment: Alignment.centerLeft,
                 child: RepaintBoundary(
                   child: ScrollText(
-                    key: ValueKey(
-                        'home_screen_${DateTime.now().millisecondsSinceEpoch}'),
+                    key: UniqueKey(),
                     text: led.name,
                     textStyle: TextStyle(
                       fontSize: 280,
@@ -85,7 +82,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                     ),
                     isLandscape: orientation == Orientation.landscape,
                     speed: controller.speed.value,
-                    textColor: getTextColorFromIndex(led.textColorIndex),
+                    backgroundColor: getBackgroundColorFromIndex(
+                        controller.backgroundColorIndex.value),
                   ),
                 ),
               ),

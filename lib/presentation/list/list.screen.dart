@@ -87,7 +87,6 @@ class ListScreen extends GetView<ListController> {
           itemCount: controller.leds.length,
           itemBuilder: (context, index) {
             final led = controller.leds[index];
-            final timestamp = DateTime.now().millisecondsSinceEpoch;
             return Container(
               decoration: BoxDecoration(
                 color: Colors.grey,
@@ -213,20 +212,22 @@ class ListScreen extends GetView<ListController> {
                         color: getBackgroundColorFromIndex(
                             led.backgroundColorIndex),
                       ),
-                      child: ListTile(
-                        contentPadding: EdgeInsets.all(12),
-                        title: Text(
-                          led.name,
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.normal,
-                            color: getTextColorFromIndex(led.textColorIndex),
-                            fontFamily: notoSansRegular,
+                      child: RepaintBoundary(
+                        child: ListTile(
+                          contentPadding: EdgeInsets.all(12),
+                          title: Text(
+                            led.name,
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.normal,
+                              color: getTextColorFromIndex(led.textColorIndex),
+                              fontFamily: notoSansRegular,
+                            ),
                           ),
+                          onTap: () {
+                            Get.toNamed(Routes.HOME, arguments: led.toJson());
+                          },
                         ),
-                        onTap: () {
-                          Get.toNamed(Routes.HOME, arguments: led.toJson());
-                        },
                       ),
                     ),
                   ),
