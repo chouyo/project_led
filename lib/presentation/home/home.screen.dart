@@ -107,7 +107,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                           color: Colors.black.withAlpha(127),
                         ),
                         Positioned(
-                          top: 16,
+                          top: MediaQuery.of(context).orientation ==
+                                  Orientation.portrait
+                              ? MediaQuery.of(context).padding.top
+                              : MediaQuery.of(context).padding.top + 8,
                           left: 16,
                           child: IconButton(
                             icon: Icon(Icons.arrow_back, color: Colors.white),
@@ -117,7 +120,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                           ),
                         ),
                         Positioned(
-                          top: 16,
+                          top: MediaQuery.of(context).orientation ==
+                                  Orientation.portrait
+                              ? MediaQuery.of(context).padding.top
+                              : MediaQuery.of(context).padding.top + 8,
                           right: 16,
                           child: IconButton(
                             icon: Icon(Icons.screen_rotation,
