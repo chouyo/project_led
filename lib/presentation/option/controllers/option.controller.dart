@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
-import 'package:project_led/presentation/home/controllers/home.controller.dart';
 import 'package:project_led/translations/locales.dart';
 import '../../../infrastructure/data/theme_model.dart';
 import '../../../infrastructure/data/locale_model.dart';

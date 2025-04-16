@@ -276,6 +276,7 @@ Future<List<String>> parseText(String text) async {
   return result;
 }
 
+/*
 int _getEmojiLength(String text, int startIndex) {
   // 获取emoji的完整长度（可能由多个代码点组成）
   if (startIndex >= text.length) return 0;
@@ -301,6 +302,7 @@ int _getEmojiLength(String text, int startIndex) {
 
   return length;
 }
+*/
 
 void _addSegment(String segment, List<String> result) {
   if (_isCJKText(segment)) {
@@ -319,6 +321,7 @@ void _addSegment(String segment, List<String> result) {
   }
 }
 
+/*
 bool _isEmojiStart(int rune) {
   // 检查是否是emoji开始字符
   return rune >= 0x1F600 && rune <= 0x1F64F || // 表情符号
@@ -335,6 +338,7 @@ bool _isEmojiModifier(int rune) {
   return rune >= 0x1F3FB && rune <= 0x1F3FF || // 肤色修饰符
       rune >= 0xFE00 && rune <= 0xFE0F; // 变体选择器
 }
+*/
 
 bool _isChinese(int rune) {
   // 中文Unicode范围
