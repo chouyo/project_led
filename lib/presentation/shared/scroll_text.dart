@@ -179,6 +179,7 @@ class _ScrollTextState extends State<ScrollText> with WidgetsBindingObserver {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return ListView.builder(
+                  cacheExtent: 1000,
                   controller: _scrollController,
                   physics: NeverScrollableScrollPhysics(),
                   padding: EdgeInsets.only(
