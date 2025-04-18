@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'Rápido',
   'normal': 'Normal',
   'slow': 'Lento',
+  'dataSettings': 'Configuración de Datos',
+  'loadDefaultData': 'Cargar Datos por Defecto',
+  'loadDefaultDataSuccess': 'Datos por Defecto Cargados Exitosamente',
+  'success': 'Éxito',
 };
 
 final Map<String, String> es = {

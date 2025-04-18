@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': '快',
   'normal': '中',
   'slow': '慢',
+  'dataSettings': '数据设置',
+  'loadDefaultData': '加载默认数据',
+  'success': '成功',
+  'loadDefaultDataSuccess': '加载默认数据成功',
 };
 
 final Map<String, String> zh_Hans = {

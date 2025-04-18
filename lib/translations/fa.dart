@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'سریع',
   'normal': 'معمولی',
   'slow': 'کند',
+  'dataSettings': 'تنظیمات داده',
+  'loadDefaultData': 'داده‌های پیش‌فرض بارگیری کنید',
+  'loadDefaultDataSuccess': 'داده‌های پیش‌فرض بارگیری شد',
+  'success': 'موفق',
 };
 
 final Map<String, String> fa = {

@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'तेज़',
   'normal': 'सामान्य',
   'slow': 'धीमा',
+  'dataSettings': 'डेटा सेटिंग्स',
+  'loadDefaultData': 'डिफ़ॉल्ट डेटा लोड करें',
+  'loadDefaultDataSuccess': 'डिफ़ॉल्ट डेटा सफलतापूर्वक लोड हो गया',
+  'success': 'सफलता',
 };
 
 final Map<String, String> hi = {

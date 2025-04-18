@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'Haraka',
   'normal': 'Kawaida',
   'slow': 'Polepole',
+  'dataSettings': 'Mipangilio ya Data',
+  'loadDefaultData': 'Kupata Data Kawaida',
+  'loadDefaultDataSuccess': 'Data Kawaida Kupatikana',
+  'success': 'Mafanikio',
 };
 
 final Map<String, String> sw = {

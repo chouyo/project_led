@@ -11,7 +11,7 @@ class ListController extends GetxController {
   void onInit() async {
     super.onInit();
     await initBox();
-    loadLeds();
+    leds.value = ledBox!.values.toList();
   }
 
   Future<void> initBox() async {
@@ -22,9 +22,9 @@ class ListController extends GetxController {
     }
   }
 
-  void loadLeds() {
+  void loadLeds() async {
     if (!ledBox!.isOpen) {
-      initBox();
+      await initBox();
     }
 
     if (ledBox!.isEmpty) {
@@ -64,5 +64,10 @@ class ListController extends GetxController {
       ledBox!.close();
     }
     super.onClose();
+  }
+
+  void loadDefaultData() async {
+    await initBox();
+    loadLeds();
   }
 }

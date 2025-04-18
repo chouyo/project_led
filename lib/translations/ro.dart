@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'Rapid',
   'normal': 'Normal',
   'slow': 'Lent',
+  'dataSettings': 'Setări Date',
+  'loadDefaultData': 'Încărcați Datele Predefinite',
+  'loadDefaultDataSuccess': 'Datele Predefinite au fost încărcate cu succes',
+  'success': 'Succes',
 };
 
 final Map<String, String> ro = {

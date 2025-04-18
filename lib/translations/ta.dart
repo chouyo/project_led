@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'விரைவு',
   'normal': 'இயல்பு',
   'slow': 'மெதுவாக',
+  'dataSettings': 'தரவு அமைப்புகள்',
+  'loadDefaultData': 'அடிப்படை தரவைக் காண்பி',
+  'loadDefaultDataSuccess': 'அடிப்படை தரவு வெற்றிகரமாக காண்பிக்கப்பட்டது',
+  'success': 'வெற்றி',
 };
 
 final Map<String, String> ta = {

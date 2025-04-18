@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'Rapida',
   'normal': 'Normala',
   'slow': 'Malrapida',
+  'dataSettings': 'Dateno Agordoj',
+  'loadDefaultData': 'Ŝargi Defaŭltan Daton',
+  'loadDefaultDataSuccess': 'Defaŭlta Datoŝargita Sukses',
+  'success': 'Sukseso',
 };
 
 final Map<String, String> eo = {

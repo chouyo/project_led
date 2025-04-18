@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'Cepat',
   'normal': 'Normal',
   'slow': 'Lambat',
+  'dataSettings': 'Pengaturan Data',
+  'loadDefaultData': 'Muat Data Standar',
+  'loadDefaultDataSuccess': 'Data Standar Berhasil Dimuat',
+  'success': 'Berhasil',
 };
 
 final Map<String, String> id = {

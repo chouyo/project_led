@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
-import 'package:project_led/translations/locales.dart';
+import '../../../translations/locales.dart';
 import '../../../infrastructure/data/theme_model.dart';
 import '../../../infrastructure/data/locale_model.dart';
+import '../../list/controllers/list.controller.dart';
 
 class OptionController extends GetxController {
   final Rx<ThemeMode> selectedThemeMode = ThemeMode.system.obs;
@@ -103,5 +104,10 @@ class OptionController extends GetxController {
 
   Locale getFallbackLocale() {
     return Locale('en');
+  }
+
+  void loadDefaultData() {
+    final listController = Get.put(ListController());
+    listController.loadDefaultData();
   }
 }

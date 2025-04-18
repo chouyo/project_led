@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'ፈጣን',
   'normal': 'መደበኛ',
   'slow': 'ዝግተኛ',
+  'dataSettings': 'የመጠን ማስተካከያዎች',
+  'loadDefaultData': 'መጠን መጠን መጠን',
+  'loadDefaultDataSuccess': 'መጠን መጠን መጠን',
+  'success': 'መጠን',
 };
 
 final Map<String, String> am = {

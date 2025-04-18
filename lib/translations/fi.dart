@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'Nopea',
   'normal': 'Normaali',
   'slow': 'Hidas',
+  'dataSettings': 'Tietojen asetukset',
+  'loadDefaultData': 'Lataa oletusarvotiedot',
+  'loadDefaultDataSuccess': 'Oletusarvotiedot ladattu',
+  'success': 'Onnistui',
 };
 
 final Map<String, String> fi = {

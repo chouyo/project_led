@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'เร็ว',
   'normal': 'ปกติ',
   'slow': 'ช้า',
+  'dataSettings': 'การตั้งค่าข้อมูล',
+  'loadDefaultData': 'โหลดข้อมูลค่าเริ่มต้น',
+  'loadDefaultDataSuccess': 'โหลดข้อมูลค่าเริ่มต้นสำเร็จ',
+  'success': 'สำเร็จ',
 };
 
 final Map<String, String> th = {

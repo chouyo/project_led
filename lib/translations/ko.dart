@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': '빠름',
   'normal': '보통',
   'slow': '느림',
+  'dataSettings': '데이터 설정',
+  'loadDefaultData': '기본 데이터 로드',
+  'loadDefaultDataSuccess': '기본 데이터 로드 성공',
+  'success': '성공',
 };
 
 final Map<String, String> ko = {

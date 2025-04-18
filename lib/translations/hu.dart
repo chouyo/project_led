@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'Gyors',
   'normal': 'Normál',
   'slow': 'Lassú',
+  'dataSettings': 'Adatbeállítások',
+  'loadDefaultData': 'Alapértelmezett adatok betöltése',
+  'loadDefaultDataSuccess': 'Alapértelmezett adatok sikeresen betöltve',
+  'success': 'Sikeres',
 };
 
 final Map<String, String> hu = {

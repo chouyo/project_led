@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'تېز',
   'normal': 'نورمال',
   'slow': 'ئاستا',
+  'dataSettings': 'مەلۇمۇتلار تەڭشىكى',
+  'loadDefaultData': 'ئۇسلۇبنى سەۋپەت قىلىش',
+  'loadDefaultDataSuccess': 'ئۇسلۇبنى سەۋپەت قىلىش سەۋپەتلىك',
+  'success': 'سەۋپەتلىك',
 };
 
 final Map<String, String> ug = {

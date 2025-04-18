@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'Mabilis',
   'normal': 'Normal',
   'slow': 'Mabagal',
+  'dataSettings': 'Mga Setting ng Data',
+  'loadDefaultData': 'I-load ang Default na Data',
+  'loadDefaultDataSuccess': 'Naisukses na i-load ang Default na Data',
+  'success': 'Naisukses',
 };
 
 final Map<String, String> tl = {

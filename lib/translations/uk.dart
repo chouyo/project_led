@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'Швидко',
   'normal': 'Нормально',
   'slow': 'Повільно',
+  'dataSettings': 'Налаштування даних',
+  'loadDefaultData': 'Завантажити дані за замовчуванням',
+  'loadDefaultDataSuccess': 'Дані за замовчуванням успішно завантажені',
+  'success': 'Успіх',
 };
 
 final Map<String, String> uk = {

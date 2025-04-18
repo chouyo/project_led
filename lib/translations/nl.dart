@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'Snel',
   'normal': 'Normaal',
   'slow': 'Langzaam',
+  'dataSettings': 'Data-instellingen',
+  'loadDefaultData': 'Standaarddata laden',
+  'loadDefaultDataSuccess': 'Standaarddata geladen',
+  'success': 'Succes',
 };
 
 final Map<String, String> nl = {

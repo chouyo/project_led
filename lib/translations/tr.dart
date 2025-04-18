@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'Hızlı',
   'normal': 'Normal',
   'slow': 'Yavaş',
+  'dataSettings': 'Veri Ayarları',
+  'loadDefaultData': 'Varsayılan Veriyi Yükle',
+  'loadDefaultDataSuccess': 'Varsayılan Veri Yüklendi',
+  'success': 'Başarılı',
 };
 
 final Map<String, String> tr = {

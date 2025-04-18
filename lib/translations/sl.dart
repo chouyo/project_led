@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'Hitro',
   'normal': 'Normalno',
   'slow': 'Počasi',
+  'dataSettings': 'Nastavitve Podatkov',
+  'loadDefaultData': 'Naloži Standardne Podatke',
+  'loadDefaultDataSuccess': 'Standardne Podatke Naložene',
+  'success': 'Uspeh',
 };
 
 final Map<String, String> sl = {

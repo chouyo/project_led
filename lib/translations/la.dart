@@ -31,6 +31,10 @@ Map<String, String> translations = {
   'fast': 'Celer',
   'normal': 'Normalis',
   'slow': 'Tardus',
+  'dataSettings': 'Optiones Datis',
+  'loadDefaultData': 'Datis Default Carrega',
+  'loadDefaultDataSuccess': 'Datis Default Carrega Successus',
+  'success': 'Successus',
 };
 
 final Map<String, String> la = {

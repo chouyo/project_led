@@ -209,6 +209,25 @@ class OptionScreen extends GetView<OptionController> {
                 ),
               ],
             ),
+            SizedBox(height: 8),
+            _buildSection(
+              'dataSettings'.tr,
+              [
+                _buildCardWithTitleOnly(
+                  Icons.data_usage,
+                  'loadDefaultData'.tr,
+                  onTap: () {
+                    controller.loadDefaultData();
+                    Get.snackbar(
+                      snackPosition: SnackPosition.BOTTOM,
+                      'success'.tr,
+                      'loadDefaultDataSuccess'.tr,
+                      duration: Duration(seconds: 2),
+                    );
+                  },
+                ),
+              ],
+            )
           ],
         ),
       ),
@@ -239,7 +258,7 @@ class OptionScreen extends GetView<OptionController> {
   Widget _buildCard(IconData icon, String title, String subtitle,
       {VoidCallback? onTap}) {
     return Card(
-      elevation: 0,
+      elevation: 1,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
@@ -274,6 +293,51 @@ class OptionScreen extends GetView<OptionController> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              Icon(Icons.chevron_right, color: Colors.grey),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCardWithTitleOnly(IconData icon, String title,
+      {VoidCallback? onTap}) {
+    return Card(
+      elevation: 1,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            children: [
+              Icon(icon, size: 24, color: Colors.blue),
+              SizedBox(width: 16),
+              Expanded(
+                child: SizedBox(
+                  // 添加 SizedBox 包裹 Column
+                  height: 48, // 设置与图标相同的高度
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center, // 垂直居中
+                    crossAxisAlignment: CrossAxisAlignment.start, // 保持文本左对齐
+                    mainAxisSize: MainAxisSize.min, // 仅占用必要空间
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: notoSansRegular,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Icon(Icons.chevron_right, color: Colors.grey),
