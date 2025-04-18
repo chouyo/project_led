@@ -122,7 +122,7 @@ class OptionScreen extends GetView<OptionController> {
                 ),
                 SizedBox(height: 8),
                 _buildCard(
-                  Icons.theater_comedy,
+                  Icons.palette,
                   'themeSettings'.tr,
                   getThemeModeName(controller.selectedThemeMode.value).tr,
                   onTap: () {
