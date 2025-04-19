@@ -120,7 +120,6 @@ class OptionScreen extends GetView<OptionController> {
                     );
                   },
                 ),
-                SizedBox(height: 8),
                 _buildCard(
                   Icons.palette,
                   'themeSettings'.tr,
@@ -209,7 +208,7 @@ class OptionScreen extends GetView<OptionController> {
                 ),
               ],
             ),
-            SizedBox(height: 8),
+            SizedBox(height: 12),
             _buildSection(
               'dataSettings'.tr,
               [
