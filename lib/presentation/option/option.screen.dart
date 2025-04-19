@@ -219,9 +219,9 @@ class OptionScreen extends GetView<OptionController> {
                   onTap: () {
                     controller.loadDefaultData();
                     Get.snackbar(
-                      snackPosition: SnackPosition.BOTTOM,
                       'success'.tr,
                       'loadDefaultDataSuccess'.tr,
+                      snackPosition: SnackPosition.TOP,
                       duration: Duration(seconds: 2),
                     );
                   },
