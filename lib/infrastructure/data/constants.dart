@@ -90,3 +90,9 @@ String getThemeModeName(ThemeMode themeMode) {
       return 'darkTheme';
   }
 }
+
+List<String> lottieAssets = ['assets/lotties/cat_1.json'];
+
+String getRandomLottieAsset() {
+  return lottieAssets[Random().nextInt(lottieAssets.length)];
+}

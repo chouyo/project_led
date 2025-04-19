@@ -5,6 +5,7 @@ import 'package:project_led/infrastructure/navigation/routes.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../infrastructure/data/constants.dart';
+import '../../infrastructure/not_found.dart';
 import 'controllers/list.controller.dart';
 import '../../infrastructure/data/led_model.dart';
 
@@ -83,9 +84,7 @@ class ListScreen extends GetView<ListController> {
       ),
       body: Obx(
         () => controller.leds.isEmpty
-            ? Center(
-                child: Text('No Leds',
-                    style: TextStyle(fontFamily: notoSansRegular)))
+            ? NotFound()
             : ListView.builder(
                 padding: EdgeInsets.all(16),
                 itemCount: controller.leds.length,
