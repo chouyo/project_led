@@ -1,0 +1,57 @@
+name: Build Android Release
+
+on:
+  workflow_dispatch:  # 这允许手动触发工作流
+    inputs:
+      build-type:
+        description: 'Build type (apk or appbundle)'
+        required: true
+        default: 'apk'
+        type: choice
+        options:
+        - apk
+        - appbundle
+      flavor:
+        description: 'Product flavor (optional)'
+        required: false
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.27.3'  # 使用你项目所需的Flutter版本
+        channel: 'stable'
+        
+    - name: Install dependencies
+      run: flutter pub get
+      
+    - name: Build APK or App Bundle
+      run: |
+        if [ "${{ github.event.inputs.build-type }}" == "appbundle" ]; then
+          flutter build appbundle --release
+        else
+          flutter build apk --release
+        fi
+        
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: android-build
+        path: |
+          build/app/outputs/flutter-apk/app-release.apk
+          build/app/outputs/bundle/release/app-release.aab
+        if-no-files-found: error
