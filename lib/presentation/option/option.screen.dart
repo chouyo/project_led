@@ -222,6 +222,7 @@ class OptionScreen extends GetView<OptionController> {
                       'loadDefaultDataSuccess'.tr,
                       snackPosition: SnackPosition.TOP,
                       duration: Duration(seconds: 2),
+                      isDismissible: true,
                     );
                   },
                 ),
