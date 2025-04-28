@@ -11,6 +11,14 @@ on:
         options:
         - apk
         - appbundle
+      branch:
+        description: 'Branch to build from'
+        required: true
+        default: 'main'
+        type: choice
+        options:
+          - main
+          - ads
       flavor:
         description: 'Product flavor (optional)'
         required: false
@@ -23,6 +31,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.inputs.branch || 'main' }}  # 使用输入的分支或默认main分支
       
     - name: Set up JDK
       uses: actions/setup-java@v3
