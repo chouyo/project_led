@@ -13,12 +13,9 @@ on:
         - appbundle
       branch:
         description: 'Branch to build from'
-        required: true
+        required: false
         default: 'main'
-        type: choice
-        options:
-          - main
-          - ads
+        type: string
       flavor:
         description: 'Product flavor (optional)'
         required: false
