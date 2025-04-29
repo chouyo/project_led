@@ -40,6 +40,12 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
+    - name: Set up Keystore
+      run: |
+        echo "${{ secrets.KEYSTORE_FILE }}" > project-led-release-key.jks
+        base64 -d project-led-release-key.jks > android/app/project-led-release-key.jks
+        rm project-led-release-key.jks
+
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
@@ -56,6 +62,10 @@ jobs:
         else
           flutter build apk --release
         fi
+      env:
+        KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+        KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
