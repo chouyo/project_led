@@ -43,6 +43,7 @@ dependencies:
   lottie: ^3.0.0
   google_mobile_ads: ^6.0.0
   firebase_analytics: ^11.4.5
+  flutter_launcher_icons: ^0.14.3
 
 dev_dependencies:
   flutter_test:
@@ -104,3 +105,8 @@ flutter:
         - asset: assets/fonts/NotoSans-Regular.ttf
   assets:
       - assets/lotties/cat_1.json
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"  # 你的图标路径
