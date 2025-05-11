@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_native_splash/cli_commands.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -19,7 +21,9 @@ import 'ads/app_open_ad_manager.dart';
 import 'ads/consent_manager.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
@@ -70,6 +74,9 @@ class _MainState extends State<Main> {
   @override
   void initState() {
     super.initState();
+
+    removeFlutterNativeSplash();
+
     initialRoute = widget.initialRoute;
 
     _appLifecycleReactor = AppLifecycleReactor(
@@ -142,5 +149,10 @@ class _MainState extends State<Main> {
       // Load an ad.
       _appOpenAdManager.loadAd();
     }
+  }
+
+  void removeFlutterNativeSplash() async {
+    await Future.delayed(Duration(seconds: 3));
+    FlutterNativeSplash.remove();
   }
 }
