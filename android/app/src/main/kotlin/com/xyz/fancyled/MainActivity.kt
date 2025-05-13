@@ -1,4 +1,4 @@
-package com.xyz.project_led
+package com.xyol.fancyled
 
 import io.flutter.embedding.android.FlutterActivity
 
