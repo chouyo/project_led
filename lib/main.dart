@@ -152,7 +152,7 @@ class _MainState extends State<Main> {
   }
 
   void removeFlutterNativeSplash() async {
-    await Future.delayed(Duration(seconds: 3));
+    await Future.delayed(Duration(seconds: 2));
     FlutterNativeSplash.remove();
   }
 }
