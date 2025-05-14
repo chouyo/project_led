@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_native_splash/cli_commands.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -68,7 +67,6 @@ class _MainState extends State<Main> {
 
   final _appOpenAdManager = AppOpenAdManager();
   var _isMobileAdsInitializeCalled = false;
-  var _isPrivacyOptionsRequired = false;
   late AppLifecycleReactor _appLifecycleReactor;
 
   @override
@@ -127,9 +125,7 @@ class _MainState extends State<Main> {
 
   void _getIsPrivacyOptionsRequired() async {
     if (await ConsentManager.instance.isPrivacyOptionsRequired()) {
-      setState(() {
-        _isPrivacyOptionsRequired = true;
-      });
+      setState(() {});
     }
   }
 

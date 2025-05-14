@@ -17,22 +17,24 @@ class MainDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0XFF2CD4FF),
+                  Color(0XFFFC51FA),
+                ],
+              ),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  'appName'.tr,
-                  style: TextStyle(
-                    fontFamily: notoSansRegular,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                )
-              ],
+            child: Center(
+              child: SizedBox(
+                width: 200,
+                height: 57,
+                child: Image.asset(
+                  "assets/Icon/Icon.png",
+                  fit: BoxFit.contain,
+                ),
+              ),
             ),
           ),
           ListTile(
