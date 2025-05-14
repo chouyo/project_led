@@ -42,14 +42,14 @@ Map<String, String> locales = {
   'bo': 'བོད་པོ',
 
   // Middle Eastern & African Languages
-  'ar': 'العربية',
-  'he': 'עברית',
-  'fa': 'فارسی',
+  // 'ar': 'العربية',
+  // 'he': 'עברית',
+  // 'fa': 'فارسی',
   'am': 'አማርኛ',
   'sw': 'Kiswahili',
   'af': 'Afrikaans',
 
   // Other Languages
   'la': 'Latina',
-  'eo': 'Esperanto',
+  // 'eo': 'Esperanto',
 };

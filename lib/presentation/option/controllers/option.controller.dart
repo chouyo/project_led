@@ -44,11 +44,11 @@ class OptionController extends GetxController {
           selectedLocale.value = Locale(Get.deviceLocale!.languageCode);
         }
       }
-      if (!locales.keys.contains(selectedLocale.value.toString())) {
-        selectedLocale.value = getFallbackLocale();
-      }
     } else {
       selectedLocale.value = parseLocaleByModel(localeModel);
+    }
+    if (!locales.keys.contains(selectedLocale.value.toString())) {
+      selectedLocale.value = getFallbackLocale();
     }
   }
 
