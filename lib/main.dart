@@ -48,6 +48,7 @@ void main() async {
   final optionController = Get.put(OptionController());
   await optionController.loadTheme();
   await optionController.loadLocale();
+  await optionController.checkIsDataEmpty();
 
   runApp(Main(initialRoute));
 }

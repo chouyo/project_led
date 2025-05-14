@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import '../../../infrastructure/data/led_model.dart';
 import '../../../translations/locales.dart';
 import '../../../infrastructure/data/theme_model.dart';
 import '../../../infrastructure/data/locale_model.dart';
@@ -9,9 +10,11 @@ import '../../list/controllers/list.controller.dart';
 class OptionController extends GetxController {
   final Rx<ThemeMode> selectedThemeMode = ThemeMode.system.obs;
   final Rx<Locale> selectedLocale = Get.deviceLocale?.obs as Rx<Locale>;
+  final RxBool isDataEmpty = true.obs;
 
   late Box<ThemeModel> themeModelBox;
   late Box<LocaleModel> localeModelBox;
+  late Box<Led> ledBox;
 
   Future<void> loadTheme() async {
     themeModelBox = await Hive.openBox<ThemeModel>('themeModel');
@@ -50,6 +53,11 @@ class OptionController extends GetxController {
     if (!locales.keys.contains(selectedLocale.value.toString())) {
       selectedLocale.value = getFallbackLocale();
     }
+  }
+
+  Future<void> checkIsDataEmpty() async {
+    ledBox = await Hive.openBox<Led>('leds');
+    isDataEmpty.value = ledBox.values.isEmpty;
   }
 
   void setTheme(ThemeMode themeMode) {

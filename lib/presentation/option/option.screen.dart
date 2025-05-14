@@ -11,6 +11,7 @@ class OptionScreen extends GetView<OptionController> {
   const OptionScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    controller.checkIsDataEmpty();
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -209,25 +210,32 @@ class OptionScreen extends GetView<OptionController> {
               ],
             ),
             SizedBox(height: 12),
-            _buildSection(
-              'dataSettings'.tr,
-              [
-                _buildCardWithTitleOnly(
-                  Icons.data_usage,
-                  'loadDefaultData'.tr,
-                  onTap: () {
-                    controller.loadDefaultData();
-                    Get.snackbar(
-                      'success'.tr,
-                      'loadDefaultDataSuccess'.tr,
-                      snackPosition: SnackPosition.TOP,
-                      duration: Duration(seconds: 2),
-                      isDismissible: true,
-                    );
-                  },
-                ),
-              ],
-            )
+            Obx(
+              () => _buildSection(
+                'dataSettings'.tr,
+                [
+                  _buildCardWithTitleOnly(
+                    Icons.data_usage,
+                    controller.isDataEmpty.value
+                        ? 'loadDefaultData'.tr
+                        : 'dataIsReady'.tr,
+                    onTap: () async {
+                      controller.loadDefaultData();
+                      if (controller.isDataEmpty.value) {
+                        Get.snackbar(
+                          'success'.tr,
+                          'loadDefaultDataSuccess'.tr,
+                          snackPosition: SnackPosition.TOP,
+                          duration: Duration(seconds: 2),
+                          isDismissible: true,
+                        );
+                        await controller.checkIsDataEmpty();
+                      }
+                    },
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
