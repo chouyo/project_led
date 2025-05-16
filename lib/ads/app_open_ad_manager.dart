@@ -14,7 +14,7 @@
 
 // ignore_for_file: public_member_api_docs
 import './consent_manager.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'dart:io' show Platform;
 
@@ -29,9 +29,19 @@ class AppOpenAdManager {
   AppOpenAd? _appOpenAd;
   bool _isShowingAd = false;
 
-  String adUnitId = Platform.isAndroid
-      ? 'ca-app-pub-3940256099942544/9257395921'
-      : 'ca-app-pub-3940256099942544/5575463023';
+  String get adUnitId {
+    if (kReleaseMode) {
+      // Production AD
+      return Platform.isAndroid
+          ? 'ca-app-pub-2946898266036267/5883298327'
+          : 'ca-app-pub-2946898266036267/7577192364';
+    } else {
+      // Test AD
+      return Platform.isAndroid
+          ? 'ca-app-pub-3940256099942544/9257395921'
+          : 'ca-app-pub-3940256099942544/5575463023';
+    }
+  }
 
   /// Load an [AppOpenAd].
   void loadAd() async {
