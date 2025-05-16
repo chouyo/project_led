@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': 'تحميل البيانات الافتراضية',
   'loadDefaultDataSuccess': 'تحميل البيانات الافتراضية بنجاح',
   'success': 'نجاح',
+  'dataIsReady': 'البيانات جاهزة'
 };
 
 final Map<String, String> ar = {

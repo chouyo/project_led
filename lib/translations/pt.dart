@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': 'Carregar Dados por Defeito',
   'loadDefaultDataSuccess': 'Dados por Defeito Carregados com Sucesso',
   'success': 'Sucesso',
+  'dataIsReady': 'Os dados estão prontos'
 };
 
 final Map<String, String> pt = {

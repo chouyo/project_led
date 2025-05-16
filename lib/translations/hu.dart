@@ -33,7 +33,8 @@ Map<String, String> translations = {
   'slow': 'Lassú',
   'dataSettings': 'Adatbeállítások',
   'loadDefaultData': 'Alapértelmezett adatok betöltése',
-  'loadDefaultDataSuccess': 'Alapértelmezett adatok sikeresen betöltve',
+  'loadDefaultDataSuccess': 'Az alapértelmezett adatok sikeresen betöltve',
+  'dataIsReady': 'Az adatok készen állnak',
   'success': 'Sikeres',
 };
 

@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': 'Laai Standaard Data',
   'loadDefaultDataSuccess': 'Standaard Data Sukses Laai',
   'success': 'Sukses',
+  'dataIsReady': 'Data is Gereed'
 };
 
 final Map<String, String> af = {

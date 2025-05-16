@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': 'デフォルトデータを読み込む',
   'loadDefaultDataSuccess': 'デフォルトデータを読み込む',
   'success': '成功',
+  'dataIsReady': 'データの準備が完了しました'
 };
 
 final Map<String, String> ja = {

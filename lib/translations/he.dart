@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': 'טען נתונים ברירת מחדל',
   'loadDefaultDataSuccess': 'נתונים ברירת מחדל טעונים בהצלחה',
   'success': 'הצלחה',
+  'dataIsReady': 'הנתונים מוכנים'
 };
 
 final Map<String, String> he = {

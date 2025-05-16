@@ -104,7 +104,7 @@ flutter:
       fonts:
         - asset: assets/fonts/NotoSans-Regular.ttf
   assets:
-      - assets/lotties/cat_1.json
+      - assets/lotties/no_data.json
       - assets/Icon/Icon.png
 
 flutter_launcher_icons:

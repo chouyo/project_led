@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': 'གྲངས་སྒྲིག་འགོད',
   'loadDefaultDataSuccess': 'གྲངས་སྒྲིག་འགོད',
   'success': 'གྲངས་སྒྲིག་འགོད',
+  'dataIsReady': 'གྲངས་སྒྲིག་འགོད་ཟིན་པ'
 };
 
 final Map<String, String> bo = {

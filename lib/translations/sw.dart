@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': 'Kupata Data Kawaida',
   'loadDefaultDataSuccess': 'Data Kawaida Kupatikana',
   'success': 'Mafanikio',
+  'dataIsReady': 'Data Iko Tayari'
 };
 
 final Map<String, String> sw = {

@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': 'Ladda standarddata',
   'loadDefaultDataSuccess': 'Standarddata laddad',
   'success': 'Lyckad',
+  'dataIsReady': 'Data är redo'
 };
 
 final Map<String, String> sv = {

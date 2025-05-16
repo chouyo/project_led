@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': 'Datis Default Carrega',
   'loadDefaultDataSuccess': 'Datis Default Carrega Successus',
   'success': 'Successus',
+  'dataIsReady': 'Data Parata Est'
 };
 
 final Map<String, String> la = {

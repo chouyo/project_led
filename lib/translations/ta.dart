@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': 'அடிப்படை தரவைக் காண்பி',
   'loadDefaultDataSuccess': 'அடிப்படை தரவு வெற்றிகரமாக காண்பிக்கப்பட்டது',
   'success': 'வெற்றி',
+  'dataIsReady': 'தரவு தயாராக உள்ளது'
 };
 
 final Map<String, String> ta = {

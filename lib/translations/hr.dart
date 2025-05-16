@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': 'Učitaj podatke po zadanom',
   'loadDefaultDataSuccess': 'Podatci su uspješno učitani',
   'success': 'Uspjeh',
+  'dataIsReady': 'Podaci su spremni'
 };
 
 final Map<String, String> hr = {

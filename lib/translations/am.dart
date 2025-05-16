@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': 'መጠን መጠን መጠን',
   'loadDefaultDataSuccess': 'መጠን መጠን መጠን',
   'success': 'መጠን',
+  'dataIsReady': 'መረጃው ዝግጁ ነው'
 };
 
 final Map<String, String> am = {

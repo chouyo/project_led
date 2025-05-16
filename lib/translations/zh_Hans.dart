@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': '加载默认数据',
   'success': '成功',
   'loadDefaultDataSuccess': '加载默认数据成功',
+  'dataIsReady': '数据已就绪'
 };
 
 final Map<String, String> zh_Hans = {

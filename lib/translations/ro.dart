@@ -34,6 +34,7 @@ Map<String, String> translations = {
   'dataSettings': 'Setări Date',
   'loadDefaultData': 'Încărcați Datele Predefinite',
   'loadDefaultDataSuccess': 'Datele Predefinite au fost încărcate cu succes',
+  'dataIsReady': 'Datele sunt gata',
   'success': 'Succes',
 };
 

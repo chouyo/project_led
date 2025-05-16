@@ -33,8 +33,9 @@ Map<String, String> translations = {
   'slow': 'Perlahan',
   'dataSettings': 'Tetapan Data',
   'loadDefaultData': 'Muat Data Default',
-  'loadDefaultDataSuccess': 'Data Default Berhasil Dimuat',
-  'success': 'Berhasil',
+  'loadDefaultDataSuccess': 'Data Lalai Berjaya Dimuat',
+  'success': 'Berjaya',
+  'dataIsReady': 'Data Sedia'
 };
 
 final Map<String, String> ms = {

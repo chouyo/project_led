@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': 'Ŝargi Defaŭltan Daton',
   'loadDefaultDataSuccess': 'Defaŭlta Datoŝargita Sukses',
   'success': 'Sukseso',
+  'dataIsReady': 'Dato Estas Preta'
 };
 
 final Map<String, String> eo = {

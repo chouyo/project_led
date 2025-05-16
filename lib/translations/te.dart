@@ -35,6 +35,7 @@ Map<String, String> translations = {
   'loadDefaultData': 'డిఫాల్ట్ డేటా లోడ్ చేయండి',
   'loadDefaultDataSuccess': 'డిఫాల్ట్ డేటా లోడ్ సాధ్యం',
   'success': 'సాధ్యం',
+  'dataIsReady': 'డేటా సిద్ధంగా ఉంది'
 };
 
 final Map<String, String> te = {

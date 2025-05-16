@@ -91,7 +91,7 @@ String getThemeModeName(ThemeMode themeMode) {
   }
 }
 
-List<String> lottieAssets = ['assets/lotties/cat_1.json'];
+List<String> lottieAssets = ['assets/lotties/no_data.json'];
 
 String getRandomLottieAsset() {
   return lottieAssets[Random().nextInt(lottieAssets.length)];

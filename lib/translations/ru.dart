@@ -34,6 +34,7 @@ Map<String, String> translations = {
   'dataSettings': 'Настройки данных',
   'loadDefaultData': 'Загрузить данные по умолчанию',
   'loadDefaultDataSuccess': 'Данные по умолчанию успешно загружены',
+  'dataIsReady': 'Данные готовы',
   'success': 'Успех',
 };
 
