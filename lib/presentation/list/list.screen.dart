@@ -36,11 +36,17 @@ class ListScreen extends GetView<ListController> {
                   final nameController = TextEditingController();
 
                   return AlertDialog(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                     title: Text('newLed'.tr),
                     content: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         TextField(
+                          minLines: 1,
+                          maxLines: 5,
+                          autofocus: true,
                           controller: nameController,
                           decoration: InputDecoration(
                             labelText: 'ledText'.tr,
@@ -126,6 +132,9 @@ class ListScreen extends GetView<ListController> {
                                 context: context,
                                 builder: (BuildContext context) {
                                   return AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
                                     title: Text('deleteLed'.tr),
                                     content: Text(
                                       'deleteLedConfirm'.tr,
@@ -163,6 +172,9 @@ class ListScreen extends GetView<ListController> {
                                       TextEditingController(text: led.name);
 
                                   return AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
                                     title: Text('editLed'.tr,
                                         style: TextStyle(
                                             fontFamily: notoSansRegular)),
@@ -170,6 +182,9 @@ class ListScreen extends GetView<ListController> {
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         TextField(
+                                          minLines: 1,
+                                          maxLines: 5,
+                                          autofocus: true,
                                           controller: nameController,
                                           decoration: InputDecoration(
                                             labelText: 'ledText'.tr,
