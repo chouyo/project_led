@@ -34,8 +34,13 @@ Map<String, String> translations = {
   'dataSettings': 'གྲངས་སྒྲིག་འགོད',
   'loadDefaultData': 'གྲངས་སྒྲིག་འགོད',
   'loadDefaultDataSuccess': 'གྲངས་སྒྲིག་འགོད',
-  'success': 'གྲངས་སྒྲིག་འགོད',
-  'dataIsReady': 'གྲངས་སྒྲིག་འགོད་ཟིན་པ'
+  'dataIsReady': 'གཞི་གྲངས་གྲུབ་ཟིན།',
+  'success': 'ལེགས་གྲུབ།',
+  'contactMethod': 'འབྲེལ་གཏུག་ཐབས་ལམ།',
+  'emailToMe': 'ང་ལ་གློག་འཕྲིན་བཏང་།',
+  'aboutMe': 'ངའི་སྐོར།',
+  'copied': 'འདྲ་བཤུས་བཟོས་ཟིན།',
+  'ok': 'ལེགས་སོ།'
 };
 
 final Map<String, String> bo = {

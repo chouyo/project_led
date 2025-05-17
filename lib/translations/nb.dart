@@ -34,8 +34,13 @@ Map<String, String> translations = {
   'dataSettings': 'Datainnstillinger',
   'loadDefaultData': 'Last standarddata',
   'loadDefaultDataSuccess': 'Standarddata lastet',
-  'success': 'Suksess',
-  'dataIsReady': 'Data er klar'
+  'success': 'Vellykket',
+  'dataIsReady': 'Data er klar',
+  'contactMethod': 'Kontaktmetode',
+  'emailToMe': 'Send meg e-post',
+  'aboutMe': 'Om meg',
+  'copied': 'Kopiert til utklippstavlen',
+  'ok': 'OK'
 };
 
 final Map<String, String> nb = {

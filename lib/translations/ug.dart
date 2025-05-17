@@ -34,8 +34,13 @@ Map<String, String> translations = {
   'dataSettings': 'مەلۇمۇتلار تەڭشىكى',
   'loadDefaultData': 'ئۇسلۇبنى سەۋپەت قىلىش',
   'loadDefaultDataSuccess': 'ئۇسلۇبنى سەۋپەت قىلىش سەۋپەتلىك',
-  'success': 'سەۋپەتلىك',
-  'dataIsReady': 'مەلۇمۇت تەييار'
+  'dataIsReady': 'سانلىق مەلۇمات تەييار',
+  'success': 'مۇۋەپپەقىيەتلىك',
+  'contactMethod': 'ئالاقىلىشىش ئۇسۇلى',
+  'emailToMe': 'ماڭا ئېلخەت ئەۋەتىڭ',
+  'aboutMe': 'مەن ھەققىدە',
+  'copied': 'چاپلاش تاختىسىغا كۆچۈرۈلدى',
+  'ok': 'جەزىم'
 };
 
 final Map<String, String> ug = {

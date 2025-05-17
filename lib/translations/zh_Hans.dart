@@ -35,7 +35,12 @@ Map<String, String> translations = {
   'loadDefaultData': '加载默认数据',
   'success': '成功',
   'loadDefaultDataSuccess': '加载默认数据成功',
-  'dataIsReady': '数据已就绪'
+  'dataIsReady': '数据已就绪',
+  'contactMethod': '联系方式',
+  'emailToMe': '给我发邮件',
+  'aboutMe': '关于我',
+  'copied': '已经拷贝到剪切板',
+  'ok': '确定'
 };
 
 final Map<String, String> zh_Hans = {

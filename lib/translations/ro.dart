@@ -36,6 +36,11 @@ Map<String, String> translations = {
   'loadDefaultDataSuccess': 'Datele Predefinite au fost încărcate cu succes',
   'dataIsReady': 'Datele sunt gata',
   'success': 'Succes',
+  'contactMethod': 'Metodă de contact',
+  'emailToMe': 'Trimite-mi un e-mail',
+  'aboutMe': 'Despre mine',
+  'copied': 'Copiat în clipboard',
+  'ok': 'OK'
 };
 
 final Map<String, String> ro = {

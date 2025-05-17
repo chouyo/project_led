@@ -35,7 +35,12 @@ Map<String, String> translations = {
   'loadDefaultData': 'Muat Data Standar',
   'loadDefaultDataSuccess': 'Data Standar Berhasil Dimuat',
   'success': 'Berhasil',
-  'dataIsReady': 'Data Siap'
+  'dataIsReady': 'Data siap',
+  'contactMethod': 'Metode kontak',
+  'emailToMe': 'Kirim email ke saya',
+  'aboutMe': 'Tentang saya',
+  'copied': 'Disalin ke papan klip',
+  'ok': 'OK'
 };
 
 final Map<String, String> id = {

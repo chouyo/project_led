@@ -35,7 +35,12 @@ Map<String, String> translations = {
   'loadDefaultData': 'โหลดข้อมูลค่าเริ่มต้น',
   'loadDefaultDataSuccess': 'โหลดข้อมูลค่าเริ่มต้นสำเร็จ',
   'success': 'สำเร็จ',
-  'dataIsReady': 'Dữ liệu đã sẵn sàng'
+  'dataIsReady': 'Dữ liệu đã sẵn sàng',
+  'contactMethod': 'Phương thức liên hệ',
+  'emailToMe': 'Gửi email cho tôi',
+  'aboutMe': 'Về tôi',
+  'copied': 'Đã sao chép vào bộ nhớ tạm',
+  'ok': 'OK'
 };
 
 final Map<String, String> vi = {

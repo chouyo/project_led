@@ -36,6 +36,11 @@ Map<String, String> translations = {
   'loadDefaultDataSuccess': 'Standarddata indlæst',
   'dataIsReady': 'Data er klar',
   'success': 'Succes',
+  'contactMethod': 'Kontaktmetode',
+  'emailToMe': 'Send mig en e-mail',
+  'aboutMe': 'Om mig',
+  'copied': 'Kopieret til udklipsholderen',
+  'ok': 'OK'
 };
 
 final Map<String, String> da = {

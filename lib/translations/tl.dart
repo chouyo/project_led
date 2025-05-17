@@ -34,8 +34,13 @@ Map<String, String> translations = {
   'dataSettings': 'Mga Setting ng Data',
   'loadDefaultData': 'I-load ang Default na Data',
   'loadDefaultDataSuccess': 'Naisukses na i-load ang Default na Data',
-  'success': 'Naisukses',
-  'dataIsReady': 'Handa na ang Data'
+  'success': 'Matagumpay',
+  'dataIsReady': 'Handa na ang data',
+  'contactMethod': 'Paraan ng pakikipag-ugnayan',
+  'emailToMe': 'Magpadala ng email sa akin',
+  'aboutMe': 'Tungkol sa akin',
+  'copied': 'Nakopya sa clipboard',
+  'ok': 'Sige'
 };
 
 final Map<String, String> tl = {

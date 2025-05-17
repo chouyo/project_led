@@ -35,7 +35,12 @@ Map<String, String> translations = {
   'loadDefaultData': 'Ladda standarddata',
   'loadDefaultDataSuccess': 'Standarddata laddad',
   'success': 'Lyckad',
-  'dataIsReady': 'Data är redo'
+  'dataIsReady': 'Data är redo',
+  'contactMethod': 'Kontaktmetod',
+  'emailToMe': 'Skicka e-post till mig',
+  'aboutMe': 'Om mig',
+  'copied': 'Kopierat till urklipp',
+  'ok': 'OK'
 };
 
 final Map<String, String> sv = {

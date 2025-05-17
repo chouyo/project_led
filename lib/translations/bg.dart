@@ -36,6 +36,11 @@ Map<String, String> translations = {
   'loadDefaultDataSuccess': 'Данните по подразбиране са заредени успешно',
   'dataIsReady': 'Данните са готови',
   'success': 'Успех',
+  'contactMethod': 'Начин на контакт',
+  'emailToMe': 'Изпрати ми имейл',
+  'aboutMe': 'За мен',
+  'copied': 'Копирано в клипборда',
+  'ok': 'OK'
 };
 
 final Map<String, String> bg = {

@@ -35,7 +35,12 @@ Map<String, String> translations = {
   'loadDefaultData': 'Charger les Données par Défaut',
   'loadDefaultDataSuccess': 'Données par Défaut Chargées avec Succès',
   'success': 'Succès',
-  'dataIsReady': 'Les données sont prêtes'
+  'dataIsReady': 'Données prêtes',
+  'contactMethod': 'Méthode de contact',
+  'emailToMe': 'M\'envoyer un email',
+  'aboutMe': 'À propos de moi',
+  'copied': 'Copié dans le presse-papiers',
+  'ok': 'OK'
 };
 
 final Map<String, String> fr = {

@@ -35,7 +35,12 @@ Map<String, String> translations = {
   'loadDefaultData': 'Standaarddata laden',
   'loadDefaultDataSuccess': 'Standaarddata geladen',
   'success': 'Succes',
-  'dataIsReady': 'De gegevens zijn gereed'
+  'dataIsReady': 'Gegevens gereed',
+  'contactMethod': 'Contactmethode',
+  'emailToMe': 'E-mail naar mij',
+  'aboutMe': 'Over mij',
+  'copied': 'Gekopieerd naar klembord',
+  'ok': 'OK'
 };
 
 final Map<String, String> nl = {

@@ -36,6 +36,11 @@ Map<String, String> translations = {
   'loadDefaultDataSuccess': 'Az alapértelmezett adatok sikeresen betöltve',
   'dataIsReady': 'Az adatok készen állnak',
   'success': 'Sikeres',
+  'contactMethod': 'Kapcsolattartási mód',
+  'emailToMe': 'Küldjön e-mailt nekem',
+  'aboutMe': 'Rólam',
+  'copied': 'Vágólapra másolva',
+  'ok': 'Rendben'
 };
 
 final Map<String, String> hu = {

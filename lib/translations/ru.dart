@@ -36,6 +36,11 @@ Map<String, String> translations = {
   'loadDefaultDataSuccess': 'Данные по умолчанию успешно загружены',
   'dataIsReady': 'Данные готовы',
   'success': 'Успех',
+  'contactMethod': 'Способ связи',
+  'emailToMe': 'Написать мне',
+  'aboutMe': 'Обо мне',
+  'copied': 'Скопировано в буфер обмена',
+  'ok': 'OK'
 };
 
 final Map<String, String> ru = {

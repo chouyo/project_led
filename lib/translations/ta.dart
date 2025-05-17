@@ -35,7 +35,12 @@ Map<String, String> translations = {
   'loadDefaultData': 'அடிப்படை தரவைக் காண்பி',
   'loadDefaultDataSuccess': 'அடிப்படை தரவு வெற்றிகரமாக காண்பிக்கப்பட்டது',
   'success': 'வெற்றி',
-  'dataIsReady': 'தரவு தயாராக உள்ளது'
+  'dataIsReady': 'தரவு தயாராக உள்ளது',
+  'contactMethod': 'தொடர்பு முறை',
+  'emailToMe': 'எனக்கு மின்னஞ்சல் அனுப்பவும்',
+  'aboutMe': 'என்னைப் பற்றி',
+  'copied': 'கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது',
+  'ok': 'சரி'
 };
 
 final Map<String, String> ta = {

@@ -35,7 +35,12 @@ Map<String, String> translations = {
   'loadDefaultData': 'Datis Default Carrega',
   'loadDefaultDataSuccess': 'Datis Default Carrega Successus',
   'success': 'Successus',
-  'dataIsReady': 'Data Parata Est'
+  'dataIsReady': 'Data parata est',
+  'contactMethod': 'Modus contactus',
+  'emailToMe': 'Mitte mihi electronica epistula',
+  'aboutMe': 'De me',
+  'copied': 'In tabulam scriptoriam copiatum est',
+  'ok': 'Bene'
 };
 
 final Map<String, String> la = {

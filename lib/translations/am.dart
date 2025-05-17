@@ -34,8 +34,13 @@ Map<String, String> translations = {
   'dataSettings': 'የመጠን ማስተካከያዎች',
   'loadDefaultData': 'መጠን መጠን መጠን',
   'loadDefaultDataSuccess': 'መጠን መጠን መጠን',
-  'success': 'መጠን',
-  'dataIsReady': 'መረጃው ዝግጁ ነው'
+  'dataIsReady': 'ዳታው ዝግጁ ነው',
+  'success': 'ተሳክቷል',
+  'contactMethod': 'የመገናኛ ዘዴ',
+  'emailToMe': 'ኢሜይል ይላኩልኝ',
+  'aboutMe': 'ስለ እኔ',
+  'copied': 'ወደ ቅንጥብ ሰሌዳ ተቅድቷል',
+  'ok': 'እሺ'
 };
 
 final Map<String, String> am = {
