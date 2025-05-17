@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:project_led/infrastructure/data/constants.dart';
 import 'package:project_led/infrastructure/data/mock_locales.dart';
@@ -9,6 +9,78 @@ import '../../infrastructure/data/mock_themes.dart';
 
 class OptionScreen extends GetView<OptionController> {
   const OptionScreen({super.key});
+
+  void _showAboutMeDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const SizedBox(height: 12),
+              Image.asset('assets/logo.png'),
+              const SizedBox(height: 24),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.grey[800]
+                      : Colors.grey[200],
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: SelectableText(
+                        'xyolstudio@gmail.com',
+                        style: TextStyle(
+                          fontFamily: notoSansRegular,
+                          fontSize: 16,
+                          color: Theme.of(context).brightness == Brightness.dark
+                              ? Colors.white
+                              : Colors.black87,
+                        ),
+                      ),
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        Icons.copy,
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white70
+                            : Colors.black54,
+                      ),
+                      onPressed: () {
+                        Clipboard.setData(
+                          const ClipboardData(text: 'xyolstudio@gmail.com'),
+                        );
+                        Get.snackbar(
+                          'success'.tr,
+                          'copied'.tr,
+                          snackPosition: SnackPosition.TOP,
+                          duration: Duration(seconds: 2),
+                          isDismissible: true,
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 24),
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: Text('ok'.tr),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     controller.checkIsDataEmpty();
@@ -215,7 +287,7 @@ class OptionScreen extends GetView<OptionController> {
                 'dataSettings'.tr,
                 [
                   _buildCardWithTitleOnly(
-                    Icons.data_usage,
+                    Icons.archive,
                     controller.isDataEmpty.value
                         ? 'loadDefaultData'.tr
                         : 'dataIsReady'.tr,
@@ -236,6 +308,24 @@ class OptionScreen extends GetView<OptionController> {
                 ],
               ),
             ),
+            SizedBox(height: 12),
+            _buildSection(
+              'contactMethod'.tr,
+              [
+                _buildCardWithTitleOnly(
+                  Icons.email,
+                  'emailToMe'.tr,
+                  onTap: () async {
+                    controller.sendEmail();
+                  },
+                ),
+                _buildCardWithTitleOnly(
+                  Icons.face,
+                  'aboutMe'.tr,
+                  onTap: () => _showAboutMeDialog(context),
+                ),
+              ],
+            )
           ],
         ),
       ),

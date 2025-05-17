@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../infrastructure/data/led_model.dart';
 import '../../../translations/locales.dart';
 import '../../../infrastructure/data/theme_model.dart';
@@ -117,5 +118,22 @@ class OptionController extends GetxController {
   void loadDefaultData() {
     final listController = Get.put(ListController());
     listController.loadDefaultData();
+  }
+
+  void sendEmail() async {
+    final Uri emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: 'xyolstudio@gmail.com',
+      queryParameters: {
+        'subject': '[StrikingLED] Help && Feedback',
+        'body': '[YOU CAN WRITE WORDS FOR HELP OR FEEDBACK HERE]',
+      },
+    );
+
+    if (await canLaunchUrl(emailLaunchUri)) {
+      await launchUrl(emailLaunchUri);
+    } else {
+      throw 'Could not launch email';
+    }
   }
 }
