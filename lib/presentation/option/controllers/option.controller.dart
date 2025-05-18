@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -129,6 +132,14 @@ class OptionController extends GetxController {
   }
 
   void sendEmail() async {
+    if (Platform.isIOS) {
+      _sendEmailViaIos();
+    } else if (Platform.isAndroid) {
+      _sendEmailViaAndroid();
+    }
+  }
+
+  void _sendEmailViaIos() async {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
       path: email,
@@ -139,7 +150,22 @@ class OptionController extends GetxController {
     if (await canLaunchUrl(emailLaunchUri)) {
       await launchUrl(emailLaunchUri);
     } else {
-      throw 'Could not launch email';
+      Get.snackbar('failed'.tr,
+          'Can\'t open mail app. You can open about me to get email address.');
+    }
+  }
+
+  Future<void> _sendEmailViaAndroid() async {
+    const platform = MethodChannel('channelSendEmail');
+    try {
+      await platform.invokeMethod('sendEmail', {
+        'email': email,
+        'subject': '[StrikingLED] Help && Feedback',
+        'body': '',
+      });
+    } on PlatformException catch (e) {
+      Get.snackbar('failed'.tr,
+          'Can\'t open mail app. You can open about me to get email address.');
     }
   }
 }
