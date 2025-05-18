@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:project_led/infrastructure/data/constants.dart';
-import 'package:project_led/infrastructure/data/mock_locales.dart';
 
+import '../../infrastructure/data/mock_locales.dart';
 import 'controllers/option.controller.dart';
 import '../../infrastructure/data/mock_themes.dart';
+import '../../infrastructure/data/constants.dart';
 
 class OptionScreen extends GetView<OptionController> {
   const OptionScreen({super.key});
@@ -55,7 +55,7 @@ class OptionScreen extends GetView<OptionController> {
                       ),
                       onPressed: () {
                         Clipboard.setData(
-                          const ClipboardData(text: 'xyolstudio@gmail.com'),
+                          ClipboardData(text: email),
                         );
                         Get.snackbar(
                           'success'.tr,

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:project_led/infrastructure/data/constants.dart';
+
+import '../../infrastructure/data/constants.dart';
 import '../../infrastructure/navigation/routes.dart';
 
 class MainDrawer extends StatelessWidget {

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-import 'package:project_led/infrastructure/navigation/routes.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../infrastructure/data/constants.dart';
+import '../../infrastructure/navigation/routes.dart';
 import '../../infrastructure/not_found.dart';
 import 'controllers/list.controller.dart';
 import '../../infrastructure/data/led_model.dart';

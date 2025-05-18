@@ -1,5 +1,6 @@
 import 'package:hive/hive.dart';
-import 'package:project_led/infrastructure/data/constants.dart';
+
+import 'constants.dart';
 
 part 'led_model.g.dart';
 

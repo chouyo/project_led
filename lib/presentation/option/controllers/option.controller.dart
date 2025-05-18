@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../../infrastructure/data/constants.dart';
 import '../../../infrastructure/data/led_model.dart';
 import '../../../translations/locales.dart';
 import '../../../infrastructure/data/theme_model.dart';
@@ -120,14 +121,19 @@ class OptionController extends GetxController {
     listController.loadDefaultData();
   }
 
+  String? encodeQueryParameters(Map<String, String> params) {
+    return params.entries
+        .map((MapEntry<String, String> e) =>
+            '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .join('&');
+  }
+
   void sendEmail() async {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
-      path: 'xyolstudio@gmail.com',
-      queryParameters: {
-        'subject': '[StrikingLED] Help && Feedback',
-        'body': '[YOU CAN WRITE WORDS FOR HELP OR FEEDBACK HERE]',
-      },
+      path: email,
+      query: encodeQueryParameters(
+          <String, String>{'subject': '[StrikingLED] Help && Feedback'}),
     );
 
     if (await canLaunchUrl(emailLaunchUri)) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project_led/infrastructure/data/constants.dart';
 
+import '../../infrastructure/data/constants.dart';
 import '../shared/scroll_text.dart';
 import 'controllers/home.controller.dart';
 import '../../infrastructure/data/led_model.dart';
