@@ -87,5 +87,5 @@ jobs:
       with:
         appId: ${{ secrets.FIREBASE_APP_ID }} # 你的Firebase应用ID
         token: ${{ secrets.FIREBASE_TOKEN }} # 之前获取的Firebase token
-        groups: testers # 分发组，可以是多个组用逗号分隔
+        groups: StrikingLED # 分发组，可以是多个组用逗号分隔
         file: build/app/outputs/apk/release/app-release.apk # APK路径
