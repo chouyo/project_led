@@ -1,4 +1,4 @@
-package com.xyol.strikingled
+package com.xyol.fancyled
 
 import android.content.Intent
 import io.flutter.embedding.android.FlutterActivity
