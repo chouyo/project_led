@@ -23,6 +23,11 @@ on:
         description: 'Product flavor (optional)'
         required: false
         type: string
+      distribute-to-firebase:
+        description: 'Distribute to firebase (optional)'
+        required: true
+        type: boolean
+        default: true
 
 jobs:
   build:
@@ -75,3 +80,12 @@ jobs:
           build/app/outputs/flutter-apk/app-release.apk
           build/app/outputs/bundle/release/app-release.aab
         if-no-files-found: warn
+
+    - name: Distribute APK to Firebase
+      if: ${{ github.event.inputs.branch }} == true
+      uses: wzieba/Firebase-Distribution-Github-Action@v1
+      with:
+        appId: ${{ secrets.FIREBASE_APP_ID }} # 你的Firebase应用ID
+        token: ${{ secrets.FIREBASE_TOKEN }} # 之前获取的Firebase token
+        groups: StrikingLED # 分发组，可以是多个组用逗号分隔
+        file: build/app/outputs/apk/release/app-release.apk # APK路径
