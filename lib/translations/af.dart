@@ -34,7 +34,13 @@ Map<String, String> translations = {
   'dataSettings': 'Data Instellings',
   'loadDefaultData': 'Laai Standaard Data',
   'loadDefaultDataSuccess': 'Standaard Data Sukses Laai',
-  'success': 'Sukses',
+  'success': 'Suksesvol',
+  'dataIsReady': 'Data is gereed',
+  'contactMethod': 'Kontakmetode',
+  'emailToMe': 'Stuur my \'n e-pos',
+  'aboutMe': 'Oor my',
+  'copied': 'Na knipbord gekopieer',
+  'ok': 'OK'
 };
 
 final Map<String, String> af = {

@@ -34,7 +34,13 @@ Map<String, String> translations = {
   'dataSettings': 'Налаштування даних',
   'loadDefaultData': 'Завантажити дані за замовчуванням',
   'loadDefaultDataSuccess': 'Дані за замовчуванням успішно завантажені',
+  'dataIsReady': 'Дані готові',
   'success': 'Успіх',
+  'contactMethod': 'Спосіб зв\'язку',
+  'emailToMe': 'Напишіть мені',
+  'aboutMe': 'Про мене',
+  'copied': 'Скопійовано в буфер обміну',
+  'ok': 'OK'
 };
 
 final Map<String, String> uk = {

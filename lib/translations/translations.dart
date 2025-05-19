@@ -90,15 +90,15 @@ class AppTranslations extends Translations {
         'bo': bo,
 
         // Middle Eastern & African Languages
-        'ar': ar,
-        'he': he,
-        'fa': fa,
+        // 'ar': ar,
+        // 'he': he,
+        // 'fa': fa,
         'am': am,
         'sw': sw,
         'af': af,
 
         // Other Languages
         'la': la,
-        'eo': eo,
+        //'eo': eo,
       };
 }

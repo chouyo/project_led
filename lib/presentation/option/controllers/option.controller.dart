@@ -1,6 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../../../infrastructure/data/constants.dart';
+import '../../../infrastructure/data/led_model.dart';
 import '../../../translations/locales.dart';
 import '../../../infrastructure/data/theme_model.dart';
 import '../../../infrastructure/data/locale_model.dart';
@@ -9,9 +15,11 @@ import '../../list/controllers/list.controller.dart';
 class OptionController extends GetxController {
   final Rx<ThemeMode> selectedThemeMode = ThemeMode.system.obs;
   final Rx<Locale> selectedLocale = Get.deviceLocale?.obs as Rx<Locale>;
+  final RxBool isDataEmpty = true.obs;
 
   late Box<ThemeModel> themeModelBox;
   late Box<LocaleModel> localeModelBox;
+  late Box<Led> ledBox;
 
   Future<void> loadTheme() async {
     themeModelBox = await Hive.openBox<ThemeModel>('themeModel');
@@ -44,12 +52,17 @@ class OptionController extends GetxController {
           selectedLocale.value = Locale(Get.deviceLocale!.languageCode);
         }
       }
-      if (!locales.keys.contains(selectedLocale.value.toString())) {
-        selectedLocale.value = getFallbackLocale();
-      }
     } else {
       selectedLocale.value = parseLocaleByModel(localeModel);
     }
+    if (!locales.keys.contains(selectedLocale.value.toString())) {
+      selectedLocale.value = getFallbackLocale();
+    }
+  }
+
+  Future<void> checkIsDataEmpty() async {
+    ledBox = await Hive.openBox<Led>('leds');
+    isDataEmpty.value = ledBox.values.isEmpty;
   }
 
   void setTheme(ThemeMode themeMode) {
@@ -109,5 +122,50 @@ class OptionController extends GetxController {
   void loadDefaultData() {
     final listController = Get.put(ListController());
     listController.loadDefaultData();
+  }
+
+  String? encodeQueryParameters(Map<String, String> params) {
+    return params.entries
+        .map((MapEntry<String, String> e) =>
+            '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .join('&');
+  }
+
+  void sendEmail() async {
+    if (Platform.isIOS) {
+      _sendEmailViaIos();
+    } else if (Platform.isAndroid) {
+      _sendEmailViaAndroid();
+    }
+  }
+
+  void _sendEmailViaIos() async {
+    final Uri emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: email,
+      query: encodeQueryParameters(
+          <String, String>{'subject': '[StrikingLED] Help && Feedback'}),
+    );
+
+    if (await canLaunchUrl(emailLaunchUri)) {
+      await launchUrl(emailLaunchUri);
+    } else {
+      Get.snackbar('failed'.tr,
+          'Can\'t open mail app. You can open about me to get email address.');
+    }
+  }
+
+  Future<void> _sendEmailViaAndroid() async {
+    const platform = MethodChannel('channelSendEmail');
+    try {
+      await platform.invokeMethod('sendEmail', {
+        'email': email,
+        'subject': '[StrikingLED] Help && Feedback',
+        'body': '',
+      });
+    } on PlatformException catch (e) {
+      Get.snackbar('failed'.tr,
+          'Can\'t open mail app. You can open about me to get email address.');
+    }
   }
 }

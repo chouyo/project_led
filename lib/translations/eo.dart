@@ -34,7 +34,13 @@ Map<String, String> translations = {
   'dataSettings': 'Dateno Agordoj',
   'loadDefaultData': 'Ŝargi Defaŭltan Daton',
   'loadDefaultDataSuccess': 'Defaŭlta Datoŝargita Sukses',
-  'success': 'Sukseso',
+  'dataIsReady': 'Datumoj estas pretaj',
+  'success': 'Sukceso',
+  'contactMethod': 'Kontakta metodo',
+  'emailToMe': 'Sendu al mi retpoŝton',
+  'aboutMe': 'Pri mi',
+  'copied': 'Kopiita al tondujo',
+  'ok': 'Bone'
 };
 
 final Map<String, String> eo = {

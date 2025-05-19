@@ -34,7 +34,13 @@ Map<String, String> translations = {
   'dataSettings': '데이터 설정',
   'loadDefaultData': '기본 데이터 로드',
   'loadDefaultDataSuccess': '기본 데이터 로드 성공',
+  'dataIsReady': '데이터 준비 완료',
   'success': '성공',
+  'contactMethod': '연락 방법',
+  'emailToMe': '이메일 보내기',
+  'aboutMe': '내 정보',
+  'copied': '클립보드에 복사됨',
+  'ok': '확인'
 };
 
 final Map<String, String> ko = {

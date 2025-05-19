@@ -34,7 +34,13 @@ Map<String, String> translations = {
   'dataSettings': 'Nastavitve Podatkov',
   'loadDefaultData': 'Naloži Standardne Podatke',
   'loadDefaultDataSuccess': 'Standardne Podatke Naložene',
-  'success': 'Uspeh',
+  'dataIsReady': 'Podatki so pripravljeni',
+  'success': 'Uspešno',
+  'contactMethod': 'Način stika',
+  'emailToMe': 'Pošljite mi e-pošto',
+  'aboutMe': 'O meni',
+  'copied': 'Kopirano v odložišče',
+  'ok': 'V redu'
 };
 
 final Map<String, String> sl = {

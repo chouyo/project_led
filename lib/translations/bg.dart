@@ -33,8 +33,14 @@ Map<String, String> translations = {
   'slow': 'Бавно',
   'dataSettings': 'Настройки на данните',
   'loadDefaultData': 'Зареждане на стандартни данни',
-  'loadDefaultDataSuccess': 'Стартови данни успешно заредени',
+  'loadDefaultDataSuccess': 'Данните по подразбиране са заредени успешно',
+  'dataIsReady': 'Данните са готови',
   'success': 'Успех',
+  'contactMethod': 'Начин на контакт',
+  'emailToMe': 'Изпрати ми имейл',
+  'aboutMe': 'За мен',
+  'copied': 'Копирано в клипборда',
+  'ok': 'OK'
 };
 
 final Map<String, String> bg = {

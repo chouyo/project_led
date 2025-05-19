@@ -35,6 +35,12 @@ Map<String, String> translations = {
   'loadDefaultData': 'Varsayılan Veriyi Yükle',
   'loadDefaultDataSuccess': 'Varsayılan Veri Yüklendi',
   'success': 'Başarılı',
+  'dataIsReady': 'Veriler hazır',
+  'contactMethod': 'İletişim yöntemi',
+  'emailToMe': 'Bana e-posta gönder',
+  'aboutMe': 'Hakkımda',
+  'copied': 'Panoya kopyalandı',
+  'ok': 'Tamam'
 };
 
 final Map<String, String> tr = {

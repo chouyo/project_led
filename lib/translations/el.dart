@@ -33,8 +33,14 @@ Map<String, String> translations = {
   'slow': 'Αργά',
   'dataSettings': 'Ρυθμίσεις δεδομένων',
   'loadDefaultData': 'Φόρτωση προεπιλεγμένων δεδομένων',
-  'loadDefaultDataSuccess': 'Τα προεπιλεγμένα δεδομένα είναι επιτυχής',
+  'loadDefaultDataSuccess': 'Τα προεπιλεγμένα δεδομένα φορτώθηκαν με επιτυχία',
   'success': 'Επιτυχία',
+  'dataIsReady': 'Τα δεδομένα είναι έτοιμα',
+  'contactMethod': 'Μέθοδος επικοινωνίας',
+  'emailToMe': 'Στείλτε μου email',
+  'aboutMe': 'Σχετικά με εμένα',
+  'copied': 'Αντιγράφηκε στο πρόχειρο',
+  'ok': 'OK'
 };
 
 final Map<String, String> el = {

@@ -35,6 +35,12 @@ Map<String, String> translations = {
   'loadDefaultData': 'Lataa oletusarvotiedot',
   'loadDefaultDataSuccess': 'Oletusarvotiedot ladattu',
   'success': 'Onnistui',
+  'dataIsReady': 'Data on valmis',
+  'contactMethod': 'Yhteydenottotapa',
+  'emailToMe': 'Lähetä minulle sähköpostia',
+  'aboutMe': 'Tietoa minusta',
+  'copied': 'Kopioitu leikepöydälle',
+  'ok': 'OK'
 };
 
 final Map<String, String> fi = {

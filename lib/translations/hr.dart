@@ -34,7 +34,13 @@ Map<String, String> translations = {
   'dataSettings': 'Postavke podataka',
   'loadDefaultData': 'Učitaj podatke po zadanom',
   'loadDefaultDataSuccess': 'Podatci su uspješno učitani',
+  'dataIsReady': 'Podaci su spremni',
   'success': 'Uspjeh',
+  'contactMethod': 'Način kontakta',
+  'emailToMe': 'Pošaljite mi e-mail',
+  'aboutMe': 'O meni',
+  'copied': 'Kopirano u međuspremnik',
+  'ok': 'U redu'
 };
 
 final Map<String, String> hr = {

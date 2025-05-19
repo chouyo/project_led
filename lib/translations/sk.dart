@@ -33,8 +33,14 @@ Map<String, String> translations = {
   'slow': 'Pomalé',
   'dataSettings': 'Nastavenia údajov',
   'loadDefaultData': 'Načítať údaje podľa prednastavených',
-  'loadDefaultDataSuccess': 'Údaje podľa prednastavených úspešne načtené',
+  'loadDefaultDataSuccess': 'Predvolené údaje boli úspešne načítané',
+  'dataIsReady': 'Údaje sú pripravené',
   'success': 'Úspech',
+  'contactMethod': 'Spôsob kontaktu',
+  'emailToMe': 'Napíšte mi email',
+  'aboutMe': 'O mne',
+  'copied': 'Skopírované do schránky',
+  'ok': 'OK'
 };
 
 final Map<String, String> sk = {

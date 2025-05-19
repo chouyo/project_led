@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:project_led/infrastructure/data/theme_model.dart';
-import 'package:project_led/presentation/option/controllers/option.controller.dart';
+
 import 'infrastructure/data/locale_model.dart';
 import 'infrastructure/data/speed_adapter.dart';
 import 'infrastructure/data/theme_adapter.dart';
+import 'infrastructure/data/theme_model.dart';
 import 'infrastructure/navigation/navigation.dart';
 import 'infrastructure/navigation/routes.dart';
+import 'presentation/option/controllers/option.controller.dart';
 import 'presentation/shared/main_drawer.dart';
 import 'infrastructure/data/led_model.dart';
 import 'infrastructure/data/color_adapter.dart';
@@ -19,7 +21,9 @@ import 'ads/app_open_ad_manager.dart';
 import 'ads/consent_manager.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
@@ -45,6 +49,7 @@ void main() async {
   final optionController = Get.put(OptionController());
   await optionController.loadTheme();
   await optionController.loadLocale();
+  await optionController.checkIsDataEmpty();
 
   runApp(Main(initialRoute));
 }
@@ -64,12 +69,14 @@ class _MainState extends State<Main> {
 
   final _appOpenAdManager = AppOpenAdManager();
   var _isMobileAdsInitializeCalled = false;
-  var _isPrivacyOptionsRequired = false;
   late AppLifecycleReactor _appLifecycleReactor;
 
   @override
   void initState() {
     super.initState();
+
+    removeFlutterNativeSplash();
+
     initialRoute = widget.initialRoute;
 
     _appLifecycleReactor = AppLifecycleReactor(
@@ -120,9 +127,7 @@ class _MainState extends State<Main> {
 
   void _getIsPrivacyOptionsRequired() async {
     if (await ConsentManager.instance.isPrivacyOptionsRequired()) {
-      setState(() {
-        _isPrivacyOptionsRequired = true;
-      });
+      setState(() {});
     }
   }
 
@@ -142,5 +147,10 @@ class _MainState extends State<Main> {
       // Load an ad.
       _appOpenAdManager.loadAd();
     }
+  }
+
+  void removeFlutterNativeSplash() async {
+    await Future.delayed(Duration(seconds: 2));
+    FlutterNativeSplash.remove();
   }
 }

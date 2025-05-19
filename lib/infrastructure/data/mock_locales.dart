@@ -43,15 +43,15 @@ class MockLocales {
     'bo',
 
     // Middle Eastern & African Languages
-    'ar',
-    'he',
-    'fa',
+    // 'ar',
+    // 'he',
+    // 'fa',
     'am',
     'sw',
     'af',
 
     // Other Languages
     'la',
-    'eo',
+    // 'eo',
   ];
 }

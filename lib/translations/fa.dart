@@ -34,7 +34,13 @@ Map<String, String> translations = {
   'dataSettings': 'تنظیمات داده',
   'loadDefaultData': 'داده‌های پیش‌فرض بارگیری کنید',
   'loadDefaultDataSuccess': 'داده‌های پیش‌فرض بارگیری شد',
-  'success': 'موفق',
+  'success': 'موفقیت',
+  'dataIsReady': 'داده‌ها آماده هستند',
+  'contactMethod': 'روش تماس',
+  'emailToMe': 'به من ایمیل بزنید',
+  'aboutMe': 'درباره من',
+  'copied': 'در کلیپ‌بورد کپی شد',
+  'ok': 'باشه'
 };
 
 final Map<String, String> fa = {

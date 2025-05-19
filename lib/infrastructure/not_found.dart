@@ -13,8 +13,7 @@ class _NotFoundState extends State<NotFound> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Lottie.asset(getRandomLottieAsset(),
-          width: 200, height: 200, fit: BoxFit.cover),
+      child: Lottie.asset(getRandomLottieAsset(), fit: BoxFit.cover),
     );
   }
 }

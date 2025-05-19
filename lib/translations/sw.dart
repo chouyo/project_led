@@ -34,7 +34,13 @@ Map<String, String> translations = {
   'dataSettings': 'Mipangilio ya Data',
   'loadDefaultData': 'Kupata Data Kawaida',
   'loadDefaultDataSuccess': 'Data Kawaida Kupatikana',
-  'success': 'Mafanikio',
+  'dataIsReady': 'Data iko tayari',
+  'success': 'Imefanikiwa',
+  'contactMethod': 'Njia ya mawasiliano',
+  'emailToMe': 'Nitume barua pepe',
+  'aboutMe': 'Kuhusu mimi',
+  'copied': 'Imenakiliwa kwenye ubao wa kunakili',
+  'ok': 'Sawa'
 };
 
 final Map<String, String> sw = {

@@ -34,7 +34,13 @@ Map<String, String> translations = {
   'dataSettings': 'డేటా అమరికలు',
   'loadDefaultData': 'డిఫాల్ట్ డేటా లోడ్ చేయండి',
   'loadDefaultDataSuccess': 'డిఫాల్ట్ డేటా లోడ్ సాధ్యం',
-  'success': 'సాధ్యం',
+  'success': 'విజయం',
+  'dataIsReady': 'డేటా సిద్ధంగా ఉంది',
+  'contactMethod': 'సంప్రదింపు పద్ధతి',
+  'emailToMe': 'నాకు ఇమెయిల్ పంపండి',
+  'aboutMe': 'నా గురించి',
+  'copied': 'క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది',
+  'ok': 'సరే'
 };
 
 final Map<String, String> te = {
