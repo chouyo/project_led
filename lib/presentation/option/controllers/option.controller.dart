@@ -163,7 +163,7 @@ class OptionController extends GetxController {
         'subject': '[StrikingLED] Help && Feedback',
         'body': '',
       });
-    } on PlatformException catch (e) {
+    } on PlatformException catch (exception) {
       Get.snackbar('failed'.tr,
           'Can\'t open mail app. You can open about me to get email address.');
     }
