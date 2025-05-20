@@ -84,10 +84,10 @@ jobs:
     - name: Distribute Preparation
       id: distribute
       run: |
-        if [ -f app/build/outputs/bundle/release/*.aab ]; then
-          echo "file=app/build/outputs/bundle/release/*.aab" >> $GITHUB_OUTPUT
-        elif [ -f app/build/outputs/apk/release/*.apk ]; then
-          echo "file=app/build/outputs/apk/release/*.apk" >> $GITHUB_OUTPUT
+        if [ -f build/app/outputs/bundle/release/app-release.aab ]; then
+          echo "file=build/app/outputs/bundle/release/app-release.aab" >> $GITHUB_OUTPUT
+        elif [ -f build/app/outputs/flutter-apk/app-release.apk ]; then
+          echo "file=build/app/outputs/flutter-apk/app-release.apk" >> $GITHUB_OUTPUT
         else
           echo "Error: No release file found!"
           exit 1
