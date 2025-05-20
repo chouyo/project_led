@@ -81,13 +81,24 @@ jobs:
           build/app/outputs/bundle/release/app-release.aab
         if-no-files-found: warn
 
-    - name: Distribute APK to Firebase
-      if: ${{ github.event.inputs.branch }} == true
+    - name: Distribute Preparation
+      id: distribute
+      run: |
+        if [ -f app/build/outputs/bundle/release/*.aab ]; then
+          echo "file=app/build/outputs/bundle/release/*.aab" >> $GITHUB_OUTPUT
+        elif [ -f app/build/outputs/apk/release/*.apk ]; then
+          echo "file=app/build/outputs/apk/release/*.apk" >> $GITHUB_OUTPUT
+        else
+          echo "Error: No release file found!"
+          exit 1
+        fi
+    
+    - name: Distribute to Firebase
+      if: ${{ github.event.inputs.distribute-to-firebase }} == true
       uses: wzieba/Firebase-Distribution-Github-Action@v1
       with:
         appId: ${{ secrets.FIREBASE_APP_ID }} # 你的Firebase应用ID
         token: ${{ secrets.FIREBASE_TOKEN }} # 之前获取的Firebase token
         groups: StrikingLED # 分发组，可以是多个组用逗号分隔
-        file: |
-          build/app/outputs/flutter-apk/app-release.apk
-          build/app/outputs/bundle/release/app-release.aab
+        file: ${{ steps.distribute.outputs.file }}
+        releaseNotes: "Build #${{ github.run_number }} - ${{ github.sha }}"
