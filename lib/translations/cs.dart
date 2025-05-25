@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Napište mi e-mail',
   'aboutMe': 'O mně',
   'copied': 'Zkopírováno do schránky',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Nepodařilo se',
+  'canNotOpenMailApp':
+      'Nelze otevřít e-mailovou aplikaci. Můžete otevřít o mně pro získání e-mailové adresy.'
 };
 
 final Map<String, String> cs = {

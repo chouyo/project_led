@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Send mig en e-mail',
   'aboutMe': 'Om mig',
   'copied': 'Kopieret til udklipsholderen',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Fejlet',
+  'canNotOpenMailApp':
+      'Kan ikke åbne e-mail-app. Du kan åbne om mig for at få e-mail-adressen.'
 };
 
 final Map<String, String> da = {

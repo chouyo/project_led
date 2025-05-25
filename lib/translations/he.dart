@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'שלח לי דוא"ל',
   'aboutMe': 'אודותיי',
   'copied': 'הועתק ללוח',
-  'ok': 'אישור'
+  'ok': 'אישור',
+  'failed': 'כשל',
+  'canNotOpenMailApp':
+      'לא ניתן לפתוח אפליקציית דואר אלקטרוני. ניתן לפתוח את דף הביטוי עליי כדי לקבל את כתובת הדואר האלקטרוני שלי.'
 };
 
 final Map<String, String> he = {

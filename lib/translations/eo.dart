@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Sendu al mi retpoŝton',
   'aboutMe': 'Pri mi',
   'copied': 'Kopiita al tondujo',
-  'ok': 'Bone'
+  'ok': 'Bone',
+  'failed': 'Malsukceso',
+  'canNotOpenMailApp':
+      'Ne eblas malfermi retpoŝtan aplikaĵon. Vi povas malfermi pri mi por ricevi retpoŝtan adreson.'
 };
 
 final Map<String, String> eo = {

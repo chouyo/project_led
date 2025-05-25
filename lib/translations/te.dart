@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'నాకు ఇమెయిల్ పంపండి',
   'aboutMe': 'నా గురించి',
   'copied': 'క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది',
-  'ok': 'సరే'
+  'ok': 'సరే',
+  'failed': 'విఫలం',
+  'canNotOpenMailApp':
+      'ఇమెయిల్ అనువర్తనాన్ని తెరవలేముందు. మీరు నా గురించి పేజీని తెరవి ఇమెయిల్ చిరునామాను పొందవచ్చు.'
 };
 
 final Map<String, String> te = {

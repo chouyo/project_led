@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'E-Mail an mich',
   'aboutMe': 'Über mich',
   'copied': 'In die Zwischenablage kopiert',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Fehlgeschlagen',
+  'canNotOpenMailApp':
+      'Die E-Mail-App kann nicht geöffnet werden. Sie können auf "Über mich" klicken, um die E-Mail-Adresse zu erhalten.'
 };
 
 final Map<String, String> de = {

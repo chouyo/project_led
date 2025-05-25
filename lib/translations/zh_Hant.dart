@@ -41,7 +41,9 @@ Map<String, String> translations = {
   'emailToMe': '給我發郵件',
   'aboutMe': '關於我',
   'copied': '已經複製到剪貼板',
-  'ok': '確定'
+  'ok': '確定',
+  'failed': '失敗',
+  'canNotOpenMailApp': '無法打開郵件應用。您可以打開關於我頁面獲取郵箱地址。'
 };
 
 final Map<String, String> zh_Hant = {

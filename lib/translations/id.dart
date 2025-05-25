@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Kirim email ke saya',
   'aboutMe': 'Tentang saya',
   'copied': 'Disalin ke papan klip',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Gagal',
+  'canNotOpenMailApp':
+      'Tidak dapat membuka aplikasi email. Anda dapat membuka tentang saya untuk mendapatkan alamat email.'
 };
 
 final Map<String, String> id = {

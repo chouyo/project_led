@@ -150,8 +150,7 @@ class OptionController extends GetxController {
     if (await canLaunchUrl(emailLaunchUri)) {
       await launchUrl(emailLaunchUri);
     } else {
-      Get.snackbar('failed'.tr,
-          'Can\'t open mail app. You can open about me to get email address.');
+      Get.snackbar('failed'.tr, 'canNotOpenMailApp'.tr);
     }
   }
 
@@ -164,8 +163,7 @@ class OptionController extends GetxController {
         'body': '',
       });
     } on PlatformException catch (exception) {
-      Get.snackbar('failed'.tr,
-          'Can\'t open mail app. You can open about me to get email address.');
+      Get.snackbar('failed'.tr, 'canNotOpenMailApp'.tr);
     }
   }
 }

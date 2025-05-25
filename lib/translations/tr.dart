@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Bana e-posta gönder',
   'aboutMe': 'Hakkımda',
   'copied': 'Panoya kopyalandı',
-  'ok': 'Tamam'
+  'ok': 'Tamam',
+  'failed': 'Başarısız',
+  'canNotOpenMailApp':
+      'E-posta uygulamasını açamıyor. E-posta adresini almak için Hakkımda sayfasını açabilirsiniz.'
 };
 
 final Map<String, String> tr = {

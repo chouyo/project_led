@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Lähetä minulle sähköpostia',
   'aboutMe': 'Tietoa minusta',
   'copied': 'Kopioitu leikepöydälle',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Epäonnistui',
+  'canNotOpenMailApp':
+      'Ei voi avata sähköpostisovellusta. Voit avata olen minusta saadaksesi sähköpostiosoitteen.'
 };
 
 final Map<String, String> fi = {

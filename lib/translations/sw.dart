@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Nitume barua pepe',
   'aboutMe': 'Kuhusu mimi',
   'copied': 'Imenakiliwa kwenye ubao wa kunakili',
-  'ok': 'Sawa'
+  'ok': 'Sawa',
+  'failed': 'Imefanikiwa',
+  'canNotOpenMailApp':
+      'Hakuna programu ya barua pepe. Unaweza kufungua ukurasa wa kuhusu mimi ili kupata barua pepe.'
 };
 
 final Map<String, String> sw = {

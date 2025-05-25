@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'ང་ལ་གློག་འཕྲིན་བཏང་།',
   'aboutMe': 'ངའི་སྐོར།',
   'copied': 'འདྲ་བཤུས་བཟོས་ཟིན།',
-  'ok': 'ལེགས་སོ།'
+  'ok': 'ལེགས་སོ།',
+  'failed': 'མིང་པོ།',
+  'canNotOpenMailApp':
+      'གློག་འཕྲིན་གཏོང་ཆས་ཁ་ཕྱེ་མ་ཐུབ། ངའི་སྐོར་ཤོག་ངོས་ནས་གློག་འཕྲིན་གཏོང་ཁ་བྱང་ཐོབ་ཐུབ།'
 };
 
 final Map<String, String> bo = {

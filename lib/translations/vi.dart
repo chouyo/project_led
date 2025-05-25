@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Gửi email cho tôi',
   'aboutMe': 'Về tôi',
   'copied': 'Đã sao chép vào bộ nhớ tạm',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Thất bại',
+  'canNotOpenMailApp':
+      'Không thể mở ứng dụng email. Bạn có thể mở trang Về tôi để lấy địa chỉ email.'
 };
 
 final Map<String, String> vi = {

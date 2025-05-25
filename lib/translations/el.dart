@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Στείλτε μου email',
   'aboutMe': 'Σχετικά με εμένα',
   'copied': 'Αντιγράφηκε στο πρόχειρο',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Αποτυχία',
+  'canNotOpenMailApp':
+      'Αδυναμία ανοίγματος της εφαρμογής email. Μπορείτε να ανοίξετε σχετικά με εμένα για να λάβετε την διεύθυνση email.'
 };
 
 final Map<String, String> el = {

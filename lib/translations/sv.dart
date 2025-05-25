@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Skicka e-post till mig',
   'aboutMe': 'Om mig',
   'copied': 'Kopierat till urklipp',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Misslyckades',
+  'canNotOpenMailApp':
+      'Kan inte öppna e-postappen. Du kan öppna om mig för att få e-postadressen.'
 };
 
 final Map<String, String> sv = {

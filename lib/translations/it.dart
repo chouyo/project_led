@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Invia email',
   'aboutMe': 'Chi sono',
   'copied': 'Copiato negli appunti',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Fallito',
+  'canNotOpenMailApp':
+      'Non è possibile aprire l\'app email. Puoi aprire su di me per ottenere l\'indirizzo email.'
 };
 
 final Map<String, String> it = {

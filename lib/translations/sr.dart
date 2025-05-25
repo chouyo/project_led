@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Пошаљите ми имејл',
   'aboutMe': 'О мени',
   'copied': 'Копирано у оставу',
-  'ok': 'У реду'
+  'ok': 'У реду',
+  'failed': 'Неуспех',
+  'canNotOpenMailApp':
+      'Не можете отворити е-пошту. Можете отворити о мени да бисте добили адресу е-поште.'
 };
 
 final Map<String, String> sr = {

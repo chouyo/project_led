@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Küldjön e-mailt nekem',
   'aboutMe': 'Rólam',
   'copied': 'Vágólapra másolva',
-  'ok': 'Rendben'
+  'ok': 'Rendben',
+  'failed': 'Sikertelen',
+  'canNotOpenMailApp':
+      'Nem lehet megnyitni az e-mail alkalmazást. Megnyithatja a rólam oldalt, hogy megkapja az e-mail címet.'
 };
 
 final Map<String, String> hu = {

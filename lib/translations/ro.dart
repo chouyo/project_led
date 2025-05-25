@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Trimite-mi un e-mail',
   'aboutMe': 'Despre mine',
   'copied': 'Copiat în clipboard',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Eșuat',
+  'canNotOpenMailApp':
+      'Nu se poate deschide aplicația de e-mail. Puteți deschide despre mine pentru a obține adresa de e-mail.'
 };
 
 final Map<String, String> ro = {

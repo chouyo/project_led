@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Написать мне',
   'aboutMe': 'Обо мне',
   'copied': 'Скопировано в буфер обмена',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Не удалось',
+  'canNotOpenMailApp':
+      'Не удалось открыть почту. Вы можете открыть о себе, чтобы получить адрес электронной почты.'
 };
 
 final Map<String, String> ru = {

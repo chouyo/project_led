@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'ኢሜይል ይላኩልኝ',
   'aboutMe': 'ስለ እኔ',
   'copied': 'ወደ ቅንጥብ ሰሌዳ ተቅድቷል',
-  'ok': 'እሺ'
+  'ok': 'እሺ',
+  'failed': 'መልእክት መልእክት',
+  'canNotOpenMailApp':
+      'ኢሜይል መተግበሪያውን ማክፈት አይቻልም። ኢሜይል አድራሻውን ለማግኘት ስለ እኔ ገጹን ማክፈት ይችላሉ።'
 };
 
 final Map<String, String> am = {

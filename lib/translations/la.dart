@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'Mitte mihi electronica epistula',
   'aboutMe': 'De me',
   'copied': 'In tabulam scriptoriam copiatum est',
-  'ok': 'Bene'
+  'ok': 'Bene',
+  'failed': 'Fallus',
+  'canNotOpenMailApp':
+      'Non potest e-mail appena aperire. Pone me, ut e-mail adressum habere possis.'
 };
 
 final Map<String, String> la = {

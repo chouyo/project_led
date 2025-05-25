@@ -40,7 +40,10 @@ Map<String, String> translations = {
   'emailToMe': 'به من ایمیل بزنید',
   'aboutMe': 'درباره من',
   'copied': 'در کلیپ‌بورد کپی شد',
-  'ok': 'باشه'
+  'ok': 'باشه',
+  'failed': 'ناموفق',
+  'canNotOpenMailApp':
+      'نمی توانید ایمیل را باز کنید. می توانید برای دریافت آدرس ایمیل بر روی من کلیک کنید.'
 };
 
 final Map<String, String> fa = {

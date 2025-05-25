@@ -40,7 +40,9 @@ Map<String, String> translations = {
   'emailToMe': '给我发邮件',
   'aboutMe': '关于我',
   'copied': '已经拷贝到剪切板',
-  'ok': '确定'
+  'ok': '确定',
+  'failed': '失败',
+  'canNotOpenMailApp': '无法打开邮件应用。您可以打开关于我页面获取邮箱地址。'
 };
 
 final Map<String, String> zh_Hans = {

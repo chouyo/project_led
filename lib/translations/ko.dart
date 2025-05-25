@@ -40,7 +40,9 @@ Map<String, String> translations = {
   'emailToMe': '이메일 보내기',
   'aboutMe': '내 정보',
   'copied': '클립보드에 복사됨',
-  'ok': '확인'
+  'ok': '확인',
+  'failed': '실패',
+  'canNotOpenMailApp': '이메일 앱을 열 수 없습니다. 이메일 주소를 얻으려면 내 정보 페이지를 열 수 있습니다.'
 };
 
 final Map<String, String> ko = {
