@@ -43,7 +43,9 @@ Map<String, String> translations = {
   'ok': 'Bone',
   'failed': 'Malsukceso',
   'canNotOpenMailApp':
-      'Ne eblas malfermi retpoŝtan aplikaĵon. Vi povas malfermi pri mi por ricevi retpoŝtan adreson.'
+      'Ne eblas malfermi retpoŝtan aplikaĵon. Vi povas malfermi pri mi por ricevi retpoŝtan adreson.',
+  'loadDemoLed': 'Ŝargi Defaŭltan LED',
+  'noData': 'Neniu LED, klaku la butonon sube por aldoni LED ekzemplo.',
 };
 
 final Map<String, String> eo = {

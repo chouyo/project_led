@@ -43,7 +43,9 @@ Map<String, String> translations = {
   'ok': 'Sawa',
   'failed': 'Imefanikiwa',
   'canNotOpenMailApp':
-      'Hakuna programu ya barua pepe. Unaweza kufungua ukurasa wa kuhusu mimi ili kupata barua pepe.'
+      'Hakuna programu ya barua pepe. Unaweza kufungua ukurasa wa kuhusu mimi ili kupata barua pepe.',
+  'loadDemoLed': 'Kupata LED Kawaida',
+  'noData': 'Hakuna LED, chagua chaguo chini ili kuongeza LED kawaida.',
 };
 
 final Map<String, String> sw = {

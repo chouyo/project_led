@@ -43,7 +43,10 @@ Map<String, String> translations = {
   'ok': 'OK',
   'failed': 'Nepodarilo sa',
   'canNotOpenMailApp':
-      'Nie je možné otvoriť e-mailovú aplikáciu. Môžete otvoriť o mne, aby ste získali e-mailovú adresu.'
+      'Nie je možné otvoriť e-mailovú aplikáciu. Môžete otvoriť o mne, aby ste získali e-mailovú adresu.',
+  'loadDemoLed': 'Načítať predvolené LED',
+  'noData':
+      'Žiadne LED, kliknite na tlačidlo nižšie pre pridanie predvoleného LED.',
 };
 
 final Map<String, String> sk = {

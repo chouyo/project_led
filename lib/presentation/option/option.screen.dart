@@ -282,33 +282,6 @@ class OptionScreen extends GetView<OptionController> {
               ],
             ),
             SizedBox(height: 12),
-            Obx(
-              () => _buildSection(
-                'dataSettings'.tr,
-                [
-                  _buildCardWithTitleOnly(
-                    Icons.archive,
-                    controller.isDataEmpty.value
-                        ? 'loadDefaultData'.tr
-                        : 'dataIsReady'.tr,
-                    onTap: () async {
-                      controller.loadDefaultData();
-                      if (controller.isDataEmpty.value) {
-                        Get.snackbar(
-                          'success'.tr,
-                          'loadDefaultDataSuccess'.tr,
-                          snackPosition: SnackPosition.TOP,
-                          duration: Duration(seconds: 2),
-                          isDismissible: true,
-                        );
-                        await controller.checkIsDataEmpty();
-                      }
-                    },
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 12),
             _buildSection(
               'contactMethod'.tr,
               [

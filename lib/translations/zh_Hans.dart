@@ -42,7 +42,9 @@ Map<String, String> translations = {
   'copied': '已经拷贝到剪切板',
   'ok': '确定',
   'failed': '失败',
-  'canNotOpenMailApp': '无法打开邮件应用。您可以打开关于我页面获取邮箱地址。'
+  'canNotOpenMailApp': '无法打开邮件应用。您可以打开关于我页面获取邮箱地址。',
+  'loadDemoLed': '加载示例LED',
+  'noData': '暂无LED，点击下方按钮可添加示例LED。',
 };
 
 final Map<String, String> zh_Hans = {

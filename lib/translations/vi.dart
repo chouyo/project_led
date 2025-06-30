@@ -43,7 +43,9 @@ Map<String, String> translations = {
   'ok': 'OK',
   'failed': 'Thất bại',
   'canNotOpenMailApp':
-      'Không thể mở ứng dụng email. Bạn có thể mở trang Về tôi để lấy địa chỉ email.'
+      'Không thể mở ứng dụng email. Bạn có thể mở trang Về tôi để lấy địa chỉ email.',
+  'loadDemoLed': 'โหลด LED ตัวอย่าง',
+  'noData': 'Không có LED, bấm nút bên dưới để thêm LED mẫu.',
 };
 
 final Map<String, String> vi = {

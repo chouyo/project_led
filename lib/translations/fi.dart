@@ -43,7 +43,9 @@ Map<String, String> translations = {
   'ok': 'OK',
   'failed': 'Epäonnistui',
   'canNotOpenMailApp':
-      'Ei voi avata sähköpostisovellusta. Voit avata olen minusta saadaksesi sähköpostiosoitteen.'
+      'Ei voi avata sähköpostisovellusta. Voit avata olen minusta saadaksesi sähköpostiosoitteen.',
+  'loadDemoLed': 'Lataa oletusarvotiedot',
+  'noData': 'Ei LED, klikkaa painiketta alla lisäämään LED-esimerkki.',
 };
 
 final Map<String, String> fi = {

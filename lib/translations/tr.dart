@@ -43,7 +43,9 @@ Map<String, String> translations = {
   'ok': 'Tamam',
   'failed': 'Başarısız',
   'canNotOpenMailApp':
-      'E-posta uygulamasını açamıyor. E-posta adresini almak için Hakkımda sayfasını açabilirsiniz.'
+      'E-posta uygulamasını açamıyor. E-posta adresini almak için Hakkımda sayfasını açabilirsiniz.',
+  'loadDemoLed': 'Örnek LED Yükle',
+  'noData': 'LED yok, aşağıdaki butona tıklayarak örnek LED ekleyebilirsiniz.',
 };
 
 final Map<String, String> tr = {

@@ -43,7 +43,10 @@ Map<String, String> translations = {
   'ok': 'OK',
   'failed': 'Mislykket',
   'canNotOpenMailApp':
-      'Kan ikke åpne e-post. Åpne om meg for å få e-postadressen.'
+      'Kan ikke åpne e-post. Åpne om meg for å få e-postadressen.',
+  'loadDemoLed': 'Last standard LED',
+  'noData':
+      'Ingen LED, klikk på knappen nedenfor for å legge til en standard LED.',
 };
 
 final Map<String, String> nb = {

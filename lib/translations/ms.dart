@@ -43,7 +43,9 @@ Map<String, String> translations = {
   'ok': 'OK',
   'failed': 'Gagal',
   'canNotOpenMailApp':
-      'Tidak dapat membuka aplikasi e-mel. Anda boleh membuka tentang saya untuk mendapatkan alamat e-mel.'
+      'Tidak dapat membuka aplikasi e-mel. Anda boleh membuka tentang saya untuk mendapatkan alamat e-mel.',
+  'loadDemoLed': 'Muat LED Lalai',
+  'noData': 'Tiada LED, klik butang di bawah untuk menambah LED contoh.',
 };
 
 final Map<String, String> ms = {

@@ -43,7 +43,9 @@ Map<String, String> translations = {
   'ok': 'OK',
   'failed': 'Fejlet',
   'canNotOpenMailApp':
-      'Kan ikke åbne e-mail-app. Du kan åbne om mig for at få e-mail-adressen.'
+      'Kan ikke åbne e-mail-app. Du kan åbne om mig for at få e-mail-adressen.',
+  'loadDemoLed': 'Indlæs standard LED',
+  'noData': 'Ingen LED, klik på knappen nedenfor for at tilføje en LED-demo.',
 };
 
 final Map<String, String> da = {

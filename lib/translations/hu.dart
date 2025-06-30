@@ -43,7 +43,9 @@ Map<String, String> translations = {
   'ok': 'Rendben',
   'failed': 'Sikertelen',
   'canNotOpenMailApp':
-      'Nem lehet megnyitni az e-mail alkalmazást. Megnyithatja a rólam oldalt, hogy megkapja az e-mail címet.'
+      'Nem lehet megnyitni az e-mail alkalmazást. Megnyithatja a rólam oldalt, hogy megkapja az e-mail címet.',
+  'loadDemoLed': 'Alapértelmezett LED betöltése',
+  'noData': 'Nincs LED, kattintson a gombra a LED példa hozzáadásához.',
 };
 
 final Map<String, String> hu = {

@@ -42,7 +42,9 @@ Map<String, String> translations = {
   'copied': 'クリップボードにコピーしました',
   'ok': 'OK',
   'failed': '失敗',
-  'canNotOpenMailApp': 'メールアプリを開けません。メールアドレスを取得するには、私についてのページを開くことができます。'
+  'canNotOpenMailApp': 'メールアプリを開けません。メールアドレスを取得するには、私についてのページを開くことができます。',
+  'loadDemoLed': 'デフォルトLEDを読み込む',
+  'noData': 'LEDがありません。下のボタンをクリックして、LEDの例を追加できます。',
 };
 
 final Map<String, String> ja = {

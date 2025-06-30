@@ -43,7 +43,9 @@ Map<String, String> translations = {
   'ok': 'OK',
   'failed': 'Misluk',
   'canNotOpenMailApp':
-      'Kan nie e-pos-app oop maak nie. U kan oor my klik om die e-posadres te kry.'
+      'Kan nie e-pos-app oop maak nie. U kan oor my klik om die e-posadres te kry.',
+  'loadDemoLed': 'Laai Standaard LED',
+  'noData': 'Geen LED, klik op die knop hieronder om \'n LED-demo by te voeg.',
 };
 
 final Map<String, String> af = {

@@ -43,7 +43,10 @@ Map<String, String> translations = {
   'ok': 'OK',
   'failed': 'Fehlgeschlagen',
   'canNotOpenMailApp':
-      'Die E-Mail-App kann nicht geöffnet werden. Sie können auf "Über mich" klicken, um die E-Mail-Adresse zu erhalten.'
+      'Die E-Mail-App kann nicht geöffnet werden. Sie können auf "Über mich" klicken, um die E-Mail-Adresse zu erhalten.',
+  'loadDemoLed': 'Standard-LED laden',
+  'noData':
+      'Keine LED, klicken Sie auf die Schaltfläche unten, um eine LED-Demo hinzuzufügen.',
 };
 
 final Map<String, String> de = {

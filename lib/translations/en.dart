@@ -43,7 +43,9 @@ Map<String, String> translations = {
   'ok': 'OK',
   'failed': 'Failed',
   'canNotOpenMailApp':
-      'Cannot open mail app. You can open about me to get the email address.'
+      'Cannot open mail app. You can open about me to get the email address.',
+  'loadDemoLed': 'Load Default LED',
+  'noData': 'No LED, click the button below to add a demo LED.',
 };
 
 final Map<String, String> en = {

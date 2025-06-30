@@ -43,7 +43,9 @@ Map<String, String> translations = {
   'ok': 'እሺ',
   'failed': 'መልእክት መልእክት',
   'canNotOpenMailApp':
-      'ኢሜይል መተግበሪያውን ማክፈት አይቻልም። ኢሜይል አድራሻውን ለማግኘት ስለ እኔ ገጹን ማክፈት ይችላሉ።'
+      'ኢሜይል መተግበሪያውን ማክፈት አይቻልም። ኢሜይል አድራሻውን ለማግኘት ስለ እኔ ገጹን ማክፈት ይችላሉ።',
+  'loadDemoLed': 'መጠን መጠን መጠን',
+  'noData': 'መጠን መጠን መጠን',
 };
 
 final Map<String, String> am = {
