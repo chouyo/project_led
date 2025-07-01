@@ -5,13 +5,16 @@ import '../../../infrastructure/data/mock_leds.dart';
 
 class ListController extends GetxController {
   final RxList<Led> leds = <Led>[].obs;
+  final RxBool isLoading = true.obs;
   Box<Led>? ledBox;
 
   @override
   void onInit() async {
     super.onInit();
+    isLoading.value = true;
     await initBox();
     leds.value = ledBox!.values.toList();
+    isLoading.value = false;
   }
 
   Future<void> initBox() async {
