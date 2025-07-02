@@ -37,7 +37,7 @@ Map<String, String> translations = {
   'dataIsReady': 'سانلىق مەلۇمات تەييار',
   'success': 'مۇۋەپپەقىيەتلىك',
   'contactMethod': 'ئالاقىلىشىش ئۇسۇلى',
-  'emailToMe': 'ماڭا ئېلخەت ئەۋەتىڭ',
+  'emailToMe': 'ئىشلەتكۈچى قوللىشى',
   'aboutMe': 'مەن ھەققىدە',
   'copied': 'چاپلاش تاختىسىغا كۆچۈرۈلدى',
   'ok': 'جەزىم',

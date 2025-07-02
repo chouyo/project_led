@@ -83,7 +83,6 @@ class OptionScreen extends GetView<OptionController> {
 
   @override
   Widget build(BuildContext context) {
-    controller.checkIsDataEmpty();
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(

@@ -37,7 +37,7 @@ Map<String, String> translations = {
   'dataIsReady': 'Az adatok készen állnak',
   'success': 'Sikeres',
   'contactMethod': 'Kapcsolattartási mód',
-  'emailToMe': 'Küldjön e-mailt nekem',
+  'emailToMe': 'Felhasználói támogatás',
   'aboutMe': 'Rólam',
   'copied': 'Vágólapra másolva',
   'ok': 'Rendben',

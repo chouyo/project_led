@@ -6,71 +6,58 @@ import '../../../infrastructure/data/mock_leds.dart';
 class ListController extends GetxController {
   final RxList<Led> leds = <Led>[].obs;
   final RxBool isLoading = true.obs;
-  Box<Led>? ledBox;
+  late final Box<Led> ledBox;
+  int _operationCount = 0; // 操作计数器
 
   @override
   void onInit() async {
     super.onInit();
     isLoading.value = true;
-    await initBox();
-    leds.value = ledBox!.values.toList();
+    ledBox = Get.find<Box<Led>>();
+    leds.value = ledBox.values.toList();
     isLoading.value = false;
   }
 
-  Future<void> initBox() async {
-    if (!Hive.isBoxOpen('leds')) {
-      ledBox = await Hive.openBox<Led>('leds');
-    } else {
-      ledBox = Hive.box<Led>('leds');
+  Future<void> loadLeds() async {
+    if (ledBox.isEmpty) {
+      await ledBox.addAll(MockLeds.leds);
+      leds.value = ledBox.values.toList();
+      ledBox.compact();
     }
   }
 
-  void loadLeds() async {
-    if (!ledBox!.isOpen) {
-      await initBox();
+  void _maybeCompact() async {
+    _operationCount++;
+    if (_operationCount >= 5) {
+      await ledBox.compact();
+      _operationCount = 0;
     }
-
-    if (ledBox!.isEmpty) {
-      // Load mock data only if box is empty (first launch)
-      ledBox!.addAll(MockLeds.leds);
-    }
-    leds.value = ledBox!.values.toList();
   }
 
   void addLed(Led led) async {
-    if (!ledBox!.isOpen) {
-      await initBox();
-    }
-    ledBox!.add(led); // Store in Hive
-    leds.value = ledBox!.values.toList(); // Update UI
+    await ledBox.add(led);
+    leds.add(led);
+    _maybeCompact();
   }
 
   void updateLed(int index, Led led) async {
-    if (!ledBox!.isOpen) {
-      await initBox();
-    }
-    ledBox!.putAt(index, led); // Update in Hive
-    leds.value = ledBox!.values.toList(); // Update UI
+    await ledBox.putAt(index, led);
+    leds[index] = led;
+    _maybeCompact();
   }
 
   void deleteLed(int index) async {
-    if (!ledBox!.isOpen) {
-      await initBox();
-    }
-    ledBox!.deleteAt(index); // Delete from Hive
-    leds.value = ledBox!.values.toList(); // Update UI
+    await ledBox.deleteAt(index);
+    leds.removeAt(index);
+    _maybeCompact();
   }
 
   @override
   void onClose() {
-    if (ledBox!.isOpen) {
-      ledBox!.close();
-    }
     super.onClose();
   }
 
   void loadDefaultData() async {
-    await initBox();
-    loadLeds();
+    await loadLeds();
   }
 }

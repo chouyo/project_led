@@ -37,7 +37,7 @@ Map<String, String> translations = {
   'dataIsReady': 'ዳታው ዝግጁ ነው',
   'success': 'ተሳክቷል',
   'contactMethod': 'የመገናኛ ዘዴ',
-  'emailToMe': 'ኢሜይል ይላኩልኝ',
+  'emailToMe': 'የተጠቃሚ ድጋፍ',
   'aboutMe': 'ስለ እኔ',
   'copied': 'ወደ ቅንጥብ ሰሌዳ ተቅድቷል',
   'ok': 'እሺ',

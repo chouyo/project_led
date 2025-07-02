@@ -37,7 +37,7 @@ Map<String, String> translations = {
   'dataIsReady': 'Data iko tayari',
   'success': 'Imefanikiwa',
   'contactMethod': 'Njia ya mawasiliano',
-  'emailToMe': 'Nitume barua pepe',
+  'emailToMe': 'Huduma kwa mtumiaji',
   'aboutMe': 'Kuhusu mimi',
   'copied': 'Imenakiliwa kwenye ubao wa kunakili',
   'ok': 'Sawa',

@@ -38,7 +38,7 @@ Map<String, String> translations = {
   'success': '成功',
   'dataIsReady': '數據已就緒',
   'contactMethod': '聯繫方式',
-  'emailToMe': '給我發郵件',
+  'emailToMe': '用戶支持',
   'aboutMe': '關於我',
   'copied': '已經複製到剪貼板',
   'ok': '確定',

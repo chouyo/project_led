@@ -37,7 +37,7 @@ Map<String, String> translations = {
   'success': 'Успех',
   'dataIsReady': 'Подаци су спремни',
   'contactMethod': 'Начин контакта',
-  'emailToMe': 'Пошаљите ми имејл',
+  'emailToMe': 'Korisnička podrška',
   'aboutMe': 'О мени',
   'copied': 'Копирано у оставу',
   'ok': 'У реду',

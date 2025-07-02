@@ -37,7 +37,7 @@ Map<String, String> translations = {
   'success': 'Suksesvol',
   'dataIsReady': 'Data is gereed',
   'contactMethod': 'Kontakmetode',
-  'emailToMe': 'Stuur my \'n e-pos',
+  'emailToMe': 'Gebruikerondersteuning',
   'aboutMe': 'Oor my',
   'copied': 'Na knipbord gekopieer',
   'ok': 'OK',
