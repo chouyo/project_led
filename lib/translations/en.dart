@@ -10,7 +10,7 @@ Map<String, String> translations = {
   'deleteLed': 'Delete LED',
   'deleteLedConfirm': 'Are you sure you want to delete this LED?',
   'ledText': 'LED Text',
-  'inputLedText': 'Enter LED text',
+  'inputLedText': 'Enter LED texts',
   'add': 'Add',
   'edit': 'Edit',
   'delete': 'Delete',
