@@ -32,15 +32,20 @@ Map<String, String> translations = {
   'normal': 'نورمال',
   'slow': 'ئاستا',
   'dataSettings': 'مەلۇمۇتلار تەڭشىكى',
-  'loadDefaultData': 'ئۇسلۇبنى سەۋپەت قىلىش',
+  'loadDefaultData': '',
   'loadDefaultDataSuccess': 'ئۇسلۇبنى سەۋپەت قىلىش سەۋپەتلىك',
   'dataIsReady': 'سانلىق مەلۇمات تەييار',
   'success': 'مۇۋەپپەقىيەتلىك',
   'contactMethod': 'ئالاقىلىشىش ئۇسۇلى',
-  'emailToMe': 'ماڭا ئېلخەت ئەۋەتىڭ',
+  'emailToMe': 'ئىشلەتكۈچى قوللىشى',
   'aboutMe': 'مەن ھەققىدە',
   'copied': 'چاپلاش تاختىسىغا كۆچۈرۈلدى',
-  'ok': 'جەزىم'
+  'ok': 'جەزىم',
+  'failed': 'مۇۋەپپەقىيەتلىك قىلىش سەۋپەتلىك',
+  'canNotOpenMailApp':
+      'ئېلخەت ئىلگىرىسىنى ئىشلىتىش سەۋپەتلىك. ئىشلىتىش ئۈچۈن مەن ھەققىدە ئاچىقىڭ.',
+  'loadDemoLed': 'ئۇسلۇبنى سەۋپەت قىلىش',
+  'noData': 'LED يوق، چىرايلىق LED قوشۇش ئۈچۈن ئاچىقىڭ.',
 };
 
 final Map<String, String> ug = {

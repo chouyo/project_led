@@ -37,10 +37,14 @@ Map<String, String> translations = {
   'dataIsReady': '데이터 준비 완료',
   'success': '성공',
   'contactMethod': '연락 방법',
-  'emailToMe': '이메일 보내기',
+  'emailToMe': '사용자 지원',
   'aboutMe': '내 정보',
   'copied': '클립보드에 복사됨',
-  'ok': '확인'
+  'ok': '확인',
+  'failed': '실패',
+  'canNotOpenMailApp': '이메일 앱을 열 수 없습니다. 이메일 주소를 얻으려면 내 정보 페이지를 열 수 있습니다.',
+  'loadDemoLed': '기본 LED 로드',
+  'noData': 'LED가 없습니다. 아래 버튼을 클릭하여 예제 LED를 추가할 수 있습니다.',
 };
 
 final Map<String, String> ko = {

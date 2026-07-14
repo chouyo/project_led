@@ -40,7 +40,8 @@ void main() async {
   Hive.registerAdapter(LocaleModelAdapter());
 
   // Open the box
-  await Hive.openBox<Led>('leds');
+  final ledBox = await Hive.openBox<Led>('leds');
+  Get.put<Box<Led>>(ledBox);
 
   var initialRoute = await Routes.initialRoute;
 
@@ -49,7 +50,6 @@ void main() async {
   final optionController = Get.put(OptionController());
   await optionController.loadTheme();
   await optionController.loadLocale();
-  await optionController.checkIsDataEmpty();
 
   runApp(Main(initialRoute));
 }

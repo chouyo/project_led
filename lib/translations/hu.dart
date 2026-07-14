@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'dataIsReady': 'Az adatok készen állnak',
   'success': 'Sikeres',
   'contactMethod': 'Kapcsolattartási mód',
-  'emailToMe': 'Küldjön e-mailt nekem',
+  'emailToMe': 'Felhasználói támogatás',
   'aboutMe': 'Rólam',
   'copied': 'Vágólapra másolva',
-  'ok': 'Rendben'
+  'ok': 'Rendben',
+  'failed': 'Sikertelen',
+  'canNotOpenMailApp':
+      'Nem lehet megnyitni az e-mail alkalmazást. Megnyithatja a rólam oldalt, hogy megkapja az e-mail címet.',
+  'loadDemoLed': 'Alapértelmezett LED betöltése',
+  'noData': 'Nincs LED, kattintson a gombra a LED példa hozzáadásához.',
 };
 
 final Map<String, String> hu = {

@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'dataIsReady': 'Podatki so pripravljeni',
   'success': 'Uspešno',
   'contactMethod': 'Način stika',
-  'emailToMe': 'Pošljite mi e-pošto',
+  'emailToMe': 'Uporabniška podpora',
   'aboutMe': 'O meni',
   'copied': 'Kopirano v odložišče',
-  'ok': 'V redu'
+  'ok': 'V redu',
+  'failed': 'Neuspešno',
+  'canNotOpenMailApp':
+      'Ni mogoče odpreti e-pošte. Odprite o meni, da dobite e-poštni naslov.',
+  'loadDemoLed': 'Naloži Primer LED',
+  'noData': 'Ni LED, kliknite na gumb spodaj za dodajanje primera LED.',
 };
 
 final Map<String, String> sl = {

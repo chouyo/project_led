@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'success': 'Úspěch',
   'dataIsReady': 'Data jsou připravena',
   'contactMethod': 'Způsob kontaktu',
-  'emailToMe': 'Napište mi e-mail',
+  'emailToMe': 'Uživatelská podpora',
   'aboutMe': 'O mně',
   'copied': 'Zkopírováno do schránky',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Nepodařilo se',
+  'canNotOpenMailApp':
+      'Nelze otevřít e-mailovou aplikaci. Můžete otevřít o mně pro získání e-mailové adresy.',
+  'loadDemoLed': 'Načíst výchozí LED',
+  'noData': 'Žádná LED, klikněte na tlačítko níže pro přidání LED ukázky.',
 };
 
 final Map<String, String> cs = {

@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'success': 'موفقیت',
   'dataIsReady': 'داده‌ها آماده هستند',
   'contactMethod': 'روش تماس',
-  'emailToMe': 'به من ایمیل بزنید',
+  'emailToMe': 'پشتیبانی کاربر',
   'aboutMe': 'درباره من',
   'copied': 'در کلیپ‌بورد کپی شد',
-  'ok': 'باشه'
+  'ok': 'باشه',
+  'failed': 'ناموفق',
+  'canNotOpenMailApp':
+      'نمی توانید ایمیل را باز کنید. می توانید برای دریافت آدرس ایمیل بر روی من کلیک کنید.',
+  'loadDemoLed': 'داده‌های پیش‌فرض بارگیری کنید',
+  'noData': 'هیچ LED نیست، برای اضافه کردن LED نمونه کلیک کنید.',
 };
 
 final Map<String, String> fa = {

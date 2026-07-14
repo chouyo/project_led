@@ -37,10 +37,16 @@ Map<String, String> translations = {
   'success': 'Lyckad',
   'dataIsReady': 'Data är redo',
   'contactMethod': 'Kontaktmetod',
-  'emailToMe': 'Skicka e-post till mig',
+  'emailToMe': 'Användarsupport',
   'aboutMe': 'Om mig',
   'copied': 'Kopierat till urklipp',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Misslyckades',
+  'canNotOpenMailApp':
+      'Kan inte öppna e-postappen. Du kan öppna om mig för att få e-postadressen.',
+  'loadDemoLed': 'Ladda standard LED',
+  'noData':
+      'Inga LED, klicka på knappen nedan för att lägga till en standard LED.',
 };
 
 final Map<String, String> sv = {

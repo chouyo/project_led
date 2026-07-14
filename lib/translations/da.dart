@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'dataIsReady': 'Data er klar',
   'success': 'Succes',
   'contactMethod': 'Kontaktmetode',
-  'emailToMe': 'Send mig en e-mail',
+  'emailToMe': 'Brugersupport',
   'aboutMe': 'Om mig',
   'copied': 'Kopieret til udklipsholderen',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Fejlet',
+  'canNotOpenMailApp':
+      'Kan ikke åbne e-mail-app. Du kan åbne om mig for at få e-mail-adressen.',
+  'loadDemoLed': 'Indlæs standard LED',
+  'noData': 'Ingen LED, klik på knappen nedenfor for at tilføje en LED-demo.',
 };
 
 final Map<String, String> da = {

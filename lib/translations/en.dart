@@ -10,7 +10,7 @@ Map<String, String> translations = {
   'deleteLed': 'Delete LED',
   'deleteLedConfirm': 'Are you sure you want to delete this LED?',
   'ledText': 'LED Text',
-  'inputLedText': 'Enter LED text',
+  'inputLedText': 'Enter LED texts',
   'add': 'Add',
   'edit': 'Edit',
   'delete': 'Delete',
@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'success': 'Success',
   'dataIsReady': 'Data is ready',
   'contactMethod': 'Contact Method',
-  'emailToMe': 'Email to Me',
+  'emailToMe': 'User Support',
   'aboutMe': 'About Me',
   'copied': 'Copied to clipboard',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Failed',
+  'canNotOpenMailApp':
+      'Cannot open mail app. You can open about me to get the email address.',
+  'loadDemoLed': 'Load Default LED',
+  'noData': 'No LED, click the button below to add a demo LED.',
 };
 
 final Map<String, String> en = {

@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'success': 'Successus',
   'dataIsReady': 'Data parata est',
   'contactMethod': 'Modus contactus',
-  'emailToMe': 'Mitte mihi electronica epistula',
+  'emailToMe': 'Subsidium usoris',
   'aboutMe': 'De me',
   'copied': 'In tabulam scriptoriam copiatum est',
-  'ok': 'Bene'
+  'ok': 'Bene',
+  'failed': 'Fallus',
+  'canNotOpenMailApp':
+      'Non potest e-mail appena aperire. Pone me, ut e-mail adressum habere possis.',
+  'loadDemoLed': 'Carrega LED Predefinitus',
+  'noData': 'Nihil LED, click button infra pro LED exemplum addendum.',
 };
 
 final Map<String, String> la = {

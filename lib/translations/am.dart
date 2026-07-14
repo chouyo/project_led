@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'dataIsReady': 'ዳታው ዝግጁ ነው',
   'success': 'ተሳክቷል',
   'contactMethod': 'የመገናኛ ዘዴ',
-  'emailToMe': 'ኢሜይል ይላኩልኝ',
+  'emailToMe': 'የተጠቃሚ ድጋፍ',
   'aboutMe': 'ስለ እኔ',
   'copied': 'ወደ ቅንጥብ ሰሌዳ ተቅድቷል',
-  'ok': 'እሺ'
+  'ok': 'እሺ',
+  'failed': 'መልእክት መልእክት',
+  'canNotOpenMailApp':
+      'ኢሜይል መተግበሪያውን ማክፈት አይቻልም። ኢሜይል አድራሻውን ለማግኘት ስለ እኔ ገጹን ማክፈት ይችላሉ።',
+  'loadDemoLed': 'መጠን መጠን መጠን',
+  'noData': 'መጠን መጠን መጠን',
 };
 
 final Map<String, String> am = {

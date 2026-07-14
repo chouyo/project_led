@@ -10,12 +10,10 @@ import '../../../infrastructure/data/led_model.dart';
 import '../../../translations/locales.dart';
 import '../../../infrastructure/data/theme_model.dart';
 import '../../../infrastructure/data/locale_model.dart';
-import '../../list/controllers/list.controller.dart';
 
 class OptionController extends GetxController {
   final Rx<ThemeMode> selectedThemeMode = ThemeMode.system.obs;
   final Rx<Locale> selectedLocale = Get.deviceLocale?.obs as Rx<Locale>;
-  final RxBool isDataEmpty = true.obs;
 
   late Box<ThemeModel> themeModelBox;
   late Box<LocaleModel> localeModelBox;
@@ -58,11 +56,6 @@ class OptionController extends GetxController {
     if (!locales.keys.contains(selectedLocale.value.toString())) {
       selectedLocale.value = getFallbackLocale();
     }
-  }
-
-  Future<void> checkIsDataEmpty() async {
-    ledBox = await Hive.openBox<Led>('leds');
-    isDataEmpty.value = ledBox.values.isEmpty;
   }
 
   void setTheme(ThemeMode themeMode) {
@@ -119,11 +112,6 @@ class OptionController extends GetxController {
     return Locale('en');
   }
 
-  void loadDefaultData() {
-    final listController = Get.put(ListController());
-    listController.loadDefaultData();
-  }
-
   String? encodeQueryParameters(Map<String, String> params) {
     return params.entries
         .map((MapEntry<String, String> e) =>
@@ -150,8 +138,7 @@ class OptionController extends GetxController {
     if (await canLaunchUrl(emailLaunchUri)) {
       await launchUrl(emailLaunchUri);
     } else {
-      Get.snackbar('failed'.tr,
-          'Can\'t open mail app. You can open about me to get email address.');
+      Get.snackbar('failed'.tr, 'canNotOpenMailApp'.tr);
     }
   }
 
@@ -163,9 +150,8 @@ class OptionController extends GetxController {
         'subject': '[StrikingLED] Help && Feedback',
         'body': '',
       });
-    } on PlatformException catch (e) {
-      Get.snackbar('failed'.tr,
-          'Can\'t open mail app. You can open about me to get email address.');
+    } on PlatformException {
+      Get.snackbar('failed'.tr, 'canNotOpenMailApp'.tr);
     }
   }
 }

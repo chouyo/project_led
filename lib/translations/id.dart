@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'success': 'Berhasil',
   'dataIsReady': 'Data siap',
   'contactMethod': 'Metode kontak',
-  'emailToMe': 'Kirim email ke saya',
+  'emailToMe': 'Dukungan pengguna',
   'aboutMe': 'Tentang saya',
   'copied': 'Disalin ke papan klip',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Gagal',
+  'canNotOpenMailApp':
+      'Tidak dapat membuka aplikasi email. Anda dapat membuka tentang saya untuk mendapatkan alamat email.',
+  'loadDemoLed': 'Muat LED Predefinito',
+  'noData': 'Tidak ada LED, klik tombol di bawah untuk menambahkan LED contoh.',
 };
 
 final Map<String, String> id = {

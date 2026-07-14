@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'success': 'Onnistui',
   'dataIsReady': 'Data on valmis',
   'contactMethod': 'Yhteydenottotapa',
-  'emailToMe': 'Lähetä minulle sähköpostia',
+  'emailToMe': 'Käyttäjätuki',
   'aboutMe': 'Tietoa minusta',
   'copied': 'Kopioitu leikepöydälle',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Epäonnistui',
+  'canNotOpenMailApp':
+      'Ei voi avata sähköpostisovellusta. Voit avata olen minusta saadaksesi sähköpostiosoitteen.',
+  'loadDemoLed': 'Lataa oletusarvotiedot',
+  'noData': 'Ei LED, klikkaa painiketta alla lisäämään LED-esimerkki.',
 };
 
 final Map<String, String> fi = {

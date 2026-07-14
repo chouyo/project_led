@@ -37,10 +37,16 @@ Map<String, String> translations = {
   'success': 'Επιτυχία',
   'dataIsReady': 'Τα δεδομένα είναι έτοιμα',
   'contactMethod': 'Μέθοδος επικοινωνίας',
-  'emailToMe': 'Στείλτε μου email',
+  'emailToMe': 'Υποστήριξη χρηστών',
   'aboutMe': 'Σχετικά με εμένα',
   'copied': 'Αντιγράφηκε στο πρόχειρο',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Αποτυχία',
+  'canNotOpenMailApp':
+      'Αδυναμία ανοίγματος της εφαρμογής email. Μπορείτε να ανοίξετε σχετικά με εμένα για να λάβετε την διεύθυνση email.',
+  'loadDemoLed': 'Φόρτωση προεπιλεγμένων LED',
+  'noData':
+      'Καμία LED, κάντε κλικ στο κουμπί παρακάτω για να προσθέσετε ένα παράδειγμα LED.',
 };
 
 final Map<String, String> el = {

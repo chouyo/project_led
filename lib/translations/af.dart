@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'success': 'Suksesvol',
   'dataIsReady': 'Data is gereed',
   'contactMethod': 'Kontakmetode',
-  'emailToMe': 'Stuur my \'n e-pos',
+  'emailToMe': 'Gebruikerondersteuning',
   'aboutMe': 'Oor my',
   'copied': 'Na knipbord gekopieer',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Misluk',
+  'canNotOpenMailApp':
+      'Kan nie e-pos-app oop maak nie. U kan oor my klik om die e-posadres te kry.',
+  'loadDemoLed': 'Laai Standaard LED',
+  'noData': 'Geen LED, klik op die knop hieronder om \'n LED-demo by te voeg.',
 };
 
 final Map<String, String> af = {

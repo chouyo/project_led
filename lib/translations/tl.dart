@@ -37,10 +37,16 @@ Map<String, String> translations = {
   'success': 'Matagumpay',
   'dataIsReady': 'Handa na ang data',
   'contactMethod': 'Paraan ng pakikipag-ugnayan',
-  'emailToMe': 'Magpadala ng email sa akin',
+  'emailToMe': 'Suporta ng gumagamit',
   'aboutMe': 'Tungkol sa akin',
   'copied': 'Nakopya sa clipboard',
-  'ok': 'Sige'
+  'ok': 'Sige',
+  'failed': 'Nabigo',
+  'canNotOpenMailApp':
+      'Hindi ma-open ang email app. Ma-open ang tungkol sa akin para makakuha ng email address.',
+  'loadDemoLed': 'I-load ang Demo LED',
+  'noData':
+      'Walang LED, pindutin ang button sa ibaba para magdagdag ng demo LED.',
 };
 
 final Map<String, String> tl = {

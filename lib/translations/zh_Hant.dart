@@ -38,10 +38,14 @@ Map<String, String> translations = {
   'success': '成功',
   'dataIsReady': '數據已就緒',
   'contactMethod': '聯繫方式',
-  'emailToMe': '給我發郵件',
+  'emailToMe': '用戶支持',
   'aboutMe': '關於我',
   'copied': '已經複製到剪貼板',
-  'ok': '確定'
+  'ok': '確定',
+  'failed': '失敗',
+  'canNotOpenMailApp': '無法打開郵件應用。您可以打開關於我頁面獲取郵箱地址。',
+  'loadDemoLed': '載入示例LED',
+  'noData': '暂无LED，点击下方按钮可添加示例LED。',
 };
 
 final Map<String, String> zh_Hant = {

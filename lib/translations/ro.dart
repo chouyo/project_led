@@ -37,10 +37,16 @@ Map<String, String> translations = {
   'dataIsReady': 'Datele sunt gata',
   'success': 'Succes',
   'contactMethod': 'Metodă de contact',
-  'emailToMe': 'Trimite-mi un e-mail',
+  'emailToMe': 'Suport utilizator',
   'aboutMe': 'Despre mine',
   'copied': 'Copiat în clipboard',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Eșuat',
+  'canNotOpenMailApp':
+      'Nu se poate deschide aplicația de e-mail. Puteți deschide despre mine pentru a obține adresa de e-mail.',
+  'loadDemoLed': 'Încărcați LED-uri Predefinite',
+  'noData':
+      'Nu există LED, apăsați butonul de mai jos pentru a adăuga un LED de exemplu.',
 };
 
 final Map<String, String> ro = {

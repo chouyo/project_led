@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'dataIsReady': 'Данные готовы',
   'success': 'Успех',
   'contactMethod': 'Способ связи',
-  'emailToMe': 'Написать мне',
+  'emailToMe': 'Поддержка пользователей',
   'aboutMe': 'Обо мне',
   'copied': 'Скопировано в буфер обмена',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Не удалось',
+  'canNotOpenMailApp':
+      'Не удалось открыть почту. Вы можете открыть о себе, чтобы получить адрес электронной почты.',
+  'loadDemoLed': 'Загрузить пример LED',
+  'noData': 'Нет LED, нажмите на кнопку ниже, чтобы добавить пример LED.',
 };
 
 final Map<String, String> ru = {

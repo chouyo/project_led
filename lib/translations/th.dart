@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'success': 'สำเร็จ',
   'dataIsReady': 'ข้อมูลพร้อมใช้งาน',
   'contactMethod': 'วิธีการติดต่อ',
-  'emailToMe': 'ส่งอีเมลถึงฉัน',
+  'emailToMe': 'ฝ่ายสนับสนุนผู้ใช้',
   'aboutMe': 'เกี่ยวกับฉัน',
   'copied': 'คัดลอกไปยังคลิปบอร์ดแล้ว',
-  'ok': 'ตกลง'
+  'ok': 'ตกลง',
+  'failed': 'ล้มเหลว',
+  'canNotOpenMailApp':
+      'ไม่สามารถเปิดแอปอีเมลได้ คุณสามารถเปิดหน้าเกี่ยวกับฉันเพื่อรับที่อยู่อีเมล',
+  'loadDemoLed': 'โหลด LED ตัวอย่าง',
+  'noData': 'ไม่มี LED, คลิกปุ่มด้านล่างเพื่อเพิ่ม LED ตัวอย่าง',
 };
 
 final Map<String, String> th = {

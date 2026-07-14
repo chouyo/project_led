@@ -37,10 +37,16 @@ Map<String, String> translations = {
   'success': 'Vellykket',
   'dataIsReady': 'Data er klar',
   'contactMethod': 'Kontaktmetode',
-  'emailToMe': 'Send meg e-post',
+  'emailToMe': 'Brukerstøtte',
   'aboutMe': 'Om meg',
   'copied': 'Kopiert til utklippstavlen',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Mislykket',
+  'canNotOpenMailApp':
+      'Kan ikke åpne e-post. Åpne om meg for å få e-postadressen.',
+  'loadDemoLed': 'Last standard LED',
+  'noData':
+      'Ingen LED, klikk på knappen nedenfor for å legge til en standard LED.',
 };
 
 final Map<String, String> nb = {

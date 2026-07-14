@@ -90,8 +90,6 @@ class HomeController extends GetxController {
 
     WakelockPlus.enable();
 
-    box = await Hive.openBox<Led>('leds');
-
     // Get current LED data
     final led = Led.fromJson(Get.arguments);
     currentLed = led;

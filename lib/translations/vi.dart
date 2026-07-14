@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'success': 'สำเร็จ',
   'dataIsReady': 'Dữ liệu đã sẵn sàng',
   'contactMethod': 'Phương thức liên hệ',
-  'emailToMe': 'Gửi email cho tôi',
+  'emailToMe': 'Hỗ trợ người dùng',
   'aboutMe': 'Về tôi',
   'copied': 'Đã sao chép vào bộ nhớ tạm',
-  'ok': 'OK'
+  'ok': 'OK',
+  'failed': 'Thất bại',
+  'canNotOpenMailApp':
+      'Không thể mở ứng dụng email. Bạn có thể mở trang Về tôi để lấy địa chỉ email.',
+  'loadDemoLed': 'โหลด LED ตัวอย่าง',
+  'noData': 'Không có LED, bấm nút bên dưới để thêm LED mẫu.',
 };
 
 final Map<String, String> vi = {

@@ -37,10 +37,15 @@ Map<String, String> translations = {
   'success': 'सफल',
   'dataIsReady': 'डेटा तैयार है',
   'contactMethod': 'संपर्क विधि',
-  'emailToMe': 'मुझे ईमेल करें',
+  'emailToMe': 'उपयोगकर्ता सहायता',
   'aboutMe': 'मेरे बारे में',
   'copied': 'क्लिपबोर्ड पर कॉपी किया गया',
-  'ok': 'ठीक है'
+  'ok': 'ठीक है',
+  'failed': 'विफल',
+  'canNotOpenMailApp':
+      'ईमेल एप्लिकेशन खोल नहीं सकता। आप मेरे बारे में पृष्ठ खोलकर ईमेल पता प्राप्त कर सकते हैं।',
+  'loadDemoLed': 'डिफ़ॉल्ट LED लोड करें',
+  'noData': 'कोई LED नहीं, नीचे बटन पर क्लिक करके एक उदाहरण LED जोड़ें।',
 };
 
 final Map<String, String> hi = {
